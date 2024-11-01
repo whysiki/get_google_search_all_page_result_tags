@@ -91,17 +91,31 @@ class GoogleSearch:
         self.page_url_dict: Dict[str, str] = {}
         self.error_path = Path("error") / f"{int(time())}"
         self.test_path = Path("data") / f"{int(time())}"
+        self.limit_page_range: tuple = None  # [1, 10]
 
     @property
     def sorted_page_url_dict_items(self) -> List[tuple]:
         return sorted(self.page_url_dict.items(), key=lambda x: int(x[0]))
 
-    async def search(self, search_query: str):
+    async def search(
+        self,
+        search_query: str,
+        limit_page_range: tuple[int, int] = None,
+    ) -> None:
         self.search_url = f"{self.base_url}?hl=en&q={search_query}"
         self.search_query = search_query
         safe_search_query = re.sub(r'[\/:*?"<>|]', "_", search_query).replace(" ", "_")
         self.error_path = self.error_path / safe_search_query
         self.test_path = self.test_path / safe_search_query
+        if limit_page_range:
+            assert isinstance(limit_page_range, tuple), "limit_page_range must be tuple"
+            assert len(limit_page_range) == 2, "limit_page_range must have 2 elements"
+            assert (
+                limit_page_range[0] < limit_page_range[1]
+            ), "First element must be less than second element"
+            self.limit_page_range = limit_page_range
+        else:
+            self.limit_page_range = None
         await self.get_pages()
 
     async def get_pages(self):
@@ -117,7 +131,7 @@ class GoogleSearch:
                 logger.debug(f"Search url: {self.search_url}")
                 html_text = await page.content()
                 currentpage_num: int = self.process_html(html_text)  # 1
-                logger.success(f"Inital current page: {currentpage_num}")
+                logger.debug(f"Inital current page: {currentpage_num}")
                 assert isinstance(currentpage_num, int), "currentpage_num must be int"
                 processed_page_set: set = {currentpage_num}
                 await page.close()
@@ -125,6 +139,13 @@ class GoogleSearch:
                     url
                     for num, url in self.page_url_dict.items()
                     if int(num) not in processed_page_set
+                    and (
+                        not self.limit_page_range  # Not None = True
+                        or (
+                            int(num) <= self.limit_page_range[1]
+                            and int(num) >= self.limit_page_range[0]
+                        )
+                    )
                 ]:
                     for future in asyncio.as_completed(
                         [
@@ -160,12 +181,18 @@ class GoogleSearch:
         searched_result_tag_set = soup.select("#rso > div")
         current_page_tag = soup.select_one("tr > td.YyVfkd.NKTSme")
         if current_page_tag is None:
-            logger.error("No current page tag found")
+            logger.error(
+                "No current page tag found, maybe blocked, you can try again later or switch proxy"
+            )
             save_html(
                 html_text,
                 self.error_path
                 / f"error_response_{int(time())}_{self.search_query}_no_current_page.html",
             )
+            # print(f"[bold red][/bold red]")
+            html_plain_text = soup.select_one("body").text
+            if html_plain_text:
+                print(f"[bold red]Error: {html_plain_text}[/bold red]")
             return 1
         current_page: str = current_page_tag.text
         logger.debug(f"Current page: {current_page}")
