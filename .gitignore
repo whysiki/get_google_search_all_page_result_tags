@@ -12,3 +12,4 @@
 **/*.txt
 /extract_data.py
 /hvac_keywords.py
+**/*.html
