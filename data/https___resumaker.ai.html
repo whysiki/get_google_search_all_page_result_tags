@@ -1,0 +1,2413 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr" data-critters-container><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,
+     user-scalable=0">
+    <link rel="icon" href="assets/favicon.png">
+    <link rel="SHORTCUT ICON" href="assets/favicon.png">
+    <style type="text/css">@font-face{font-family:'Roboto';font-style:normal;font-weight:100;src:url(https://fonts.gstatic.com/s/roboto/v32/KFOkCnqEu92Fr1MmgVxFIzIXKMnyrYk.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}@font-face{font-family:'Roboto';font-style:normal;font-weight:100;src:url(https://fonts.gstatic.com/s/roboto/v32/KFOkCnqEu92Fr1MmgVxMIzIXKMnyrYk.woff2) format('woff2');unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}@font-face{font-family:'Roboto';font-style:normal;font-weight:100;src:url(https://fonts.gstatic.com/s/roboto/v32/KFOkCnqEu92Fr1MmgVxEIzIXKMnyrYk.woff2) format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:100;src:url(https://fonts.gstatic.com/s/roboto/v32/KFOkCnqEu92Fr1MmgVxLIzIXKMnyrYk.woff2) format('woff2');unicode-range:U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:100;src:url(https://fonts.gstatic.com/s/roboto/v32/KFOkCnqEu92Fr1MmgVxHIzIXKMnyrYk.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'Roboto';font-style:normal;font-weight:100;src:url(https://fonts.gstatic.com/s/roboto/v32/KFOkCnqEu92Fr1MmgVxGIzIXKMnyrYk.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:100;src:url(https://fonts.gstatic.com/s/roboto/v32/KFOkCnqEu92Fr1MmgVxIIzIXKMny.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;src:url(https://fonts.gstatic.com/s/roboto/v32/KFOlCnqEu92Fr1MmSU5fCRc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;src:url(https://fonts.gstatic.com/s/roboto/v32/KFOlCnqEu92Fr1MmSU5fABc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;src:url(https://fonts.gstatic.com/s/roboto/v32/KFOlCnqEu92Fr1MmSU5fCBc4AMP6lbBP.woff2) format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;src:url(https://fonts.gstatic.com/s/roboto/v32/KFOlCnqEu92Fr1MmSU5fBxc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;src:url(https://fonts.gstatic.com/s/roboto/v32/KFOlCnqEu92Fr1MmSU5fCxc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;src:url(https://fonts.gstatic.com/s/roboto/v32/KFOlCnqEu92Fr1MmSU5fChc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;src:url(https://fonts.gstatic.com/s/roboto/v32/KFOlCnqEu92Fr1MmSU5fBBc4AMP6lQ.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/roboto/v32/KFOmCnqEu92Fr1Mu72xKKTU1Kvnz.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/roboto/v32/KFOmCnqEu92Fr1Mu5mxKKTU1Kvnz.woff2) format('woff2');unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/roboto/v32/KFOmCnqEu92Fr1Mu7mxKKTU1Kvnz.woff2) format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/roboto/v32/KFOmCnqEu92Fr1Mu4WxKKTU1Kvnz.woff2) format('woff2');unicode-range:U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/roboto/v32/KFOmCnqEu92Fr1Mu7WxKKTU1Kvnz.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/roboto/v32/KFOmCnqEu92Fr1Mu7GxKKTU1Kvnz.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/roboto/v32/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}@font-face{font-family:'Roboto';font-style:normal;font-weight:700;src:url(https://fonts.gstatic.com/s/roboto/v32/KFOlCnqEu92Fr1MmWUlfCRc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}@font-face{font-family:'Roboto';font-style:normal;font-weight:700;src:url(https://fonts.gstatic.com/s/roboto/v32/KFOlCnqEu92Fr1MmWUlfABc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}@font-face{font-family:'Roboto';font-style:normal;font-weight:700;src:url(https://fonts.gstatic.com/s/roboto/v32/KFOlCnqEu92Fr1MmWUlfCBc4AMP6lbBP.woff2) format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:700;src:url(https://fonts.gstatic.com/s/roboto/v32/KFOlCnqEu92Fr1MmWUlfBxc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:700;src:url(https://fonts.gstatic.com/s/roboto/v32/KFOlCnqEu92Fr1MmWUlfCxc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'Roboto';font-style:normal;font-weight:700;src:url(https://fonts.gstatic.com/s/roboto/v32/KFOlCnqEu92Fr1MmWUlfChc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:700;src:url(https://fonts.gstatic.com/s/roboto/v32/KFOlCnqEu92Fr1MmWUlfBBc4AMP6lQ.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}</style>
+    <base href="/">
+    <script>
+      // Function to get URL parameter by name
+      function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, '\\$&');
+        const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
+        const results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+      }
+
+      function saveFromUrlToStorage(paramNameFromURL, paramName) {
+        try {
+          const gclidFromURL = getParameterByName(paramNameFromURL);
+          if (gclidFromURL) {
+            localStorage.setItem(paramName, gclidFromURL);
+          }
+        } catch {}
+      }
+
+      function saveGADParams() {
+        try {
+          const a = getParameterByName('gclid');
+          const b = getParameterByName('gbraid');
+          const c = getParameterByName('wbraid');
+
+          if (a || b || c) {
+            saveFromUrlToStorage('utm_campaign', 'gad_campaign_2');
+            saveFromUrlToStorage('utm_content', 'gad_content_2');
+            saveFromUrlToStorage('utm_term', 'gad_term_2');
+          }
+        } catch {}
+      }
+
+      saveFromUrlToStorage('gclid', 'gclid');
+      saveFromUrlToStorage('gbraid', 'gbraid');
+      saveFromUrlToStorage('wbraid', 'wbraid');
+      saveGADParams();
+    </script>
+  <style>html{--mat-option-selected-state-label-text-color:#3f51b5;--mat-option-label-text-color:rgba(0, 0, 0, .87);--mat-option-hover-state-layer-color:rgba(0, 0, 0, .04);--mat-option-focus-state-layer-color:rgba(0, 0, 0, .04);--mat-option-selected-state-layer-color:rgba(0, 0, 0, .04)}html{--mat-optgroup-label-text-color:rgba(0, 0, 0, .87)}html{--mat-option-label-text-font:Roboto, sans-serif;--mat-option-label-text-line-height:24px;--mat-option-label-text-size:16px;--mat-option-label-text-tracking:.03125em;--mat-option-label-text-weight:400}html{--mat-optgroup-label-text-font:Roboto, sans-serif;--mat-optgroup-label-text-line-height:24px;--mat-optgroup-label-text-size:16px;--mat-optgroup-label-text-tracking:.03125em;--mat-optgroup-label-text-weight:400}html{--mdc-filled-text-field-caret-color:#3f51b5;--mdc-filled-text-field-focus-active-indicator-color:#3f51b5;--mdc-filled-text-field-focus-label-text-color:rgba(63, 81, 181, .87);--mdc-filled-text-field-container-color:whitesmoke;--mdc-filled-text-field-disabled-container-color:#fafafa;--mdc-filled-text-field-label-text-color:rgba(0, 0, 0, .6);--mdc-filled-text-field-disabled-label-text-color:rgba(0, 0, 0, .38);--mdc-filled-text-field-input-text-color:rgba(0, 0, 0, .87);--mdc-filled-text-field-disabled-input-text-color:rgba(0, 0, 0, .38);--mdc-filled-text-field-input-text-placeholder-color:rgba(0, 0, 0, .6);--mdc-filled-text-field-error-focus-label-text-color:#f44336;--mdc-filled-text-field-error-label-text-color:#f44336;--mdc-filled-text-field-error-caret-color:#f44336;--mdc-filled-text-field-active-indicator-color:rgba(0, 0, 0, .42);--mdc-filled-text-field-disabled-active-indicator-color:rgba(0, 0, 0, .06);--mdc-filled-text-field-hover-active-indicator-color:rgba(0, 0, 0, .87);--mdc-filled-text-field-error-active-indicator-color:#f44336;--mdc-filled-text-field-error-focus-active-indicator-color:#f44336;--mdc-filled-text-field-error-hover-active-indicator-color:#f44336;--mdc-outlined-text-field-caret-color:#3f51b5;--mdc-outlined-text-field-focus-outline-color:#3f51b5;--mdc-outlined-text-field-focus-label-text-color:rgba(63, 81, 181, .87);--mdc-outlined-text-field-label-text-color:rgba(0, 0, 0, .6);--mdc-outlined-text-field-disabled-label-text-color:rgba(0, 0, 0, .38);--mdc-outlined-text-field-input-text-color:rgba(0, 0, 0, .87);--mdc-outlined-text-field-disabled-input-text-color:rgba(0, 0, 0, .38);--mdc-outlined-text-field-input-text-placeholder-color:rgba(0, 0, 0, .6);--mdc-outlined-text-field-error-caret-color:#f44336;--mdc-outlined-text-field-error-focus-label-text-color:#f44336;--mdc-outlined-text-field-error-label-text-color:#f44336;--mdc-outlined-text-field-outline-color:rgba(0, 0, 0, .38);--mdc-outlined-text-field-disabled-outline-color:rgba(0, 0, 0, .06);--mdc-outlined-text-field-hover-outline-color:rgba(0, 0, 0, .87);--mdc-outlined-text-field-error-focus-outline-color:#f44336;--mdc-outlined-text-field-error-hover-outline-color:#f44336;--mdc-outlined-text-field-error-outline-color:#f44336;--mat-form-field-disabled-input-text-placeholder-color:rgba(0, 0, 0, .38)}html{--mdc-filled-text-field-label-text-font:Roboto, sans-serif;--mdc-filled-text-field-label-text-size:16px;--mdc-filled-text-field-label-text-tracking:.03125em;--mdc-filled-text-field-label-text-weight:400;--mdc-outlined-text-field-label-text-font:Roboto, sans-serif;--mdc-outlined-text-field-label-text-size:16px;--mdc-outlined-text-field-label-text-tracking:.03125em;--mdc-outlined-text-field-label-text-weight:400;--mat-form-field-container-text-font:Roboto, sans-serif;--mat-form-field-container-text-line-height:24px;--mat-form-field-container-text-size:16px;--mat-form-field-container-text-tracking:.03125em;--mat-form-field-container-text-weight:400;--mat-form-field-outlined-label-text-populated-size:16px;--mat-form-field-subscript-text-font:Roboto, sans-serif;--mat-form-field-subscript-text-line-height:20px;--mat-form-field-subscript-text-size:12px;--mat-form-field-subscript-text-tracking:.0333333333em;--mat-form-field-subscript-text-weight:400}html{--mat-select-panel-background-color:white;--mat-select-enabled-trigger-text-color:rgba(0, 0, 0, .87);--mat-select-disabled-trigger-text-color:rgba(0, 0, 0, .38);--mat-select-placeholder-text-color:rgba(0, 0, 0, .6);--mat-select-enabled-arrow-color:rgba(0, 0, 0, .54);--mat-select-disabled-arrow-color:rgba(0, 0, 0, .38);--mat-select-focused-arrow-color:rgba(63, 81, 181, .87);--mat-select-invalid-arrow-color:rgba(244, 67, 54, .87)}html{--mat-select-trigger-text-font:Roboto, sans-serif;--mat-select-trigger-text-line-height:24px;--mat-select-trigger-text-size:16px;--mat-select-trigger-text-tracking:.03125em;--mat-select-trigger-text-weight:400}html{--mat-autocomplete-background-color:white}html{--mat-menu-item-label-text-color:rgba(0, 0, 0, .87);--mat-menu-item-icon-color:rgba(0, 0, 0, .87);--mat-menu-item-hover-state-layer-color:rgba(0, 0, 0, .04);--mat-menu-item-focus-state-layer-color:rgba(0, 0, 0, .04);--mat-menu-container-color:white}html{--mat-menu-item-label-text-font:Roboto, sans-serif;--mat-menu-item-label-text-size:16px;--mat-menu-item-label-text-tracking:.03125em;--mat-menu-item-label-text-line-height:24px;--mat-menu-item-label-text-weight:400}html{--mat-paginator-container-text-color:rgba(0, 0, 0, .87);--mat-paginator-container-background-color:white;--mat-paginator-enabled-icon-color:rgba(0, 0, 0, .54);--mat-paginator-disabled-icon-color:rgba(0, 0, 0, .12)}html{--mat-paginator-container-size:56px}html{--mat-paginator-container-text-font:Roboto, sans-serif;--mat-paginator-container-text-line-height:20px;--mat-paginator-container-text-size:12px;--mat-paginator-container-text-tracking:.0333333333em;--mat-paginator-container-text-weight:400;--mat-paginator-select-trigger-text-size:12px}html{--mdc-checkbox-disabled-selected-icon-color:rgba(0, 0, 0, .38);--mdc-checkbox-disabled-unselected-icon-color:rgba(0, 0, 0, .38);--mdc-checkbox-selected-checkmark-color:#fff;--mdc-checkbox-selected-focus-icon-color:#ff4081;--mdc-checkbox-selected-hover-icon-color:#ff4081;--mdc-checkbox-selected-icon-color:#ff4081;--mdc-checkbox-selected-pressed-icon-color:#ff4081;--mdc-checkbox-unselected-focus-icon-color:#212121;--mdc-checkbox-unselected-hover-icon-color:#212121;--mdc-checkbox-unselected-icon-color:rgba(0, 0, 0, .54);--mdc-checkbox-unselected-pressed-icon-color:rgba(0, 0, 0, .54);--mdc-checkbox-selected-focus-state-layer-color:#ff4081;--mdc-checkbox-selected-hover-state-layer-color:#ff4081;--mdc-checkbox-selected-pressed-state-layer-color:#ff4081;--mdc-checkbox-unselected-focus-state-layer-color:black;--mdc-checkbox-unselected-hover-state-layer-color:black;--mdc-checkbox-unselected-pressed-state-layer-color:black}html{--mdc-checkbox-state-layer-size:40px}html{--mat-table-background-color:white;--mat-table-header-headline-color:rgba(0, 0, 0, .87);--mat-table-row-item-label-text-color:rgba(0, 0, 0, .87);--mat-table-row-item-outline-color:rgba(0, 0, 0, .12)}html{--mat-table-header-container-height:56px;--mat-table-footer-container-height:52px;--mat-table-row-item-container-height:52px}html{--mat-table-header-headline-font:Roboto, sans-serif;--mat-table-header-headline-line-height:22px;--mat-table-header-headline-size:14px;--mat-table-header-headline-weight:500;--mat-table-header-headline-tracking:.0071428571em;--mat-table-row-item-label-text-font:Roboto, sans-serif;--mat-table-row-item-label-text-line-height:20px;--mat-table-row-item-label-text-size:14px;--mat-table-row-item-label-text-weight:400;--mat-table-row-item-label-text-tracking:.0178571429em;--mat-table-footer-supporting-text-font:Roboto, sans-serif;--mat-table-footer-supporting-text-line-height:20px;--mat-table-footer-supporting-text-size:14px;--mat-table-footer-supporting-text-weight:400;--mat-table-footer-supporting-text-tracking:.0178571429em}html{--mat-badge-background-color:#3f51b5;--mat-badge-text-color:white;--mat-badge-disabled-state-background-color:#b9b9b9;--mat-badge-disabled-state-text-color:rgba(0, 0, 0, .38)}html{--mat-badge-text-font:Roboto, sans-serif;--mat-badge-text-size:12px;--mat-badge-text-weight:600;--mat-badge-small-size-text-size:9px;--mat-badge-large-size-text-size:24px}html{--mat-bottom-sheet-container-text-color:rgba(0, 0, 0, .87);--mat-bottom-sheet-container-background-color:white}html{--mat-bottom-sheet-container-text-font:Roboto, sans-serif;--mat-bottom-sheet-container-text-line-height:20px;--mat-bottom-sheet-container-text-size:14px;--mat-bottom-sheet-container-text-tracking:.0178571429em;--mat-bottom-sheet-container-text-weight:400}html{--mat-legacy-button-toggle-text-color:rgba(0, 0, 0, .38);--mat-legacy-button-toggle-state-layer-color:rgba(0, 0, 0, .12);--mat-legacy-button-toggle-selected-state-text-color:rgba(0, 0, 0, .54);--mat-legacy-button-toggle-selected-state-background-color:#e0e0e0;--mat-legacy-button-toggle-disabled-state-text-color:rgba(0, 0, 0, .26);--mat-legacy-button-toggle-disabled-state-background-color:#eeeeee;--mat-legacy-button-toggle-disabled-selected-state-background-color:#bdbdbd;--mat-standard-button-toggle-text-color:rgba(0, 0, 0, .87);--mat-standard-button-toggle-background-color:white;--mat-standard-button-toggle-state-layer-color:black;--mat-standard-button-toggle-selected-state-background-color:#e0e0e0;--mat-standard-button-toggle-selected-state-text-color:rgba(0, 0, 0, .87);--mat-standard-button-toggle-disabled-state-text-color:rgba(0, 0, 0, .26);--mat-standard-button-toggle-disabled-state-background-color:white;--mat-standard-button-toggle-disabled-selected-state-text-color:rgba(0, 0, 0, .87);--mat-standard-button-toggle-disabled-selected-state-background-color:#bdbdbd;--mat-standard-button-toggle-divider-color:#e0e0e0}html{--mat-standard-button-toggle-height:48px}html{--mat-legacy-button-toggle-text-font:Roboto, sans-serif;--mat-standard-button-toggle-text-font:Roboto, sans-serif}html{--mat-datepicker-calendar-date-selected-state-text-color:white;--mat-datepicker-calendar-date-selected-state-background-color:#3f51b5;--mat-datepicker-calendar-date-selected-disabled-state-background-color:rgba(63, 81, 181, .4);--mat-datepicker-calendar-date-today-selected-state-outline-color:white;--mat-datepicker-calendar-date-focus-state-background-color:rgba(63, 81, 181, .3);--mat-datepicker-calendar-date-hover-state-background-color:rgba(63, 81, 181, .3);--mat-datepicker-toggle-active-state-icon-color:#3f51b5;--mat-datepicker-calendar-date-in-range-state-background-color:rgba(63, 81, 181, .2);--mat-datepicker-calendar-date-in-comparison-range-state-background-color:rgba(249, 171, 0, .2);--mat-datepicker-calendar-date-in-overlap-range-state-background-color:#a8dab5;--mat-datepicker-calendar-date-in-overlap-range-selected-state-background-color:#46a35e;--mat-datepicker-toggle-icon-color:rgba(0, 0, 0, .54);--mat-datepicker-calendar-body-label-text-color:rgba(0, 0, 0, .54);--mat-datepicker-calendar-period-button-icon-color:rgba(0, 0, 0, .54);--mat-datepicker-calendar-navigation-button-icon-color:rgba(0, 0, 0, .54);--mat-datepicker-calendar-header-divider-color:rgba(0, 0, 0, .12);--mat-datepicker-calendar-header-text-color:rgba(0, 0, 0, .54);--mat-datepicker-calendar-date-today-outline-color:rgba(0, 0, 0, .38);--mat-datepicker-calendar-date-today-disabled-state-outline-color:rgba(0, 0, 0, .18);--mat-datepicker-calendar-date-text-color:rgba(0, 0, 0, .87);--mat-datepicker-calendar-date-outline-color:transparent;--mat-datepicker-calendar-date-disabled-state-text-color:rgba(0, 0, 0, .38);--mat-datepicker-calendar-date-preview-state-outline-color:rgba(0, 0, 0, .24);--mat-datepicker-range-input-separator-color:rgba(0, 0, 0, .87);--mat-datepicker-range-input-disabled-state-separator-color:rgba(0, 0, 0, .38);--mat-datepicker-range-input-disabled-state-text-color:rgba(0, 0, 0, .38);--mat-datepicker-calendar-container-background-color:white;--mat-datepicker-calendar-container-text-color:rgba(0, 0, 0, .87)}html{--mat-datepicker-calendar-text-font:Roboto, sans-serif;--mat-datepicker-calendar-text-size:13px;--mat-datepicker-calendar-body-label-text-size:14px;--mat-datepicker-calendar-body-label-text-weight:500;--mat-datepicker-calendar-period-button-text-size:14px;--mat-datepicker-calendar-period-button-text-weight:500;--mat-datepicker-calendar-header-text-size:11px;--mat-datepicker-calendar-header-text-weight:400}html{--mat-divider-color:rgba(0, 0, 0, .12)}html{--mat-expansion-container-background-color:white;--mat-expansion-container-text-color:rgba(0, 0, 0, .87);--mat-expansion-actions-divider-color:rgba(0, 0, 0, .12);--mat-expansion-header-hover-state-layer-color:rgba(0, 0, 0, .04);--mat-expansion-header-focus-state-layer-color:rgba(0, 0, 0, .04);--mat-expansion-header-disabled-state-text-color:rgba(0, 0, 0, .26);--mat-expansion-header-text-color:rgba(0, 0, 0, .87);--mat-expansion-header-description-color:rgba(0, 0, 0, .54);--mat-expansion-header-indicator-color:rgba(0, 0, 0, .54)}html{--mat-expansion-header-collapsed-state-height:48px;--mat-expansion-header-expanded-state-height:64px}html{--mat-expansion-header-text-font:Roboto, sans-serif;--mat-expansion-header-text-size:14px;--mat-expansion-header-text-weight:500;--mat-expansion-header-text-line-height:inherit;--mat-expansion-header-text-tracking:inherit;--mat-expansion-container-text-font:Roboto, sans-serif;--mat-expansion-container-text-line-height:20px;--mat-expansion-container-text-size:14px;--mat-expansion-container-text-tracking:.0178571429em;--mat-expansion-container-text-weight:400}html{--mat-grid-list-tile-header-primary-text-size:14px;--mat-grid-list-tile-header-secondary-text-size:12px;--mat-grid-list-tile-footer-primary-text-size:14px;--mat-grid-list-tile-footer-secondary-text-size:12px}html{--mat-icon-color:inherit}html{--mat-sidenav-container-divider-color:rgba(0, 0, 0, .12);--mat-sidenav-container-background-color:white;--mat-sidenav-container-text-color:rgba(0, 0, 0, .87);--mat-sidenav-content-background-color:#fafafa;--mat-sidenav-content-text-color:rgba(0, 0, 0, .87);--mat-sidenav-scrim-color:rgba(0, 0, 0, .6)}html{--mat-stepper-header-icon-foreground-color:white;--mat-stepper-header-selected-state-icon-background-color:#3f51b5;--mat-stepper-header-selected-state-icon-foreground-color:white;--mat-stepper-header-done-state-icon-background-color:#3f51b5;--mat-stepper-header-done-state-icon-foreground-color:white;--mat-stepper-header-edit-state-icon-background-color:#3f51b5;--mat-stepper-header-edit-state-icon-foreground-color:white;--mat-stepper-container-color:white;--mat-stepper-line-color:rgba(0, 0, 0, .12);--mat-stepper-header-hover-state-layer-color:rgba(0, 0, 0, .04);--mat-stepper-header-focus-state-layer-color:rgba(0, 0, 0, .04);--mat-stepper-header-label-text-color:rgba(0, 0, 0, .54);--mat-stepper-header-optional-label-text-color:rgba(0, 0, 0, .54);--mat-stepper-header-selected-state-label-text-color:rgba(0, 0, 0, .87);--mat-stepper-header-error-state-label-text-color:#f44336;--mat-stepper-header-icon-background-color:rgba(0, 0, 0, .54);--mat-stepper-header-error-state-icon-foreground-color:#f44336;--mat-stepper-header-error-state-icon-background-color:transparent}html{--mat-stepper-header-height:72px}html{--mat-stepper-container-text-font:Roboto, sans-serif;--mat-stepper-header-label-text-font:Roboto, sans-serif;--mat-stepper-header-label-text-size:14px;--mat-stepper-header-label-text-weight:400;--mat-stepper-header-error-state-label-text-size:16px;--mat-stepper-header-selected-state-label-text-size:16px;--mat-stepper-header-selected-state-label-text-weight:400}html{--mat-toolbar-container-background-color:whitesmoke;--mat-toolbar-container-text-color:rgba(0, 0, 0, .87)}html{--mat-toolbar-standard-height:64px;--mat-toolbar-mobile-height:56px}html{--mat-toolbar-title-text-font:Roboto, sans-serif;--mat-toolbar-title-text-line-height:32px;--mat-toolbar-title-text-size:20px;--mat-toolbar-title-text-tracking:.0125em;--mat-toolbar-title-text-weight:500}body{margin:0;line-height:1.5}*,:after,:before{box-sizing:border-box}</style><style>html{--mat-option-selected-state-label-text-color:#3f51b5;--mat-option-label-text-color:rgba(0, 0, 0, .87);--mat-option-hover-state-layer-color:rgba(0, 0, 0, .04);--mat-option-focus-state-layer-color:rgba(0, 0, 0, .04);--mat-option-selected-state-layer-color:rgba(0, 0, 0, .04)}html{--mat-optgroup-label-text-color:rgba(0, 0, 0, .87)}html{--mat-option-label-text-font:Roboto, sans-serif;--mat-option-label-text-line-height:24px;--mat-option-label-text-size:16px;--mat-option-label-text-tracking:.03125em;--mat-option-label-text-weight:400}html{--mat-optgroup-label-text-font:Roboto, sans-serif;--mat-optgroup-label-text-line-height:24px;--mat-optgroup-label-text-size:16px;--mat-optgroup-label-text-tracking:.03125em;--mat-optgroup-label-text-weight:400}html{--mdc-filled-text-field-caret-color:#3f51b5;--mdc-filled-text-field-focus-active-indicator-color:#3f51b5;--mdc-filled-text-field-focus-label-text-color:rgba(63, 81, 181, .87);--mdc-filled-text-field-container-color:whitesmoke;--mdc-filled-text-field-disabled-container-color:#fafafa;--mdc-filled-text-field-label-text-color:rgba(0, 0, 0, .6);--mdc-filled-text-field-disabled-label-text-color:rgba(0, 0, 0, .38);--mdc-filled-text-field-input-text-color:rgba(0, 0, 0, .87);--mdc-filled-text-field-disabled-input-text-color:rgba(0, 0, 0, .38);--mdc-filled-text-field-input-text-placeholder-color:rgba(0, 0, 0, .6);--mdc-filled-text-field-error-focus-label-text-color:#f44336;--mdc-filled-text-field-error-label-text-color:#f44336;--mdc-filled-text-field-error-caret-color:#f44336;--mdc-filled-text-field-active-indicator-color:rgba(0, 0, 0, .42);--mdc-filled-text-field-disabled-active-indicator-color:rgba(0, 0, 0, .06);--mdc-filled-text-field-hover-active-indicator-color:rgba(0, 0, 0, .87);--mdc-filled-text-field-error-active-indicator-color:#f44336;--mdc-filled-text-field-error-focus-active-indicator-color:#f44336;--mdc-filled-text-field-error-hover-active-indicator-color:#f44336;--mdc-outlined-text-field-caret-color:#3f51b5;--mdc-outlined-text-field-focus-outline-color:#3f51b5;--mdc-outlined-text-field-focus-label-text-color:rgba(63, 81, 181, .87);--mdc-outlined-text-field-label-text-color:rgba(0, 0, 0, .6);--mdc-outlined-text-field-disabled-label-text-color:rgba(0, 0, 0, .38);--mdc-outlined-text-field-input-text-color:rgba(0, 0, 0, .87);--mdc-outlined-text-field-disabled-input-text-color:rgba(0, 0, 0, .38);--mdc-outlined-text-field-input-text-placeholder-color:rgba(0, 0, 0, .6);--mdc-outlined-text-field-error-caret-color:#f44336;--mdc-outlined-text-field-error-focus-label-text-color:#f44336;--mdc-outlined-text-field-error-label-text-color:#f44336;--mdc-outlined-text-field-outline-color:rgba(0, 0, 0, .38);--mdc-outlined-text-field-disabled-outline-color:rgba(0, 0, 0, .06);--mdc-outlined-text-field-hover-outline-color:rgba(0, 0, 0, .87);--mdc-outlined-text-field-error-focus-outline-color:#f44336;--mdc-outlined-text-field-error-hover-outline-color:#f44336;--mdc-outlined-text-field-error-outline-color:#f44336;--mat-form-field-disabled-input-text-placeholder-color:rgba(0, 0, 0, .38)}html{--mdc-filled-text-field-label-text-font:Roboto, sans-serif;--mdc-filled-text-field-label-text-size:16px;--mdc-filled-text-field-label-text-tracking:.03125em;--mdc-filled-text-field-label-text-weight:400;--mdc-outlined-text-field-label-text-font:Roboto, sans-serif;--mdc-outlined-text-field-label-text-size:16px;--mdc-outlined-text-field-label-text-tracking:.03125em;--mdc-outlined-text-field-label-text-weight:400;--mat-form-field-container-text-font:Roboto, sans-serif;--mat-form-field-container-text-line-height:24px;--mat-form-field-container-text-size:16px;--mat-form-field-container-text-tracking:.03125em;--mat-form-field-container-text-weight:400;--mat-form-field-outlined-label-text-populated-size:16px;--mat-form-field-subscript-text-font:Roboto, sans-serif;--mat-form-field-subscript-text-line-height:20px;--mat-form-field-subscript-text-size:12px;--mat-form-field-subscript-text-tracking:.0333333333em;--mat-form-field-subscript-text-weight:400}html{--mat-select-panel-background-color:white;--mat-select-enabled-trigger-text-color:rgba(0, 0, 0, .87);--mat-select-disabled-trigger-text-color:rgba(0, 0, 0, .38);--mat-select-placeholder-text-color:rgba(0, 0, 0, .6);--mat-select-enabled-arrow-color:rgba(0, 0, 0, .54);--mat-select-disabled-arrow-color:rgba(0, 0, 0, .38);--mat-select-focused-arrow-color:rgba(63, 81, 181, .87);--mat-select-invalid-arrow-color:rgba(244, 67, 54, .87)}html{--mat-select-trigger-text-font:Roboto, sans-serif;--mat-select-trigger-text-line-height:24px;--mat-select-trigger-text-size:16px;--mat-select-trigger-text-tracking:.03125em;--mat-select-trigger-text-weight:400}html{--mat-autocomplete-background-color:white}html{--mat-menu-item-label-text-color:rgba(0, 0, 0, .87);--mat-menu-item-icon-color:rgba(0, 0, 0, .87);--mat-menu-item-hover-state-layer-color:rgba(0, 0, 0, .04);--mat-menu-item-focus-state-layer-color:rgba(0, 0, 0, .04);--mat-menu-container-color:white}html{--mat-menu-item-label-text-font:Roboto, sans-serif;--mat-menu-item-label-text-size:16px;--mat-menu-item-label-text-tracking:.03125em;--mat-menu-item-label-text-line-height:24px;--mat-menu-item-label-text-weight:400}html{--mat-paginator-container-text-color:rgba(0, 0, 0, .87);--mat-paginator-container-background-color:white;--mat-paginator-enabled-icon-color:rgba(0, 0, 0, .54);--mat-paginator-disabled-icon-color:rgba(0, 0, 0, .12)}html{--mat-paginator-container-size:56px}html{--mat-paginator-container-text-font:Roboto, sans-serif;--mat-paginator-container-text-line-height:20px;--mat-paginator-container-text-size:12px;--mat-paginator-container-text-tracking:.0333333333em;--mat-paginator-container-text-weight:400;--mat-paginator-select-trigger-text-size:12px}html{--mdc-checkbox-disabled-selected-icon-color:rgba(0, 0, 0, .38);--mdc-checkbox-disabled-unselected-icon-color:rgba(0, 0, 0, .38);--mdc-checkbox-selected-checkmark-color:#fff;--mdc-checkbox-selected-focus-icon-color:#ff4081;--mdc-checkbox-selected-hover-icon-color:#ff4081;--mdc-checkbox-selected-icon-color:#ff4081;--mdc-checkbox-selected-pressed-icon-color:#ff4081;--mdc-checkbox-unselected-focus-icon-color:#212121;--mdc-checkbox-unselected-hover-icon-color:#212121;--mdc-checkbox-unselected-icon-color:rgba(0, 0, 0, .54);--mdc-checkbox-unselected-pressed-icon-color:rgba(0, 0, 0, .54);--mdc-checkbox-selected-focus-state-layer-color:#ff4081;--mdc-checkbox-selected-hover-state-layer-color:#ff4081;--mdc-checkbox-selected-pressed-state-layer-color:#ff4081;--mdc-checkbox-unselected-focus-state-layer-color:black;--mdc-checkbox-unselected-hover-state-layer-color:black;--mdc-checkbox-unselected-pressed-state-layer-color:black}html{--mdc-checkbox-state-layer-size:40px}html{--mat-table-background-color:white;--mat-table-header-headline-color:rgba(0, 0, 0, .87);--mat-table-row-item-label-text-color:rgba(0, 0, 0, .87);--mat-table-row-item-outline-color:rgba(0, 0, 0, .12)}html{--mat-table-header-container-height:56px;--mat-table-footer-container-height:52px;--mat-table-row-item-container-height:52px}html{--mat-table-header-headline-font:Roboto, sans-serif;--mat-table-header-headline-line-height:22px;--mat-table-header-headline-size:14px;--mat-table-header-headline-weight:500;--mat-table-header-headline-tracking:.0071428571em;--mat-table-row-item-label-text-font:Roboto, sans-serif;--mat-table-row-item-label-text-line-height:20px;--mat-table-row-item-label-text-size:14px;--mat-table-row-item-label-text-weight:400;--mat-table-row-item-label-text-tracking:.0178571429em;--mat-table-footer-supporting-text-font:Roboto, sans-serif;--mat-table-footer-supporting-text-line-height:20px;--mat-table-footer-supporting-text-size:14px;--mat-table-footer-supporting-text-weight:400;--mat-table-footer-supporting-text-tracking:.0178571429em}html{--mat-badge-background-color:#3f51b5;--mat-badge-text-color:white;--mat-badge-disabled-state-background-color:#b9b9b9;--mat-badge-disabled-state-text-color:rgba(0, 0, 0, .38)}html{--mat-badge-text-font:Roboto, sans-serif;--mat-badge-text-size:12px;--mat-badge-text-weight:600;--mat-badge-small-size-text-size:9px;--mat-badge-large-size-text-size:24px}html{--mat-bottom-sheet-container-text-color:rgba(0, 0, 0, .87);--mat-bottom-sheet-container-background-color:white}html{--mat-bottom-sheet-container-text-font:Roboto, sans-serif;--mat-bottom-sheet-container-text-line-height:20px;--mat-bottom-sheet-container-text-size:14px;--mat-bottom-sheet-container-text-tracking:.0178571429em;--mat-bottom-sheet-container-text-weight:400}html{--mat-legacy-button-toggle-text-color:rgba(0, 0, 0, .38);--mat-legacy-button-toggle-state-layer-color:rgba(0, 0, 0, .12);--mat-legacy-button-toggle-selected-state-text-color:rgba(0, 0, 0, .54);--mat-legacy-button-toggle-selected-state-background-color:#e0e0e0;--mat-legacy-button-toggle-disabled-state-text-color:rgba(0, 0, 0, .26);--mat-legacy-button-toggle-disabled-state-background-color:#eeeeee;--mat-legacy-button-toggle-disabled-selected-state-background-color:#bdbdbd;--mat-standard-button-toggle-text-color:rgba(0, 0, 0, .87);--mat-standard-button-toggle-background-color:white;--mat-standard-button-toggle-state-layer-color:black;--mat-standard-button-toggle-selected-state-background-color:#e0e0e0;--mat-standard-button-toggle-selected-state-text-color:rgba(0, 0, 0, .87);--mat-standard-button-toggle-disabled-state-text-color:rgba(0, 0, 0, .26);--mat-standard-button-toggle-disabled-state-background-color:white;--mat-standard-button-toggle-disabled-selected-state-text-color:rgba(0, 0, 0, .87);--mat-standard-button-toggle-disabled-selected-state-background-color:#bdbdbd;--mat-standard-button-toggle-divider-color:#e0e0e0}html{--mat-standard-button-toggle-height:48px}html{--mat-legacy-button-toggle-text-font:Roboto, sans-serif;--mat-standard-button-toggle-text-font:Roboto, sans-serif}html{--mat-datepicker-calendar-date-selected-state-text-color:white;--mat-datepicker-calendar-date-selected-state-background-color:#3f51b5;--mat-datepicker-calendar-date-selected-disabled-state-background-color:rgba(63, 81, 181, .4);--mat-datepicker-calendar-date-today-selected-state-outline-color:white;--mat-datepicker-calendar-date-focus-state-background-color:rgba(63, 81, 181, .3);--mat-datepicker-calendar-date-hover-state-background-color:rgba(63, 81, 181, .3);--mat-datepicker-toggle-active-state-icon-color:#3f51b5;--mat-datepicker-calendar-date-in-range-state-background-color:rgba(63, 81, 181, .2);--mat-datepicker-calendar-date-in-comparison-range-state-background-color:rgba(249, 171, 0, .2);--mat-datepicker-calendar-date-in-overlap-range-state-background-color:#a8dab5;--mat-datepicker-calendar-date-in-overlap-range-selected-state-background-color:#46a35e;--mat-datepicker-toggle-icon-color:rgba(0, 0, 0, .54);--mat-datepicker-calendar-body-label-text-color:rgba(0, 0, 0, .54);--mat-datepicker-calendar-period-button-icon-color:rgba(0, 0, 0, .54);--mat-datepicker-calendar-navigation-button-icon-color:rgba(0, 0, 0, .54);--mat-datepicker-calendar-header-divider-color:rgba(0, 0, 0, .12);--mat-datepicker-calendar-header-text-color:rgba(0, 0, 0, .54);--mat-datepicker-calendar-date-today-outline-color:rgba(0, 0, 0, .38);--mat-datepicker-calendar-date-today-disabled-state-outline-color:rgba(0, 0, 0, .18);--mat-datepicker-calendar-date-text-color:rgba(0, 0, 0, .87);--mat-datepicker-calendar-date-outline-color:transparent;--mat-datepicker-calendar-date-disabled-state-text-color:rgba(0, 0, 0, .38);--mat-datepicker-calendar-date-preview-state-outline-color:rgba(0, 0, 0, .24);--mat-datepicker-range-input-separator-color:rgba(0, 0, 0, .87);--mat-datepicker-range-input-disabled-state-separator-color:rgba(0, 0, 0, .38);--mat-datepicker-range-input-disabled-state-text-color:rgba(0, 0, 0, .38);--mat-datepicker-calendar-container-background-color:white;--mat-datepicker-calendar-container-text-color:rgba(0, 0, 0, .87)}html{--mat-datepicker-calendar-text-font:Roboto, sans-serif;--mat-datepicker-calendar-text-size:13px;--mat-datepicker-calendar-body-label-text-size:14px;--mat-datepicker-calendar-body-label-text-weight:500;--mat-datepicker-calendar-period-button-text-size:14px;--mat-datepicker-calendar-period-button-text-weight:500;--mat-datepicker-calendar-header-text-size:11px;--mat-datepicker-calendar-header-text-weight:400}html{--mat-divider-color:rgba(0, 0, 0, .12)}html{--mat-expansion-container-background-color:white;--mat-expansion-container-text-color:rgba(0, 0, 0, .87);--mat-expansion-actions-divider-color:rgba(0, 0, 0, .12);--mat-expansion-header-hover-state-layer-color:rgba(0, 0, 0, .04);--mat-expansion-header-focus-state-layer-color:rgba(0, 0, 0, .04);--mat-expansion-header-disabled-state-text-color:rgba(0, 0, 0, .26);--mat-expansion-header-text-color:rgba(0, 0, 0, .87);--mat-expansion-header-description-color:rgba(0, 0, 0, .54);--mat-expansion-header-indicator-color:rgba(0, 0, 0, .54)}html{--mat-expansion-header-collapsed-state-height:48px;--mat-expansion-header-expanded-state-height:64px}html{--mat-expansion-header-text-font:Roboto, sans-serif;--mat-expansion-header-text-size:14px;--mat-expansion-header-text-weight:500;--mat-expansion-header-text-line-height:inherit;--mat-expansion-header-text-tracking:inherit;--mat-expansion-container-text-font:Roboto, sans-serif;--mat-expansion-container-text-line-height:20px;--mat-expansion-container-text-size:14px;--mat-expansion-container-text-tracking:.0178571429em;--mat-expansion-container-text-weight:400}html{--mat-grid-list-tile-header-primary-text-size:14px;--mat-grid-list-tile-header-secondary-text-size:12px;--mat-grid-list-tile-footer-primary-text-size:14px;--mat-grid-list-tile-footer-secondary-text-size:12px}html{--mat-icon-color:inherit}html{--mat-sidenav-container-divider-color:rgba(0, 0, 0, .12);--mat-sidenav-container-background-color:white;--mat-sidenav-container-text-color:rgba(0, 0, 0, .87);--mat-sidenav-content-background-color:#fafafa;--mat-sidenav-content-text-color:rgba(0, 0, 0, .87);--mat-sidenav-scrim-color:rgba(0, 0, 0, .6)}html{--mat-stepper-header-icon-foreground-color:white;--mat-stepper-header-selected-state-icon-background-color:#3f51b5;--mat-stepper-header-selected-state-icon-foreground-color:white;--mat-stepper-header-done-state-icon-background-color:#3f51b5;--mat-stepper-header-done-state-icon-foreground-color:white;--mat-stepper-header-edit-state-icon-background-color:#3f51b5;--mat-stepper-header-edit-state-icon-foreground-color:white;--mat-stepper-container-color:white;--mat-stepper-line-color:rgba(0, 0, 0, .12);--mat-stepper-header-hover-state-layer-color:rgba(0, 0, 0, .04);--mat-stepper-header-focus-state-layer-color:rgba(0, 0, 0, .04);--mat-stepper-header-label-text-color:rgba(0, 0, 0, .54);--mat-stepper-header-optional-label-text-color:rgba(0, 0, 0, .54);--mat-stepper-header-selected-state-label-text-color:rgba(0, 0, 0, .87);--mat-stepper-header-error-state-label-text-color:#f44336;--mat-stepper-header-icon-background-color:rgba(0, 0, 0, .54);--mat-stepper-header-error-state-icon-foreground-color:#f44336;--mat-stepper-header-error-state-icon-background-color:transparent}html{--mat-stepper-header-height:72px}html{--mat-stepper-container-text-font:Roboto, sans-serif;--mat-stepper-header-label-text-font:Roboto, sans-serif;--mat-stepper-header-label-text-size:14px;--mat-stepper-header-label-text-weight:400;--mat-stepper-header-error-state-label-text-size:16px;--mat-stepper-header-selected-state-label-text-size:16px;--mat-stepper-header-selected-state-label-text-weight:400}html{--mat-toolbar-container-background-color:whitesmoke;--mat-toolbar-container-text-color:rgba(0, 0, 0, .87)}html{--mat-toolbar-standard-height:64px;--mat-toolbar-mobile-height:56px}html{--mat-toolbar-title-text-font:Roboto, sans-serif;--mat-toolbar-title-text-line-height:32px;--mat-toolbar-title-text-size:20px;--mat-toolbar-title-text-tracking:.0125em;--mat-toolbar-title-text-weight:500}body{margin:0;line-height:1.5}*,:after,:before{box-sizing:border-box}h1,h2,h3,h4,h5,h6{margin:0;font-weight:400}a{text-decoration:none}a:active{color:initial}</style><link rel="stylesheet" href="styles.f8039754437c225a.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.f8039754437c225a.css"></noscript><style ng-app-id="serverApp">.non-padding-dialog .mat-dialog-container {
+  padding: 0;
+  overflow: visible;
+}
+  .non-padding-dialog app-dialog-component-container {
+  max-height: inherit;
+}
+
+  .dialog-background {
+  background-color: rgba(0, 0, 0, 0.631372549);
+}
+
+  body.rtl {
+  font-family: "Rubik", "Roboto", "Helvetica Neue", sans-serif;
+}
+  body:not(.rtl) {
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
+}
+  .rtl {
+  text-align: right;
+  direction: rtl;
+}
+  .ltr {
+  text-align: left;
+  direction: ltr;
+}
+
+  #enable-toolbar #enable-toast {
+  border-color: none !important;
+}
+  #enable-toolbar #enable-toolbar-trigger.ltr {
+  right: 60px;
+  left: auto;
+}
+
+  body.remove-enabled #enable-toolbar {
+  display: none !important;
+}
+
+@media (max-width: 1025px) {
+    #enable-toolbar {
+    display: none !important;
+  }
+}</style><link rel="canonical" href="https://resumaker.ai/"><link rel="alternate" hreflang="he-IL" href="https://www.resumake.co.il/"><link rel="alternate" hreflang="pl-PL" href="https://resumaker.pl/"><link rel="alternate" hreflang="fr-FR" href="https://resumaker.fr/"><link rel="alternate" hreflang="ar-SA" href="https://cv-ar.com/"><link rel="alternate" hreflang="es-ES" href="https://resumaker.es/"><link rel="alternate" hreflang="pt-PT" href="https://cv-br.com/"><link rel="alternate" hreflang="tr-TR" href="https://ozgecmis.app/"><link rel="alternate" hreflang="it-IT" href="https://resumaker.it/"><link rel="alternate" hreflang="cs-CZ" href="https://resumaker.cz/"><link rel="alternate" hreflang="hu-HU" href="https://cv-hu.com/"><link rel="alternate" hreflang="de-DE" href="https://resumaker.de/"><link rel="alternate" hreflang="ro-RO" href="https://cv-ro.com/"><link rel="alternate" hreflang="sv-SE" href="https://resumaker.se/"><link rel="alternate" hreflang="el-GR" href="https://cv-gr.com/"><link rel="alternate" hreflang="nb-NO" href="https://cv-norge.com/"><link rel="alternate" hreflang="nl-NL" href="https://resumaker.nl/"><link rel="alternate" hreflang="da-DK" href="https://resumaker.dk/"><link rel="alternate" hreflang="fi-FI" href="https://resumaker.fi/"><link rel="alternate" hreflang="id-ID" href="https://contoh-cv.co.id/"><link rel="alternate" hreflang="x-default" href="https://resumaker.ai/"><style ng-app-id="serverApp">.nav[_ngcontent-serverApp-c3127548941] {
+  width: 100%;
+}
+
+.scroll-helper[_ngcontent-serverApp-c3127548941] {
+  height: 80px;
+  width: 100%;
+  display: none;
+  background-color: #f2f7fc;
+}
+.scroll-helper.show[_ngcontent-serverApp-c3127548941] {
+  display: block;
+}
+@media (max-width: 1200px) {
+  .scroll-helper.home[_ngcontent-serverApp-c3127548941] {
+    display: block !important;
+  }
+}
+
+.nav[_ngcontent-serverApp-c3127548941] {
+  height: 80px;
+  background-color: white;
+  padding: 0 25px;
+  z-index: 9999;
+  position: relative;
+}
+.nav.hidden[_ngcontent-serverApp-c3127548941] {
+  display: none;
+}
+.nav.transparent[_ngcontent-serverApp-c3127548941] {
+  opacity: 0;
+  z-index: -99999;
+}
+.nav.blue[_ngcontent-serverApp-c3127548941] {
+  background-color: #eff4f8;
+}
+.nav.home[_ngcontent-serverApp-c3127548941] {
+  background-color: #f2f7fc;
+}
+.nav.scroll-up[_ngcontent-serverApp-c3127548941] {
+  position: fixed;
+  top: -80px;
+  animation: _ngcontent-serverApp-c3127548941_nav-animation 300ms forwards;
+}
+@media (max-width: 1200px) {
+  .nav.home[_ngcontent-serverApp-c3127548941] {
+    position: fixed !important;
+    top: 0 !important;
+    animation: none !important;
+  }
+}
+.nav[_ngcontent-serverApp-c3127548941]   .row[_ngcontent-serverApp-c3127548941] {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+  z-index: 9999;
+  position: relative;
+}
+.nav[_ngcontent-serverApp-c3127548941]   .row[_ngcontent-serverApp-c3127548941]   .language-chooser-container[_ngcontent-serverApp-c3127548941] {
+  direction: ltr;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 10px;
+  width: 250px;
+}
+.nav[_ngcontent-serverApp-c3127548941]   .row[_ngcontent-serverApp-c3127548941]   .language-chooser-container.rtl[_ngcontent-serverApp-c3127548941] {
+  direction: rtl;
+}
+.nav[_ngcontent-serverApp-c3127548941]   .row[_ngcontent-serverApp-c3127548941]   .logo-container[_ngcontent-serverApp-c3127548941] {
+  height: 100%;
+  padding: 18px 0;
+  width: 140px;
+  display: flex;
+  justify-content: flex-start;
+}
+.nav[_ngcontent-serverApp-c3127548941]   .row[_ngcontent-serverApp-c3127548941]   .logo-container[_ngcontent-serverApp-c3127548941]   .logo[_ngcontent-serverApp-c3127548941] {
+  height: 70%;
+  outline: none;
+}
+.nav[_ngcontent-serverApp-c3127548941]   .row[_ngcontent-serverApp-c3127548941]   .logo-container[_ngcontent-serverApp-c3127548941]   .logo[_ngcontent-serverApp-c3127548941]:hover {
+  cursor: pointer;
+}
+.nav[_ngcontent-serverApp-c3127548941]   .row[_ngcontent-serverApp-c3127548941]   .mobile-button[_ngcontent-serverApp-c3127548941] {
+  display: none;
+}
+.nav[_ngcontent-serverApp-c3127548941]   .row[_ngcontent-serverApp-c3127548941]   .mobile-button[_ngcontent-serverApp-c3127548941]   .icon[_ngcontent-serverApp-c3127548941] {
+  color: #0066ff;
+}
+.nav[_ngcontent-serverApp-c3127548941]   .row[_ngcontent-serverApp-c3127548941]   .buttons[_ngcontent-serverApp-c3127548941] {
+  display: flex;
+  align-items: center;
+}
+.nav[_ngcontent-serverApp-c3127548941]   .row[_ngcontent-serverApp-c3127548941]   .buttons[_ngcontent-serverApp-c3127548941]   .login-button[_ngcontent-serverApp-c3127548941] {
+  color: #73abff;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  margin: 0 33px 0 11px;
+}
+.nav[_ngcontent-serverApp-c3127548941]   .row[_ngcontent-serverApp-c3127548941]   .buttons[_ngcontent-serverApp-c3127548941]   .login-button[_ngcontent-serverApp-c3127548941]:hover {
+  color: #2196f3;
+}
+.nav[_ngcontent-serverApp-c3127548941]   .row[_ngcontent-serverApp-c3127548941]   .buttons[_ngcontent-serverApp-c3127548941]   .login-button[_ngcontent-serverApp-c3127548941]:before {
+  content: "";
+  height: 34%;
+  background-color: rgba(187, 187, 187, 0.6);
+  width: 1px;
+  right: -22px;
+  min-height: 14px;
+  position: absolute;
+  pointer-events: none;
+}
+.nav[_ngcontent-serverApp-c3127548941]   .row[_ngcontent-serverApp-c3127548941]   .buttons[_ngcontent-serverApp-c3127548941]   .my-account-button[_ngcontent-serverApp-c3127548941] {
+  border: 1.5px solid #73abff;
+  color: #73abff;
+  padding: 3px 22px;
+  font-size: 16px;
+  border-radius: 4px;
+  font-weight: bold;
+  margin-left: 11px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav[_ngcontent-serverApp-c3127548941]   .row[_ngcontent-serverApp-c3127548941]   .buttons[_ngcontent-serverApp-c3127548941]   .my-account-button[_ngcontent-serverApp-c3127548941]:hover {
+  cursor: pointer;
+  background-color: rgba(115, 171, 255, 0.1019607843);
+}
+.nav[_ngcontent-serverApp-c3127548941]   .row[_ngcontent-serverApp-c3127548941]   .buttons[_ngcontent-serverApp-c3127548941]   .link-button[_ngcontent-serverApp-c3127548941] {
+  color: #4c4c4c;
+  margin: 0 11px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  outline: none;
+}
+.nav[_ngcontent-serverApp-c3127548941]   .row[_ngcontent-serverApp-c3127548941]   .buttons[_ngcontent-serverApp-c3127548941]   .link-button[_ngcontent-serverApp-c3127548941]:hover {
+  cursor: pointer;
+  color: #73abff;
+}
+.nav[_ngcontent-serverApp-c3127548941]   .row[_ngcontent-serverApp-c3127548941]   .buttons[_ngcontent-serverApp-c3127548941]   .link-button.activated[_ngcontent-serverApp-c3127548941] {
+  pointer-events: none;
+  opacity: 0.6;
+}
+.nav[_ngcontent-serverApp-c3127548941]   .row[_ngcontent-serverApp-c3127548941]   .buttons[_ngcontent-serverApp-c3127548941]   .back-button[_ngcontent-serverApp-c3127548941] {
+  color: #c3c3c3;
+  cursor: pointer;
+}
+.nav[_ngcontent-serverApp-c3127548941]   .row[_ngcontent-serverApp-c3127548941]   .buttons[_ngcontent-serverApp-c3127548941]   .back-button[_ngcontent-serverApp-c3127548941]:hover {
+  color: #73abff;
+}
+.nav.blue[_ngcontent-serverApp-c3127548941]   .mobile-menu[_ngcontent-serverApp-c3127548941] {
+  background-color: #eff4f8;
+}
+.nav.home[_ngcontent-serverApp-c3127548941]   .mobile-menu[_ngcontent-serverApp-c3127548941] {
+  background-color: #f2f7fc;
+}
+.nav[_ngcontent-serverApp-c3127548941]   .mobile-menu[_ngcontent-serverApp-c3127548941] {
+  display: none;
+  width: 100%;
+  position: fixed;
+  overflow: none;
+  height: calc(100% - 70px);
+  top: 70px;
+  background-color: white;
+  left: 0;
+  flex-direction: column;
+}
+.nav[_ngcontent-serverApp-c3127548941]   .mobile-menu[_ngcontent-serverApp-c3127548941]   .menu-upper[_ngcontent-serverApp-c3127548941], .nav[_ngcontent-serverApp-c3127548941]   .mobile-menu[_ngcontent-serverApp-c3127548941]   .menu-lower[_ngcontent-serverApp-c3127548941] {
+  height: 50%;
+  width: 100%;
+}
+.nav[_ngcontent-serverApp-c3127548941]   .mobile-menu[_ngcontent-serverApp-c3127548941]   .menu-lower[_ngcontent-serverApp-c3127548941] {
+  background-color: #0066ff;
+  color: white;
+}
+.nav[_ngcontent-serverApp-c3127548941]   .mobile-menu[_ngcontent-serverApp-c3127548941]   .menu-lower[_ngcontent-serverApp-c3127548941]   .menu-lower-items[_ngcontent-serverApp-c3127548941] {
+  padding: 30px 20px;
+}
+.nav[_ngcontent-serverApp-c3127548941]   .mobile-menu[_ngcontent-serverApp-c3127548941]   .menu-lower[_ngcontent-serverApp-c3127548941]   .menu-lower-items[_ngcontent-serverApp-c3127548941]   .menu-link-button[_ngcontent-serverApp-c3127548941] {
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 16px;
+}
+.nav[_ngcontent-serverApp-c3127548941]   .mobile-menu[_ngcontent-serverApp-c3127548941]   .menu-lower[_ngcontent-serverApp-c3127548941]   .copyright[_ngcontent-serverApp-c3127548941] {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  position: absolute;
+  text-align: center;
+  font-size: 16px;
+}
+.nav[_ngcontent-serverApp-c3127548941]   .mobile-menu[_ngcontent-serverApp-c3127548941]   .menu-upper[_ngcontent-serverApp-c3127548941] {
+  color: #0066ff;
+}
+.nav[_ngcontent-serverApp-c3127548941]   .mobile-menu[_ngcontent-serverApp-c3127548941]   .menu-upper[_ngcontent-serverApp-c3127548941]   .menu-upper-items[_ngcontent-serverApp-c3127548941] {
+  padding: 30px 20px;
+}
+.nav[_ngcontent-serverApp-c3127548941]   .mobile-menu[_ngcontent-serverApp-c3127548941]   .menu-upper[_ngcontent-serverApp-c3127548941]   .menu-upper-items[_ngcontent-serverApp-c3127548941]   .menu-link-button[_ngcontent-serverApp-c3127548941] {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+.nav[_ngcontent-serverApp-c3127548941]   .mobile-menu[_ngcontent-serverApp-c3127548941]   .menu-upper[_ngcontent-serverApp-c3127548941]   .menu-upper-items[_ngcontent-serverApp-c3127548941]   .menu-link-button.bold[_ngcontent-serverApp-c3127548941] {
+  font-weight: bold;
+}
+.nav[_ngcontent-serverApp-c3127548941]   .mobile-menu[_ngcontent-serverApp-c3127548941]   .menu-upper[_ngcontent-serverApp-c3127548941]   .menu-upper-items[_ngcontent-serverApp-c3127548941]   .menu-link-button[_ngcontent-serverApp-c3127548941]   .icon[_ngcontent-serverApp-c3127548941] {
+  margin-left: 8px;
+}
+
+  .rtl .my-account-button {
+  margin-left: 0 !important;
+  margin-right: 11px !important;
+}
+  .rtl .menu-link-button .icon {
+  margin-left: 0 !important;
+  margin-right: 8px !important;
+  transform: scaleX(-1);
+}
+
+@media (max-width: 1200px) {
+  .buttons[_ngcontent-serverApp-c3127548941], .language-chooser-container[_ngcontent-serverApp-c3127548941] {
+    display: none !important;
+  }
+  .nav[_ngcontent-serverApp-c3127548941] {
+    height: 70px !important;
+  }
+  .nav[_ngcontent-serverApp-c3127548941]   .mobile-button[_ngcontent-serverApp-c3127548941] {
+    display: block !important;
+  }
+  .nav[_ngcontent-serverApp-c3127548941]   .mobile-button.hidden[_ngcontent-serverApp-c3127548941] {
+    display: none !important;
+  }
+  .nav.mobile-opened[_ngcontent-serverApp-c3127548941] {
+    position: fixed;
+  }
+  .logo[_ngcontent-serverApp-c3127548941] {
+    height: 100% !important;
+  }
+  .mobile-menu.open[_ngcontent-serverApp-c3127548941] {
+    display: flex !important;
+  }
+}
+@media (max-height: 600px) {
+  .mobile-menu[_ngcontent-serverApp-c3127548941]   .menu-lower[_ngcontent-serverApp-c3127548941]   .menu-link-button[_ngcontent-serverApp-c3127548941] {
+    margin-bottom: 0 !important;
+  }
+}
+@media (max-height: 520px) {
+  .mobile-menu[_ngcontent-serverApp-c3127548941]   .menu-lower[_ngcontent-serverApp-c3127548941] {
+    display: none;
+  }
+}
+@keyframes _ngcontent-serverApp-c3127548941_nav-animation {
+  from {
+    top: -80px;
+  }
+  to {
+    top: 0;
+  }
+}
+  .logo * {
+  height: 100% !important;
+  width: initial !important;
+}
+
+.svg-icon[_ngcontent-serverApp-c3127548941] {
+  width: 20px;
+  height: 20px;
+  fill: #0066ff;
+}
+
+.menu-link-button[_ngcontent-serverApp-c3127548941] {
+  display: block;
+}
+
+.menu-upper[_ngcontent-serverApp-c3127548941]   .menu-link-button[_ngcontent-serverApp-c3127548941] {
+  color: #0066ff;
+  cursor: pointer;
+}
+
+.menu-lower[_ngcontent-serverApp-c3127548941]   .menu-link-button[_ngcontent-serverApp-c3127548941] {
+  color: white;
+  cursor: pointer;
+}</style><style ng-app-id="serverApp">.footer[_ngcontent-serverApp-c906790912] {
+  padding: 50px 20% 60px;
+  position: relative;
+}
+.footer.simple[_ngcontent-serverApp-c906790912] {
+  padding: 50px 25% 60px;
+}
+.footer[_ngcontent-serverApp-c906790912]   .copyright[_ngcontent-serverApp-c906790912] {
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+  color: #aaaaaa;
+}
+.footer[_ngcontent-serverApp-c906790912]   .links-sections[_ngcontent-serverApp-c906790912] {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.footer[_ngcontent-serverApp-c906790912]   .links-sections[_ngcontent-serverApp-c906790912]   .link-section[_ngcontent-serverApp-c906790912]   .link-header[_ngcontent-serverApp-c906790912] {
+  color: #566e97;
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+.footer[_ngcontent-serverApp-c906790912]   .links-sections[_ngcontent-serverApp-c906790912]   .link-section[_ngcontent-serverApp-c906790912]   .links[_ngcontent-serverApp-c906790912] {
+  margin-top: 8px;
+}
+.footer[_ngcontent-serverApp-c906790912]   .links-sections[_ngcontent-serverApp-c906790912]   .link-section[_ngcontent-serverApp-c906790912]   .links[_ngcontent-serverApp-c906790912]   .link[_ngcontent-serverApp-c906790912] {
+  cursor: pointer;
+  text-decoration: none;
+  color: #aaaaaa;
+}
+.footer[_ngcontent-serverApp-c906790912]   .links-sections[_ngcontent-serverApp-c906790912]   .link-section[_ngcontent-serverApp-c906790912]   .links[_ngcontent-serverApp-c906790912]   .link[_ngcontent-serverApp-c906790912]:hover {
+  text-decoration: underline;
+}
+.footer[_ngcontent-serverApp-c906790912]   .links-minimal[_ngcontent-serverApp-c906790912] {
+  display: flex;
+}
+
+.footer-templates[_ngcontent-serverApp-c906790912] {
+  height: 40px;
+  background-color: #eff4f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer-templates[_ngcontent-serverApp-c906790912]   .link[_ngcontent-serverApp-c906790912] {
+  color: grey;
+  font-size: 11px;
+  padding: 0 12px;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+}
+.footer-templates[_ngcontent-serverApp-c906790912]   .link[_ngcontent-serverApp-c906790912]:hover {
+  color: #2196f3;
+}
+.footer-templates[_ngcontent-serverApp-c906790912]   .link[_ngcontent-serverApp-c906790912]:not(:last-of-type):after {
+  content: "";
+  position: absolute;
+  background-color: grey;
+  width: 4px;
+  height: 4px;
+  right: -2px;
+  top: 4.5px;
+  border-radius: 3px;
+}
+
+.footer-download[_ngcontent-serverApp-c906790912] {
+  height: 60px;
+  background-color: #f7f5f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer-download[_ngcontent-serverApp-c906790912]   .copyright[_ngcontent-serverApp-c906790912] {
+  color: rgba(144, 144, 144, 0.7294117647);
+}
+.footer-download[_ngcontent-serverApp-c906790912]   .link[_ngcontent-serverApp-c906790912] {
+  color: #b1b1b1;
+  font-size: 14px;
+  padding: 0 12px;
+  position: relative;
+  cursor: pointer;
+}
+.footer-download[_ngcontent-serverApp-c906790912]   .link[_ngcontent-serverApp-c906790912]:hover {
+  color: #2196f3;
+}
+
+  .rtl .footer-templates .link:not(:last-of-type):after {
+  right: auto !important;
+  left: -2px !important;
+}
+  .rtl .x-button {
+  right: initial !important;
+  left: 10px;
+}
+  .rtl .footer {
+  flex-direction: row-reverse;
+}
+  .rtl .footer-flag-icon {
+  margin-right: inherit !important;
+  margin-left: 8px;
+}
+  .rtl .dialog-footer-flag-icon {
+  margin-right: inherit !important;
+  margin-left: 15px;
+}
+
+@media (max-width: 1025px) {
+  .footer[_ngcontent-serverApp-c906790912] {
+    margin-bottom: 10px;
+    padding: 0 50px 80px !important;
+    flex-direction: column-reverse !important;
+  }
+  .footer[_ngcontent-serverApp-c906790912]   .links-sections[_ngcontent-serverApp-c906790912] {
+    justify-content: flex-start;
+  }
+  .footer[_ngcontent-serverApp-c906790912]   .links-sections[_ngcontent-serverApp-c906790912]   .link-section[_ngcontent-serverApp-c906790912] {
+    flex: 33.33% 0 0;
+    margin-top: 40px;
+  }
+}
+@media (max-width: 750px) {
+  .link-section[_ngcontent-serverApp-c906790912] {
+    flex: 50% 0 0 !important;
+  }
+}
+@media (max-width: 500px) {
+  .link-section[_ngcontent-serverApp-c906790912] {
+    flex: 100% 0 0 !important;
+  }
+}
+.flag-container[_ngcontent-serverApp-c906790912] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 35px;
+}
+
+.flag-holder[_ngcontent-serverApp-c906790912] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: #aaaaaa;
+}
+.flag-holder[_ngcontent-serverApp-c906790912]:hover {
+  color: blue;
+}
+
+.footer-flag-icon[_ngcontent-serverApp-c906790912] {
+  width: 30px;
+  margin-right: 8px;
+}
+
+.language-modal-container[_ngcontent-serverApp-c906790912] {
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4901960784);
+  position: fixed;
+  display: none;
+}
+.language-modal-container.open[_ngcontent-serverApp-c906790912] {
+  display: block;
+}
+
+.language-modal[_ngcontent-serverApp-c906790912] {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: white;
+  width: 500px;
+  height: 500px;
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 8px;
+  display: flex;
+  padding: 35px 50px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.languages[_ngcontent-serverApp-c906790912] {
+  width: 100%;
+  flex-wrap: wrap;
+  display: flex;
+  overflow: auto;
+}
+
+.langauge[_ngcontent-serverApp-c906790912] {
+  width: 50%;
+  margin-top: 35px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  min-width: 200px;
+}
+.langauge[_ngcontent-serverApp-c906790912]:hover {
+  color: blue;
+}
+
+.dialog-footer-flag-icon[_ngcontent-serverApp-c906790912] {
+  width: 50px;
+  margin-right: 15px;
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.42), 0 1px 1px 0 rgba(0, 0, 0, 0.39), 0 1px 3px 0 rgba(0, 0, 0, 0.35);
+}
+
+.x-button[_ngcontent-serverApp-c906790912] {
+  right: 10px;
+  top: 10px;
+  position: absolute;
+  font-size: 20px;
+  cursor: pointer;
+  color: rgba(128, 128, 128, 0.621);
+}
+.x-button[_ngcontent-serverApp-c906790912]:hover {
+  color: blue;
+}
+
+.dialog-title[_ngcontent-serverApp-c906790912] {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.languages[_ngcontent-serverApp-c906790912] {
+  margin-top: 20px;
+}</style><style ng-app-id="serverApp">[_nghost-serverApp-c752811285] {
+  width: 100%;
+  height: inherit;
+  display: block;
+  min-height: 1px;
+}
+
+.ngx-picture__picture[_ngcontent-serverApp-c752811285] {
+  width: 100%;
+  height: inherit;
+}
+.ngx-picture__picture[_ngcontent-serverApp-c752811285]   .ngx-picture__picture__img[_ngcontent-serverApp-c752811285] {
+  width: 100%;
+  height: inherit;
+}</style><style ng-app-id="serverApp">.home[_ngcontent-serverApp-c3596918864] {
+  padding: 0 10%;
+  background-color: #f2f7fc;
+}
+.home[_ngcontent-serverApp-c3596918864]   .section[_ngcontent-serverApp-c3596918864] {
+  min-height: 70vh;
+}
+.home[_ngcontent-serverApp-c3596918864]   .section.small[_ngcontent-serverApp-c3596918864] {
+  min-height: 35vh;
+  margin-top: 0;
+}
+.home[_ngcontent-serverApp-c3596918864]   .header-section[_ngcontent-serverApp-c3596918864] {
+  display: flex;
+  align-items: center;
+  height: 75vh;
+  min-height: 75vh;
+}
+.home[_ngcontent-serverApp-c3596918864]   .header-section[_ngcontent-serverApp-c3596918864]   .h1-text[_ngcontent-serverApp-c3596918864] {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: rgba(141, 141, 141, 0.8392156863);
+}
+.home[_ngcontent-serverApp-c3596918864]   .header-section[_ngcontent-serverApp-c3596918864]   .resume-image-container-mobile[_ngcontent-serverApp-c3596918864] {
+  display: none;
+}
+.home[_ngcontent-serverApp-c3596918864]   .header-section[_ngcontent-serverApp-c3596918864]   .text-button-container[_ngcontent-serverApp-c3596918864] {
+  width: 50%;
+}
+.home[_ngcontent-serverApp-c3596918864]   .header-section[_ngcontent-serverApp-c3596918864]   .text-button-container[_ngcontent-serverApp-c3596918864]   .main-text[_ngcontent-serverApp-c3596918864] {
+  font-size: 45px;
+  line-height: 45px;
+  font-weight: bold;
+  margin: 0;
+}
+.home[_ngcontent-serverApp-c3596918864]   .header-section[_ngcontent-serverApp-c3596918864]   .text-button-container[_ngcontent-serverApp-c3596918864]   .sub-text[_ngcontent-serverApp-c3596918864] {
+  font-size: 20px;
+  line-height: 30px;
+  margin-top: 30px;
+  font-weight: normal;
+  margin-bottom: 0;
+}
+.home[_ngcontent-serverApp-c3596918864]   .header-section[_ngcontent-serverApp-c3596918864]   .text-button-container[_ngcontent-serverApp-c3596918864]   .create-resume-button-container[_ngcontent-serverApp-c3596918864] {
+  display: flex;
+  justify-content: flex-start;
+}
+.home[_ngcontent-serverApp-c3596918864]   .header-section[_ngcontent-serverApp-c3596918864]   .text-button-container[_ngcontent-serverApp-c3596918864]   .create-resume-button-container.cvUpload[_ngcontent-serverApp-c3596918864]   .upload-resume-button[_ngcontent-serverApp-c3596918864] {
+  display: block;
+  padding: 15px 20px;
+}
+.home[_ngcontent-serverApp-c3596918864]   .header-section[_ngcontent-serverApp-c3596918864]   .text-button-container[_ngcontent-serverApp-c3596918864]   .create-resume-button-container.cvUpload[_ngcontent-serverApp-c3596918864]   .create-resume-button[_ngcontent-serverApp-c3596918864] {
+  padding: 15px 30px;
+}
+.home[_ngcontent-serverApp-c3596918864]   .header-section[_ngcontent-serverApp-c3596918864]   .text-button-container[_ngcontent-serverApp-c3596918864]   .create-resume-button-container[_ngcontent-serverApp-c3596918864]   .upload-resume-button[_ngcontent-serverApp-c3596918864] {
+  display: none;
+  color: #0066ff;
+  border: 1px solid #0066ff;
+  padding: 20px 30px;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-top: 60px;
+  font-size: 18px;
+  line-height: 22px;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  margin: 60px 20px 0;
+}
+.home[_ngcontent-serverApp-c3596918864]   .header-section[_ngcontent-serverApp-c3596918864]   .text-button-container[_ngcontent-serverApp-c3596918864]   .create-resume-button-container[_ngcontent-serverApp-c3596918864]   .upload-resume-button[_ngcontent-serverApp-c3596918864]:hover {
+  filter: brightness(0.7);
+}
+.home[_ngcontent-serverApp-c3596918864]   .header-section[_ngcontent-serverApp-c3596918864]   .text-button-container[_ngcontent-serverApp-c3596918864]   .create-resume-button-container[_ngcontent-serverApp-c3596918864]   .create-resume-button[_ngcontent-serverApp-c3596918864] {
+  color: white;
+  background-color: #0066ff;
+  padding: 20px 30px;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-top: 60px;
+  font-size: 18px;
+  line-height: 22px;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+}
+.home[_ngcontent-serverApp-c3596918864]   .header-section[_ngcontent-serverApp-c3596918864]   .text-button-container[_ngcontent-serverApp-c3596918864]   .create-resume-button-container[_ngcontent-serverApp-c3596918864]   .create-resume-button[_ngcontent-serverApp-c3596918864]:hover {
+  filter: brightness(0.8);
+}
+.home[_ngcontent-serverApp-c3596918864]   .header-section[_ngcontent-serverApp-c3596918864]   .text-button-container[_ngcontent-serverApp-c3596918864]   .create-resume-button-container[_ngcontent-serverApp-c3596918864]   .create-resume-button[_ngcontent-serverApp-c3596918864]   .icon[_ngcontent-serverApp-c3596918864] {
+  padding-right: 10px;
+}
+.home[_ngcontent-serverApp-c3596918864]   .header-section[_ngcontent-serverApp-c3596918864]   .resume-image-container[_ngcontent-serverApp-c3596918864] {
+  width: 50%;
+  position: relative;
+  overflow: hidden;
+  height: 95vh;
+}
+.home[_ngcontent-serverApp-c3596918864]   .header-section[_ngcontent-serverApp-c3596918864]   .resume-image-container[_ngcontent-serverApp-c3596918864]   #main-resume-image[_ngcontent-serverApp-c3596918864] {
+  position: absolute;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  height: 75vh;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  box-shadow: none;
+  transition: opacity 1500ms ease-in-out;
+  top: 120vh;
+}
+.home[_ngcontent-serverApp-c3596918864]   .header-section[_ngcontent-serverApp-c3596918864]   .resume-image-container[_ngcontent-serverApp-c3596918864]   #main-resume-image.hidden[_ngcontent-serverApp-c3596918864] {
+  opacity: 0;
+}
+.home[_ngcontent-serverApp-c3596918864]   .header-section[_ngcontent-serverApp-c3596918864]   .resume-image-container[_ngcontent-serverApp-c3596918864]   #main-resume-image.browser[_ngcontent-serverApp-c3596918864], .home[_ngcontent-serverApp-c3596918864]   .header-section[_ngcontent-serverApp-c3596918864]   .resume-image-container[_ngcontent-serverApp-c3596918864]   #main-resume-image.imageLoaded[_ngcontent-serverApp-c3596918864] {
+  animation: _ngcontent-serverApp-c3596918864_pull-up 1s 0.2s forwards;
+}
+.home[_ngcontent-serverApp-c3596918864]   .header-section[_ngcontent-serverApp-c3596918864]   .resume-image-container[_ngcontent-serverApp-c3596918864]   #main-resume-image[_ngcontent-serverApp-c3596918864]   source[_ngcontent-serverApp-c3596918864], .home[_ngcontent-serverApp-c3596918864]   .header-section[_ngcontent-serverApp-c3596918864]   .resume-image-container[_ngcontent-serverApp-c3596918864]   #main-resume-image[_ngcontent-serverApp-c3596918864]   img[_ngcontent-serverApp-c3596918864] {
+  height: 100%;
+}
+.home[_ngcontent-serverApp-c3596918864]   .companies-section[_ngcontent-serverApp-c3596918864] {
+  height: 50vh;
+  background-color: #0066ff;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 25px;
+  direction: ltr;
+  position: relative;
+}
+.home[_ngcontent-serverApp-c3596918864]   .companies-section.shrinked[_ngcontent-serverApp-c3596918864] {
+  min-height: 30vh;
+}
+.home[_ngcontent-serverApp-c3596918864]   .companies-section[_ngcontent-serverApp-c3596918864]   .companies[_ngcontent-serverApp-c3596918864] {
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row-reverse;
+}
+.home[_ngcontent-serverApp-c3596918864]   .companies-section[_ngcontent-serverApp-c3596918864]   .companies[_ngcontent-serverApp-c3596918864]   .company[_ngcontent-serverApp-c3596918864] {
+  flex-grow: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.home[_ngcontent-serverApp-c3596918864]   .companies-section[_ngcontent-serverApp-c3596918864]   .companies[_ngcontent-serverApp-c3596918864]   .company[_ngcontent-serverApp-c3596918864]   .company-image[_ngcontent-serverApp-c3596918864] {
+  height: 100px;
+  filter: brightness(0) invert(1);
+  opacity: 0.7;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+.home[_ngcontent-serverApp-c3596918864]   .companies-section[_ngcontent-serverApp-c3596918864]   .companies[_ngcontent-serverApp-c3596918864]   .company[_ngcontent-serverApp-c3596918864]   .company-hired-count[_ngcontent-serverApp-c3596918864] {
+  font-size: 30px;
+  color: rgba(255, 255, 255, 0.5490196078);
+  margin-top: 6px;
+}
+.home[_ngcontent-serverApp-c3596918864]   .companies-section[_ngcontent-serverApp-c3596918864]   .text[_ngcontent-serverApp-c3596918864] {
+  color: white;
+  font-size: 22px;
+  margin-bottom: 24px;
+}
+.home[_ngcontent-serverApp-c3596918864]   .designs-section[_ngcontent-serverApp-c3596918864] {
+  background-color: black;
+  margin-top: 20px;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  color: white;
+  display: flex;
+}
+.home[_ngcontent-serverApp-c3596918864]   .designs-section[_ngcontent-serverApp-c3596918864]   .resumes-background[_ngcontent-serverApp-c3596918864] {
+  position: absolute;
+  width: 1010px;
+  position: absolute;
+  background-repeat: repeat;
+  background-position-x: center;
+  background-position-y: center;
+  right: -260px;
+}
+.home[_ngcontent-serverApp-c3596918864]   .designs-section[_ngcontent-serverApp-c3596918864]   .content[_ngcontent-serverApp-c3596918864] {
+  width: 60%;
+  padding-left: 100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.home[_ngcontent-serverApp-c3596918864]   .designs-section[_ngcontent-serverApp-c3596918864]   .content[_ngcontent-serverApp-c3596918864]   .main-text[_ngcontent-serverApp-c3596918864] {
+  font-size: 40px;
+  line-height: 40px;
+  font-weight: bold;
+}
+.home[_ngcontent-serverApp-c3596918864]   .designs-section[_ngcontent-serverApp-c3596918864]   .content[_ngcontent-serverApp-c3596918864]   .sub-text[_ngcontent-serverApp-c3596918864] {
+  font-size: 20px;
+  line-height: 22px;
+  color: rgba(255, 255, 255, 0.3137254902);
+  margin-top: 34px;
+  white-space: pre-line;
+}
+.home[_ngcontent-serverApp-c3596918864]   .designs-section[_ngcontent-serverApp-c3596918864]   .content[_ngcontent-serverApp-c3596918864]   .buttons-continaer[_ngcontent-serverApp-c3596918864] {
+  display: flex;
+  margin-top: 50px;
+}
+.home[_ngcontent-serverApp-c3596918864]   .designs-section[_ngcontent-serverApp-c3596918864]   .content[_ngcontent-serverApp-c3596918864]   .buttons-continaer[_ngcontent-serverApp-c3596918864]   .create-button[_ngcontent-serverApp-c3596918864], .home[_ngcontent-serverApp-c3596918864]   .designs-section[_ngcontent-serverApp-c3596918864]   .content[_ngcontent-serverApp-c3596918864]   .buttons-continaer[_ngcontent-serverApp-c3596918864]   .watch-video-button[_ngcontent-serverApp-c3596918864] {
+  width: 220px;
+  text-align: center;
+  padding: 10px 30px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+}
+.home[_ngcontent-serverApp-c3596918864]   .designs-section[_ngcontent-serverApp-c3596918864]   .content[_ngcontent-serverApp-c3596918864]   .buttons-continaer[_ngcontent-serverApp-c3596918864]   .create-button.hu-HU[_ngcontent-serverApp-c3596918864], .home[_ngcontent-serverApp-c3596918864]   .designs-section[_ngcontent-serverApp-c3596918864]   .content[_ngcontent-serverApp-c3596918864]   .buttons-continaer[_ngcontent-serverApp-c3596918864]   .watch-video-button.hu-HU[_ngcontent-serverApp-c3596918864] {
+  width: 280px;
+}
+.home[_ngcontent-serverApp-c3596918864]   .designs-section[_ngcontent-serverApp-c3596918864]   .content[_ngcontent-serverApp-c3596918864]   .buttons-continaer[_ngcontent-serverApp-c3596918864]   .create-button.de-DE[_ngcontent-serverApp-c3596918864], .home[_ngcontent-serverApp-c3596918864]   .designs-section[_ngcontent-serverApp-c3596918864]   .content[_ngcontent-serverApp-c3596918864]   .buttons-continaer[_ngcontent-serverApp-c3596918864]   .watch-video-button.de-DE[_ngcontent-serverApp-c3596918864] {
+  width: 240px;
+}
+.home[_ngcontent-serverApp-c3596918864]   .designs-section[_ngcontent-serverApp-c3596918864]   .content[_ngcontent-serverApp-c3596918864]   .buttons-continaer[_ngcontent-serverApp-c3596918864]   .create-button[_ngcontent-serverApp-c3596918864] {
+  background-color: white;
+  color: #0066ff;
+}
+.home[_ngcontent-serverApp-c3596918864]   .designs-section[_ngcontent-serverApp-c3596918864]   .content[_ngcontent-serverApp-c3596918864]   .buttons-continaer[_ngcontent-serverApp-c3596918864]   .create-button[_ngcontent-serverApp-c3596918864]   .icon[_ngcontent-serverApp-c3596918864] {
+  padding-left: 10px;
+}
+.home[_ngcontent-serverApp-c3596918864]   .designs-section[_ngcontent-serverApp-c3596918864]   .content[_ngcontent-serverApp-c3596918864]   .buttons-continaer[_ngcontent-serverApp-c3596918864]   .create-button[_ngcontent-serverApp-c3596918864]:hover {
+  filter: brightness(80%);
+}
+.home[_ngcontent-serverApp-c3596918864]   .designs-section[_ngcontent-serverApp-c3596918864]   .content[_ngcontent-serverApp-c3596918864]   .buttons-continaer[_ngcontent-serverApp-c3596918864]   .create-button[_ngcontent-serverApp-c3596918864]   .mobile-text[_ngcontent-serverApp-c3596918864] {
+  display: none;
+}
+.home[_ngcontent-serverApp-c3596918864]   .designs-section[_ngcontent-serverApp-c3596918864]   .content[_ngcontent-serverApp-c3596918864]   .buttons-continaer[_ngcontent-serverApp-c3596918864]   .watch-video-button[_ngcontent-serverApp-c3596918864] {
+  border: 1px solid white;
+  margin-left: 8px;
+}
+.home[_ngcontent-serverApp-c3596918864]   .designs-section[_ngcontent-serverApp-c3596918864]   .content[_ngcontent-serverApp-c3596918864]   .buttons-continaer[_ngcontent-serverApp-c3596918864]   .watch-video-button[_ngcontent-serverApp-c3596918864]:hover {
+  background-color: #2f2f2f;
+}
+.home[_ngcontent-serverApp-c3596918864]   .points-section[_ngcontent-serverApp-c3596918864] {
+  background-color: #99edde;
+  border-radius: 20px;
+}
+.home[_ngcontent-serverApp-c3596918864]   .points-section[_ngcontent-serverApp-c3596918864]   .points-container[_ngcontent-serverApp-c3596918864] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.home[_ngcontent-serverApp-c3596918864]   .points-section[_ngcontent-serverApp-c3596918864]   .points-container[_ngcontent-serverApp-c3596918864]   .text[_ngcontent-serverApp-c3596918864] {
+  font-weight: bold;
+  text-align: center;
+  white-space: pre-line;
+  margin-top: 50px;
+}
+.home[_ngcontent-serverApp-c3596918864]   .points-section[_ngcontent-serverApp-c3596918864]   .points-container[_ngcontent-serverApp-c3596918864]   .points[_ngcontent-serverApp-c3596918864] {
+  display: flex;
+  width: 80%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 32px 0;
+}
+.home[_ngcontent-serverApp-c3596918864]   .points-section[_ngcontent-serverApp-c3596918864]   .points-container[_ngcontent-serverApp-c3596918864]   .points[_ngcontent-serverApp-c3596918864]   .point[_ngcontent-serverApp-c3596918864] {
+  display: flex;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  width: 26%;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.home[_ngcontent-serverApp-c3596918864]   .points-section[_ngcontent-serverApp-c3596918864]   .points-container[_ngcontent-serverApp-c3596918864]   .points[_ngcontent-serverApp-c3596918864]   .point[_ngcontent-serverApp-c3596918864]   .point-icon[_ngcontent-serverApp-c3596918864] {
+  width: 50px;
+  margin-bottom: 8px;
+  filter: sepia(100%) hue-rotate(190deg) saturate(500%);
+}
+.home[_ngcontent-serverApp-c3596918864]   .points-section[_ngcontent-serverApp-c3596918864]   .points-container[_ngcontent-serverApp-c3596918864]   .points[_ngcontent-serverApp-c3596918864]   .point[_ngcontent-serverApp-c3596918864]   .point-content[_ngcontent-serverApp-c3596918864]   .point-header[_ngcontent-serverApp-c3596918864] {
+  font-weight: bold;
+  font-size: 20px;
+}
+.home[_ngcontent-serverApp-c3596918864]   .points-section[_ngcontent-serverApp-c3596918864]   .points-container[_ngcontent-serverApp-c3596918864]   .points[_ngcontent-serverApp-c3596918864]   .point[_ngcontent-serverApp-c3596918864]   .point-content[_ngcontent-serverApp-c3596918864]   .point-text[_ngcontent-serverApp-c3596918864] {
+  margin-top: 10px;
+  white-space: pre-line;
+}
+.home[_ngcontent-serverApp-c3596918864]   .templates-section[_ngcontent-serverApp-c3596918864] {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 50px;
+}
+.home[_ngcontent-serverApp-c3596918864]   .templates-section[_ngcontent-serverApp-c3596918864]   app-choose-template[_ngcontent-serverApp-c3596918864] {
+  flex: 1;
+  width: 100%;
+  display: flex;
+}
+.home[_ngcontent-serverApp-c3596918864]   .templates-section[_ngcontent-serverApp-c3596918864]   .text[_ngcontent-serverApp-c3596918864] {
+  font-weight: bold;
+  white-space: pre-line;
+  margin-bottom: 50px;
+}
+.home[_ngcontent-serverApp-c3596918864]   .templates-section[_ngcontent-serverApp-c3596918864]   .templates-container[_ngcontent-serverApp-c3596918864] {
+  flex-grow: 1;
+  height: 100%;
+  margin: 50px 0;
+  width: 60%;
+  position: relative;
+}
+.home[_ngcontent-serverApp-c3596918864]   .templates-section[_ngcontent-serverApp-c3596918864]   .templates-container[_ngcontent-serverApp-c3596918864]   .template[_ngcontent-serverApp-c3596918864] {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  top: 0;
+  bottom: 0;
+}
+.home[_ngcontent-serverApp-c3596918864]   .templates-section[_ngcontent-serverApp-c3596918864]   .templates-container[_ngcontent-serverApp-c3596918864]   .template[_ngcontent-serverApp-c3596918864]   .template-image[_ngcontent-serverApp-c3596918864] {
+  width: 100%;
+}
+.home[_ngcontent-serverApp-c3596918864]   .templates-section[_ngcontent-serverApp-c3596918864]   .templates-container[_ngcontent-serverApp-c3596918864]   .before-template[_ngcontent-serverApp-c3596918864] {
+  left: 0;
+  width: 30%;
+}
+.home[_ngcontent-serverApp-c3596918864]   .templates-section[_ngcontent-serverApp-c3596918864]   .templates-container[_ngcontent-serverApp-c3596918864]   .current-template[_ngcontent-serverApp-c3596918864] {
+  width: 35%;
+  left: 33.5%;
+}
+.home[_ngcontent-serverApp-c3596918864]   .templates-section[_ngcontent-serverApp-c3596918864]   .templates-container[_ngcontent-serverApp-c3596918864]   .next-template[_ngcontent-serverApp-c3596918864] {
+  left: 72%;
+  width: 30%;
+}
+.home[_ngcontent-serverApp-c3596918864]   .last-section[_ngcontent-serverApp-c3596918864] {
+  display: flex;
+  flex-direction: column;
+}
+.home[_ngcontent-serverApp-c3596918864]   .last-section[_ngcontent-serverApp-c3596918864]   .upper[_ngcontent-serverApp-c3596918864] {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 8% 10%;
+  justify-content: space-around;
+}
+.home[_ngcontent-serverApp-c3596918864]   .last-section[_ngcontent-serverApp-c3596918864]   .upper[_ngcontent-serverApp-c3596918864]   .trustpilot-container[_ngcontent-serverApp-c3596918864] {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.home[_ngcontent-serverApp-c3596918864]   .last-section[_ngcontent-serverApp-c3596918864]   .upper[_ngcontent-serverApp-c3596918864]   .trustpilot-container[_ngcontent-serverApp-c3596918864]   .text[_ngcontent-serverApp-c3596918864] {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 60px;
+}
+.home[_ngcontent-serverApp-c3596918864]   .last-section[_ngcontent-serverApp-c3596918864]   .upper.no-padding[_ngcontent-serverApp-c3596918864] {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.home[_ngcontent-serverApp-c3596918864]   .last-section[_ngcontent-serverApp-c3596918864]   .upper[_ngcontent-serverApp-c3596918864]   .trustpilot-reviews-container[_ngcontent-serverApp-c3596918864] {
+  width: 100%;
+  height: 100%;
+}
+.home[_ngcontent-serverApp-c3596918864]   .last-section[_ngcontent-serverApp-c3596918864]   .upper[_ngcontent-serverApp-c3596918864]   .quote[_ngcontent-serverApp-c3596918864]   .text[_ngcontent-serverApp-c3596918864] {
+  color: rgb(21, 130, 255);
+  width: 400px;
+  font-size: 25px;
+  line-height: 30px;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+.home[_ngcontent-serverApp-c3596918864]   .last-section[_ngcontent-serverApp-c3596918864]   .upper[_ngcontent-serverApp-c3596918864]   .quote[_ngcontent-serverApp-c3596918864]   .quoter[_ngcontent-serverApp-c3596918864] {
+  display: flex;
+  align-items: center;
+}
+.home[_ngcontent-serverApp-c3596918864]   .last-section[_ngcontent-serverApp-c3596918864]   .upper[_ngcontent-serverApp-c3596918864]   .quote[_ngcontent-serverApp-c3596918864]   .quoter[_ngcontent-serverApp-c3596918864]   .avatar[_ngcontent-serverApp-c3596918864] {
+  width: 60px;
+  margin-right: 12px;
+}
+.home[_ngcontent-serverApp-c3596918864]   .last-section[_ngcontent-serverApp-c3596918864]   .upper[_ngcontent-serverApp-c3596918864]   .quote[_ngcontent-serverApp-c3596918864]   .quoter[_ngcontent-serverApp-c3596918864]   .fullname-position-container[_ngcontent-serverApp-c3596918864] {
+  display: flex;
+  flex-direction: column;
+}
+.home[_ngcontent-serverApp-c3596918864]   .last-section[_ngcontent-serverApp-c3596918864]   .upper[_ngcontent-serverApp-c3596918864]   .quote[_ngcontent-serverApp-c3596918864]   .quoter[_ngcontent-serverApp-c3596918864]   .fullname-position-container[_ngcontent-serverApp-c3596918864]   .fullname[_ngcontent-serverApp-c3596918864] {
+  font-weight: bold;
+  font-size: 18px;
+}
+.home[_ngcontent-serverApp-c3596918864]   .last-section[_ngcontent-serverApp-c3596918864]   .upper[_ngcontent-serverApp-c3596918864]   .quote[_ngcontent-serverApp-c3596918864]   .quoter[_ngcontent-serverApp-c3596918864]   .fullname-position-container[_ngcontent-serverApp-c3596918864]   .position[_ngcontent-serverApp-c3596918864] {
+  margin-top: -5px;
+  font-size: 16px;
+}
+.home[_ngcontent-serverApp-c3596918864]   .last-section[_ngcontent-serverApp-c3596918864]   .bottom[_ngcontent-serverApp-c3596918864] {
+  display: flex;
+  flex: 1;
+  background-color: #0066ff;
+  color: white;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 20px;
+  padding: 8%;
+}
+.home[_ngcontent-serverApp-c3596918864]   .last-section[_ngcontent-serverApp-c3596918864]   .bottom[_ngcontent-serverApp-c3596918864]   .try-text[_ngcontent-serverApp-c3596918864] {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 17px;
+}
+.home[_ngcontent-serverApp-c3596918864]   .last-section[_ngcontent-serverApp-c3596918864]   .bottom[_ngcontent-serverApp-c3596918864]   .create-resume-button-container[_ngcontent-serverApp-c3596918864] {
+  margin-top: 30px;
+}
+.home[_ngcontent-serverApp-c3596918864]   .last-section[_ngcontent-serverApp-c3596918864]   .bottom[_ngcontent-serverApp-c3596918864]   .create-resume-button-container[_ngcontent-serverApp-c3596918864]   .resume-button[_ngcontent-serverApp-c3596918864] {
+  background-color: white;
+  color: #0066ff;
+  font-size: 24px;
+  padding: 14px 63px;
+  border-radius: 126px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.home[_ngcontent-serverApp-c3596918864]   .last-section[_ngcontent-serverApp-c3596918864]   .bottom[_ngcontent-serverApp-c3596918864]   .create-resume-button-container[_ngcontent-serverApp-c3596918864]   .resume-button[_ngcontent-serverApp-c3596918864]:hover {
+  filter: brightness(90%);
+}
+.home[_ngcontent-serverApp-c3596918864]   .seo-section[_ngcontent-serverApp-c3596918864] {
+  padding: 100px 10%;
+  text-align: center;
+}
+.home[_ngcontent-serverApp-c3596918864]   .seo-section[_ngcontent-serverApp-c3596918864]   .main-text[_ngcontent-serverApp-c3596918864] {
+  font-size: 30px;
+  font-weight: bold;
+}
+.home[_ngcontent-serverApp-c3596918864]   .seo-section[_ngcontent-serverApp-c3596918864]   .sub-text[_ngcontent-serverApp-c3596918864] {
+  margin-top: 10px;
+}
+.home[_ngcontent-serverApp-c3596918864]   .seo-section[_ngcontent-serverApp-c3596918864]   .sub-text[_ngcontent-serverApp-c3596918864]   .read-more[_ngcontent-serverApp-c3596918864] {
+  color: rgb(21, 130, 255);
+  cursor: pointer;
+}
+.home[_ngcontent-serverApp-c3596918864]   .seo-section[_ngcontent-serverApp-c3596918864]   .sub-text[_ngcontent-serverApp-c3596918864]   .read-more-text[_ngcontent-serverApp-c3596918864] {
+  text-align: left;
+  display: none;
+}
+.home[_ngcontent-serverApp-c3596918864]   .seo-section[_ngcontent-serverApp-c3596918864]   .sub-text[_ngcontent-serverApp-c3596918864]   .read-more-text.open[_ngcontent-serverApp-c3596918864] {
+  display: block;
+}
+
+.big-header[_ngcontent-serverApp-c3596918864] {
+  font-size: 42px;
+  line-height: 48px;
+}
+
+.big-header-secondary[_ngcontent-serverApp-c3596918864] {
+  font-size: 32px;
+  line-height: 40px;
+}
+
+@keyframes _ngcontent-serverApp-c3596918864_moving-template {
+  from {
+    padding-top: 40vh;
+  }
+  to {
+    padding-top: 0;
+  }
+}
+@keyframes _ngcontent-serverApp-c3596918864_moving-small-template {
+  from {
+    top: 100%;
+  }
+  to {
+    top: 20%;
+  }
+}
+@keyframes _ngcontent-serverApp-c3596918864_pull-up {
+  from {
+    top: 120vh;
+  }
+  to {
+    top: 20vh;
+  }
+}
+@media (max-width: 1200px) {
+  .home[_ngcontent-serverApp-c3596918864] {
+    padding: 0;
+  }
+  .home[_ngcontent-serverApp-c3596918864]   .trustpilot-section[_ngcontent-serverApp-c3596918864] {
+    display: none;
+  }
+  .home[_ngcontent-serverApp-c3596918864]   .today-created[_ngcontent-serverApp-c3596918864] {
+    text-align: center !important;
+    left: 0;
+    right: 0;
+    margin: auto;
+    min-width: unset !important;
+  }
+  .home[_ngcontent-serverApp-c3596918864]   .today-created.el-GR[_ngcontent-serverApp-c3596918864] {
+    display: none;
+  }
+  .home[_ngcontent-serverApp-c3596918864]   .header-section[_ngcontent-serverApp-c3596918864] {
+    flex-direction: column;
+  }
+  .home[_ngcontent-serverApp-c3596918864]   .header-section[_ngcontent-serverApp-c3596918864]   .text-button-container[_ngcontent-serverApp-c3596918864] {
+    margin-top: 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+  }
+  .home[_ngcontent-serverApp-c3596918864]   .header-section[_ngcontent-serverApp-c3596918864]   .text-button-container[_ngcontent-serverApp-c3596918864]   .main-text[_ngcontent-serverApp-c3596918864] {
+    font-size: 30px;
+    line-height: 32px;
+    padding: 0 25px;
+  }
+  .home[_ngcontent-serverApp-c3596918864]   .header-section[_ngcontent-serverApp-c3596918864]   .text-button-container[_ngcontent-serverApp-c3596918864]   .sub-text[_ngcontent-serverApp-c3596918864] {
+    display: none;
+  }
+  .home[_ngcontent-serverApp-c3596918864]   .header-section[_ngcontent-serverApp-c3596918864]   .text-button-container[_ngcontent-serverApp-c3596918864]   .create-resume-button-container[_ngcontent-serverApp-c3596918864] {
+    justify-content: center;
+    margin-top: 40px;
+  }
+  .home[_ngcontent-serverApp-c3596918864]   .header-section[_ngcontent-serverApp-c3596918864]   .text-button-container[_ngcontent-serverApp-c3596918864]   .create-resume-button-container[_ngcontent-serverApp-c3596918864]   .create-resume-button[_ngcontent-serverApp-c3596918864] {
+    margin-top: 0px;
+    padding: 16px 30px !important;
+  }
+  .home[_ngcontent-serverApp-c3596918864]   .header-section[_ngcontent-serverApp-c3596918864]   .text-button-container[_ngcontent-serverApp-c3596918864]   .resume-image-container-mobile[_ngcontent-serverApp-c3596918864] {
+    display: block;
+    flex-grow: 1;
+    position: relative;
+  }
+  .home[_ngcontent-serverApp-c3596918864]   .header-section[_ngcontent-serverApp-c3596918864]   .text-button-container[_ngcontent-serverApp-c3596918864]   .resume-image-container-mobile[_ngcontent-serverApp-c3596918864]   .mobile-helper[_ngcontent-serverApp-c3596918864] {
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 60px;
+    overflow: hidden;
+  }
+  .home[_ngcontent-serverApp-c3596918864]   .header-section[_ngcontent-serverApp-c3596918864]   .text-button-container[_ngcontent-serverApp-c3596918864]   .resume-image-container-mobile[_ngcontent-serverApp-c3596918864]   .mobile-helper[_ngcontent-serverApp-c3596918864]   #main-mobile-resume-image[_ngcontent-serverApp-c3596918864] {
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    top: 70%;
+  }
+  .home[_ngcontent-serverApp-c3596918864]   .header-section[_ngcontent-serverApp-c3596918864]   .text-button-container[_ngcontent-serverApp-c3596918864]   .resume-image-container-mobile[_ngcontent-serverApp-c3596918864]   .mobile-helper[_ngcontent-serverApp-c3596918864]   #main-mobile-resume-image.browser[_ngcontent-serverApp-c3596918864], .home[_ngcontent-serverApp-c3596918864]   .header-section[_ngcontent-serverApp-c3596918864]   .text-button-container[_ngcontent-serverApp-c3596918864]   .resume-image-container-mobile[_ngcontent-serverApp-c3596918864]   .mobile-helper[_ngcontent-serverApp-c3596918864]   #main-mobile-resume-image.imageLoaded[_ngcontent-serverApp-c3596918864] {
+    animation: mobile-pull-up 1s 0.2s forwards;
+  }
+  .home[_ngcontent-serverApp-c3596918864]   .header-section[_ngcontent-serverApp-c3596918864]   .text-button-container[_ngcontent-serverApp-c3596918864]   .resume-image-container-mobile[_ngcontent-serverApp-c3596918864]   .mobile-helper[_ngcontent-serverApp-c3596918864]   #main-mobile-resume-image[_ngcontent-serverApp-c3596918864]   source[_ngcontent-serverApp-c3596918864], .home[_ngcontent-serverApp-c3596918864]   .header-section[_ngcontent-serverApp-c3596918864]   .text-button-container[_ngcontent-serverApp-c3596918864]   .resume-image-container-mobile[_ngcontent-serverApp-c3596918864]   .mobile-helper[_ngcontent-serverApp-c3596918864]   #main-mobile-resume-image[_ngcontent-serverApp-c3596918864]   img[_ngcontent-serverApp-c3596918864] {
+    height: 100%;
+  }
+  .home[_ngcontent-serverApp-c3596918864]   .header-section[_ngcontent-serverApp-c3596918864]   .resume-image-container[_ngcontent-serverApp-c3596918864] {
+    display: none;
+  }
+  .home[_ngcontent-serverApp-c3596918864]   .companies-section[_ngcontent-serverApp-c3596918864] {
+    margin-top: 0;
+    border-radius: 0;
+  }
+  .home[_ngcontent-serverApp-c3596918864]   .companies-section[_ngcontent-serverApp-c3596918864]   .text[_ngcontent-serverApp-c3596918864] {
+    text-align: center;
+  }
+  .home[_ngcontent-serverApp-c3596918864]   .companies-section[_ngcontent-serverApp-c3596918864]   .companies[_ngcontent-serverApp-c3596918864] {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .home[_ngcontent-serverApp-c3596918864]   .companies-section[_ngcontent-serverApp-c3596918864]   .companies[_ngcontent-serverApp-c3596918864]   .company[_ngcontent-serverApp-c3596918864] {
+    width: 33%;
+    flex-shrink: 0;
+    margin-bottom: 10px;
+  }
+  .home[_ngcontent-serverApp-c3596918864]   .companies-section[_ngcontent-serverApp-c3596918864]   .companies[_ngcontent-serverApp-c3596918864]   .company[_ngcontent-serverApp-c3596918864]   .company-image[_ngcontent-serverApp-c3596918864] {
+    height: 50px;
+  }
+  .home[_ngcontent-serverApp-c3596918864]   .companies-section[_ngcontent-serverApp-c3596918864]   .companies[_ngcontent-serverApp-c3596918864]   .company[_ngcontent-serverApp-c3596918864]   .company-hired-count[_ngcontent-serverApp-c3596918864] {
+    display: none;
+  }
+  .home[_ngcontent-serverApp-c3596918864]   .designs-section[_ngcontent-serverApp-c3596918864] {
+    border-radius: 0;
+    margin-top: 0;
+  }
+  .home[_ngcontent-serverApp-c3596918864]   .designs-section[_ngcontent-serverApp-c3596918864]   .content[_ngcontent-serverApp-c3596918864] {
+    width: 100%;
+    padding: 0 10%;
+  }
+  .home[_ngcontent-serverApp-c3596918864]   .designs-section[_ngcontent-serverApp-c3596918864]   .content[_ngcontent-serverApp-c3596918864]   .main-text[_ngcontent-serverApp-c3596918864] {
+    font-size: 30px;
+    line-height: 35px;
+  }
+  .home[_ngcontent-serverApp-c3596918864]   .designs-section[_ngcontent-serverApp-c3596918864]   .content[_ngcontent-serverApp-c3596918864]   .sub-text[_ngcontent-serverApp-c3596918864] {
+    color: rgba(255, 255, 255, 0.6509803922);
+  }
+  .home[_ngcontent-serverApp-c3596918864]   .designs-section[_ngcontent-serverApp-c3596918864]   .content[_ngcontent-serverApp-c3596918864]   .watch-video-button[_ngcontent-serverApp-c3596918864] {
+    display: none;
+  }
+  .home[_ngcontent-serverApp-c3596918864]   .designs-section[_ngcontent-serverApp-c3596918864]   .content[_ngcontent-serverApp-c3596918864]   .watch-video-button[_ngcontent-serverApp-c3596918864], .home[_ngcontent-serverApp-c3596918864]   .designs-section[_ngcontent-serverApp-c3596918864]   .content[_ngcontent-serverApp-c3596918864]   .create-button[_ngcontent-serverApp-c3596918864] {
+    z-index: 1;
+  }
+  .home[_ngcontent-serverApp-c3596918864]   .designs-section[_ngcontent-serverApp-c3596918864]   .content[_ngcontent-serverApp-c3596918864]   .create-button[_ngcontent-serverApp-c3596918864]   .icon[_ngcontent-serverApp-c3596918864] {
+    display: none;
+  }
+  .home[_ngcontent-serverApp-c3596918864]   .designs-section[_ngcontent-serverApp-c3596918864]   .content[_ngcontent-serverApp-c3596918864]   .create-button[_ngcontent-serverApp-c3596918864]   .mobile-text[_ngcontent-serverApp-c3596918864] {
+    display: block !important;
+  }
+  .home[_ngcontent-serverApp-c3596918864]   .designs-section[_ngcontent-serverApp-c3596918864]   .content[_ngcontent-serverApp-c3596918864]   .create-button[_ngcontent-serverApp-c3596918864]   .desktop-text[_ngcontent-serverApp-c3596918864] {
+    display: none;
+  }
+  .home[_ngcontent-serverApp-c3596918864]   .designs-section[_ngcontent-serverApp-c3596918864]   .resumes-background[_ngcontent-serverApp-c3596918864] {
+    opacity: 0.1;
+    width: 100%;
+    left: auto;
+    right: auto;
+    width: 100% !important;
+    height: 100% !important;
+  }
+  .home[_ngcontent-serverApp-c3596918864]   .big-header-secondary[_ngcontent-serverApp-c3596918864] {
+    font-size: 24px;
+    line-height: 30px;
+  }
+  .home[_ngcontent-serverApp-c3596918864]   .points-section[_ngcontent-serverApp-c3596918864] {
+    padding: 0 10%;
+    border-radius: 0;
+  }
+  .home[_ngcontent-serverApp-c3596918864]   .points-section[_ngcontent-serverApp-c3596918864]   .point[_ngcontent-serverApp-c3596918864] {
+    width: 100% !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+  .home[_ngcontent-serverApp-c3596918864]   .last-section[_ngcontent-serverApp-c3596918864]   .upper[_ngcontent-serverApp-c3596918864] {
+    flex-direction: column;
+  }
+  .home[_ngcontent-serverApp-c3596918864]   .last-section[_ngcontent-serverApp-c3596918864]   .upper[_ngcontent-serverApp-c3596918864]   .quote[_ngcontent-serverApp-c3596918864] {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .home[_ngcontent-serverApp-c3596918864]   .last-section[_ngcontent-serverApp-c3596918864]   .upper[_ngcontent-serverApp-c3596918864]   .quote[_ngcontent-serverApp-c3596918864]:last-child {
+    margin-bottom: 50px;
+  }
+  .home[_ngcontent-serverApp-c3596918864]   .last-section[_ngcontent-serverApp-c3596918864]   .upper[_ngcontent-serverApp-c3596918864]   .quote[_ngcontent-serverApp-c3596918864]   .text[_ngcontent-serverApp-c3596918864] {
+    margin-bottom: 0;
+    font-size: 22px;
+    line-height: 26px;
+    align-self: flex-start;
+    width: 75%;
+    margin-bottom: 20px;
+  }
+  .home[_ngcontent-serverApp-c3596918864]   .last-section[_ngcontent-serverApp-c3596918864]   .upper[_ngcontent-serverApp-c3596918864]   .quote[_ngcontent-serverApp-c3596918864]   .quoter[_ngcontent-serverApp-c3596918864] {
+    align-self: flex-start;
+    margin-right: 20px;
+  }
+  .home[_ngcontent-serverApp-c3596918864]   .last-section[_ngcontent-serverApp-c3596918864]   .bottom[_ngcontent-serverApp-c3596918864] {
+    padding: 10%;
+    border-radius: 0;
+  }
+  .home[_ngcontent-serverApp-c3596918864]   .last-section[_ngcontent-serverApp-c3596918864]   .bottom[_ngcontent-serverApp-c3596918864]   .try-text[_ngcontent-serverApp-c3596918864] {
+    font-size: 22px;
+    line-height: 26px;
+  }
+  .home[_ngcontent-serverApp-c3596918864]   .last-section[_ngcontent-serverApp-c3596918864]   .bottom[_ngcontent-serverApp-c3596918864]   .resume-button[_ngcontent-serverApp-c3596918864] {
+    font-size: 18px !important;
+    padding: 14px 25px !important;
+  }
+  .home[_ngcontent-serverApp-c3596918864]   .seo-section[_ngcontent-serverApp-c3596918864] {
+    padding: 50px 10% !important;
+  }
+  .home[_ngcontent-serverApp-c3596918864]   .seo-section[_ngcontent-serverApp-c3596918864]   .main-text[_ngcontent-serverApp-c3596918864] {
+    font-size: 24px;
+  }
+  .home[_ngcontent-serverApp-c3596918864]   .seo-section[_ngcontent-serverApp-c3596918864]   .sub-text[_ngcontent-serverApp-c3596918864] {
+    font-size: 16px;
+  }
+  @keyframes mobile-pull-up {
+    from {
+      top: 70%;
+    }
+    to {
+      top: 0;
+    }
+  }
+  @keyframes today-text-animation {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+@keyframes _ngcontent-serverApp-c3596918864_today-text-animation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media (max-width: 1200px) and (min-width: 861px) {
+  .create-resume-button[_ngcontent-serverApp-c3596918864] {
+    width: calc((75vh - 176px) * 21 / 29.7);
+  }
+}
+@media (max-width: 860px) and (min-width: 471px) {
+  .create-resume-button[_ngcontent-serverApp-c3596918864] {
+    width: calc((75vh - 208px) * 21 / 29.7);
+  }
+}
+@media (max-width: 470px) and (min-width: 348px) {
+  .create-resume-button[_ngcontent-serverApp-c3596918864] {
+    width: calc((75vh - 240px) * 21 / 29.7);
+  }
+}
+@media (max-width: 347px) and (min-width: 281px) {
+  .create-resume-button[_ngcontent-serverApp-c3596918864] {
+    width: calc((75vh - 272px) * 21 / 29.7);
+  }
+}
+@media (max-width: 280px) {
+  .create-resume-button[_ngcontent-serverApp-c3596918864] {
+    width: calc((75vh - 304px) * 21 / 29.7);
+  }
+}
+@media (max-height: 750px) {
+  .header-section[_ngcontent-serverApp-c3596918864] {
+    height: 600px !important;
+  }
+}
+@media (max-height: 750px) and (max-width: 1200px) and (min-width: 861px) {
+  .header-section[_ngcontent-serverApp-c3596918864]   .create-resume-button[_ngcontent-serverApp-c3596918864] {
+    width: calc((600px - 176px) * 21 / 29.7);
+  }
+}
+@media (max-height: 750px) and (max-width: 860px) and (min-width: 471px) {
+  .header-section[_ngcontent-serverApp-c3596918864]   .create-resume-button[_ngcontent-serverApp-c3596918864] {
+    width: calc((600px - 208px) * 21 / 29.7);
+  }
+}
+@media (max-height: 750px) and (max-width: 470px) and (min-width: 348px) {
+  .header-section[_ngcontent-serverApp-c3596918864]   .create-resume-button[_ngcontent-serverApp-c3596918864] {
+    width: calc((600px - 240px) * 21 / 29.7);
+  }
+}
+@media (max-height: 750px) and (max-width: 347px) and (min-width: 281px) {
+  .header-section[_ngcontent-serverApp-c3596918864]   .create-resume-button[_ngcontent-serverApp-c3596918864] {
+    width: calc((600px - 272px) * 21 / 29.7);
+  }
+}
+@media (max-height: 750px) and (max-width: 280px) {
+  .header-section[_ngcontent-serverApp-c3596918864]   .create-resume-button[_ngcontent-serverApp-c3596918864] {
+    width: calc((600px - 304px) * 21 / 29.7);
+  }
+}
+@media (max-height: 750px) {
+  .companies-section[_ngcontent-serverApp-c3596918864], .designs-section[_ngcontent-serverApp-c3596918864], .templates-section[_ngcontent-serverApp-c3596918864] {
+    height: 400px !important;
+  }
+}
+  body[dir=rtl] .trustpilot-link .tp {
+  margin-top: -8px;
+}
+  body[dir=rtl] .designs-section .resumes-background {
+  right: inherit !important;
+  left: -19%;
+  width: 70% !important;
+}
+  body[dir=rtl] .designs-section .content {
+  padding-left: 0 !important;
+  padding-right: 100px;
+}
+  body[dir=rtl] .designs-section .watch-video-button {
+  margin-left: 0 !important;
+  margin-right: 8px;
+}
+  body[dir=rtl] .designs-section .create-button .icon {
+  transform: scaleX(-1);
+}
+  body[dir=rtl] .today-created {
+  text-align: right;
+}
+  body[dir=rtl] .blinking {
+  margin-left: 8px;
+  margin-right: 0 !important;
+}
+  body[dir=rtl] .last-section .avatar {
+  margin-right: 0 !important;
+  margin-left: 12px;
+}
+  body[dir=rtl] .read-more-text {
+  text-align: right !important;
+}
+  body[dir=rtl] .company-hired-count {
+  direction: rtl;
+}
+
+.blinking[_ngcontent-serverApp-c3596918864] {
+  animation: 1.8s _ngcontent-serverApp-c3596918864_blink ease infinite;
+  margin-right: 8px;
+}
+
+@keyframes _ngcontent-serverApp-c3596918864_blink {
+  from, to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+.today-created[_ngcontent-serverApp-c3596918864] {
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+}
+
+.today-created[_ngcontent-serverApp-c3596918864] {
+  position: absolute;
+  font-weight: 400;
+  font-size: 16px;
+  opacity: 0;
+  animation: _ngcontent-serverApp-c3596918864_today-text-animation 1s 1s forwards;
+  right: 0;
+  text-align: left;
+  bottom: -36px;
+  pointer-events: none;
+  color: rgba(0, 0, 0, 0.6588235294);
+  min-width: 300px;
+}
+.today-created[_ngcontent-serverApp-c3596918864]:not(.browser) {
+  display: none;
+}
+
+.home[_ngcontent-serverApp-c3596918864]     #main-resume-image *, .home[_ngcontent-serverApp-c3596918864]     #main-mobile-resume-image *, .home[_ngcontent-serverApp-c3596918864]     .company-image * {
+  height: 100% !important;
+  width: initial !important;
+}
+
+@media (max-width: 1200px) {
+  .upload-resume-button[_ngcontent-serverApp-c3596918864] {
+    display: none !important;
+  }
+  .templates-section[_ngcontent-serverApp-c3596918864] {
+    margin: 50px 0 !important;
+  }
+  .templates-section[_ngcontent-serverApp-c3596918864]   .big-header-secondary[_ngcontent-serverApp-c3596918864] {
+    margin: 0 50px !important;
+  }
+}
+.trustpilot-section[_ngcontent-serverApp-c3596918864] {
+  height: 40px;
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+}
+
+internal-app-trustpilot-reviews[_ngcontent-serverApp-c3596918864] {
+  height: 100%;
+  width: 100%;
+}
+
+@media (max-width: 1650px) and (min-width: 1200px) {
+  .home[_ngcontent-serverApp-c3596918864] {
+    padding: 0 50px !important;
+  }
+}
+.trustpilot-link[_ngcontent-serverApp-c3596918864] {
+  display: flex;
+  align-items: center;
+}
+.trustpilot-link[_ngcontent-serverApp-c3596918864]   .stars[_ngcontent-serverApp-c3596918864], .trustpilot-link[_ngcontent-serverApp-c3596918864]   .tp[_ngcontent-serverApp-c3596918864] {
+  height: 25px;
+}
+.trustpilot-link[_ngcontent-serverApp-c3596918864]   .stars[_ngcontent-serverApp-c3596918864] {
+  padding: 0 10px;
+}
+.trustpilot-link[_ngcontent-serverApp-c3596918864]   .score[_ngcontent-serverApp-c3596918864] {
+  padding: 0 5px;
+}</style><style ng-app-id="serverApp">.choose-template[_ngcontent-serverApp-c3036021743] {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  position: relative;
+}
+.choose-template[_ngcontent-serverApp-c3036021743]   .choose-template-h1[_ngcontent-serverApp-c3036021743] {
+  font-size: 30px;
+  font-weight: bold;
+  color: #5f5f5f;
+  text-align: center;
+}
+.choose-template.regular[_ngcontent-serverApp-c3036021743] {
+  height: calc(100vh - 150px);
+  background-color: #eff4f8;
+}
+.choose-template[_ngcontent-serverApp-c3036021743]   .header[_ngcontent-serverApp-c3036021743] {
+  font-size: 30px;
+  font-weight: bold;
+  color: #5f5f5f;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.choose-template[_ngcontent-serverApp-c3036021743]   .language-container[_ngcontent-serverApp-c3036021743] {
+  display: none;
+}
+.choose-template[_ngcontent-serverApp-c3036021743]   .templates-container[_ngcontent-serverApp-c3036021743] {
+  width: 80%;
+  overflow: hidden;
+  position: relative;
+  flex: 1;
+}
+.choose-template[_ngcontent-serverApp-c3036021743]   .templates-container.forward[_ngcontent-serverApp-c3036021743]   .template.next-next[_ngcontent-serverApp-c3036021743] {
+  animation: _ngcontent-serverApp-c3036021743_next-next-next-to-next-next 0.5s forwards;
+}
+.choose-template[_ngcontent-serverApp-c3036021743]   .templates-container.forward[_ngcontent-serverApp-c3036021743]   .template.next[_ngcontent-serverApp-c3036021743] {
+  animation: _ngcontent-serverApp-c3036021743_next-next-to-next 0.5s forwards;
+}
+.choose-template[_ngcontent-serverApp-c3036021743]   .templates-container.forward[_ngcontent-serverApp-c3036021743]   .template.main[_ngcontent-serverApp-c3036021743] {
+  animation: _ngcontent-serverApp-c3036021743_next-to-main 0.5s forwards;
+}
+.choose-template[_ngcontent-serverApp-c3036021743]   .templates-container.forward[_ngcontent-serverApp-c3036021743]   .template.prev[_ngcontent-serverApp-c3036021743] {
+  animation: _ngcontent-serverApp-c3036021743_main-to-prev 0.5s forwards;
+}
+.choose-template[_ngcontent-serverApp-c3036021743]   .templates-container.forward[_ngcontent-serverApp-c3036021743]   .template.prev-prev[_ngcontent-serverApp-c3036021743] {
+  animation: _ngcontent-serverApp-c3036021743_prev-to-prev-prev 0.5s forwards;
+}
+.choose-template[_ngcontent-serverApp-c3036021743]   .templates-container.forward[_ngcontent-serverApp-c3036021743]   .template.prev-prev-prev[_ngcontent-serverApp-c3036021743] {
+  animation: _ngcontent-serverApp-c3036021743_prev-prev-to-prev-prev-prev 0.5s forwards;
+}
+.choose-template[_ngcontent-serverApp-c3036021743]   .templates-container.backward[_ngcontent-serverApp-c3036021743]   .template.prev-prev[_ngcontent-serverApp-c3036021743] {
+  animation: _ngcontent-serverApp-c3036021743_prev-prev-prev-to-prev-prev 0.5s forwards;
+}
+.choose-template[_ngcontent-serverApp-c3036021743]   .templates-container.backward[_ngcontent-serverApp-c3036021743]   .template.prev[_ngcontent-serverApp-c3036021743] {
+  animation: _ngcontent-serverApp-c3036021743_prev-prev-to-prev 0.5s forwards;
+}
+.choose-template[_ngcontent-serverApp-c3036021743]   .templates-container.backward[_ngcontent-serverApp-c3036021743]   .template.main[_ngcontent-serverApp-c3036021743] {
+  animation: _ngcontent-serverApp-c3036021743_prev-to-main 0.5s forwards;
+}
+.choose-template[_ngcontent-serverApp-c3036021743]   .templates-container.backward[_ngcontent-serverApp-c3036021743]   .template.next[_ngcontent-serverApp-c3036021743] {
+  animation: _ngcontent-serverApp-c3036021743_main-to-next 0.5s forwards;
+}
+.choose-template[_ngcontent-serverApp-c3036021743]   .templates-container.backward[_ngcontent-serverApp-c3036021743]   .template.next-next[_ngcontent-serverApp-c3036021743] {
+  animation: _ngcontent-serverApp-c3036021743_next-to-next-next 0.5s forwards;
+}
+.choose-template[_ngcontent-serverApp-c3036021743]   .templates-container.backward[_ngcontent-serverApp-c3036021743]   .template.next-next-next[_ngcontent-serverApp-c3036021743] {
+  animation: _ngcontent-serverApp-c3036021743_next-next-to-next-next-next 0.5s forwards;
+}
+.choose-template[_ngcontent-serverApp-c3036021743]   .templates-container[_ngcontent-serverApp-c3036021743]   .template[_ngcontent-serverApp-c3036021743] {
+  position: absolute;
+  cursor: pointer;
+  max-height: 100%;
+  height: 90%;
+  display: none;
+  bottom: 0;
+  margin: auto;
+  top: 0;
+  opacity: 0;
+}
+.choose-template[_ngcontent-serverApp-c3036021743]   .templates-container[_ngcontent-serverApp-c3036021743]   .template[_ngcontent-serverApp-c3036021743]:hover {
+  opacity: 0.8 !important;
+}
+.choose-template[_ngcontent-serverApp-c3036021743]   .templates-container[_ngcontent-serverApp-c3036021743]   .template.main[_ngcontent-serverApp-c3036021743] {
+  z-index: 3;
+}
+.choose-template[_ngcontent-serverApp-c3036021743]   .templates-container[_ngcontent-serverApp-c3036021743]   .template.loaded[_ngcontent-serverApp-c3036021743] {
+  opacity: 1;
+}
+.choose-template[_ngcontent-serverApp-c3036021743]   .templates-container[_ngcontent-serverApp-c3036021743]   .template.hidded[_ngcontent-serverApp-c3036021743] {
+  opacity: 0.01;
+  z-index: -1;
+}
+.choose-template[_ngcontent-serverApp-c3036021743]   .templates-container[_ngcontent-serverApp-c3036021743]   .template.main[_ngcontent-serverApp-c3036021743], .choose-template[_ngcontent-serverApp-c3036021743]   .templates-container[_ngcontent-serverApp-c3036021743]   .template.hidded[_ngcontent-serverApp-c3036021743] {
+  left: calc(50% - (var(--container-height)) * 2479 / 3506 / 2);
+  width: calc(var(--container-height) * 2479 / 3506);
+  display: block;
+  height: 100%;
+}
+.choose-template[_ngcontent-serverApp-c3036021743]   .templates-container[_ngcontent-serverApp-c3036021743]   .template.next[_ngcontent-serverApp-c3036021743] {
+  display: block;
+  left: calc(50% + (var(--container-height)) * 2479 / 3506 / 2 + 20px);
+  width: calc(var(--container-height) * 0.9 * 2479 / 3506);
+}
+.choose-template[_ngcontent-serverApp-c3036021743]   .templates-container[_ngcontent-serverApp-c3036021743]   .template.next-next[_ngcontent-serverApp-c3036021743] {
+  display: block;
+  left: calc(50% + (var(--container-height)) * 2479 / 3506 * 1.4 + 40px);
+  width: calc(var(--container-height) * 0.9 * 2479 / 3506);
+}
+.choose-template[_ngcontent-serverApp-c3036021743]   .templates-container[_ngcontent-serverApp-c3036021743]   .template.next-next-next[_ngcontent-serverApp-c3036021743] {
+  display: block;
+  left: calc(50% + (var(--container-height)) * 2479 / 3506 * 2.3 + 60px);
+  width: calc(var(--container-height) * 0.9 * 2479 / 3506);
+}
+.choose-template[_ngcontent-serverApp-c3036021743]   .templates-container[_ngcontent-serverApp-c3036021743]   .template.prev[_ngcontent-serverApp-c3036021743] {
+  display: block;
+  left: calc(50% - (var(--container-height)) * 2479 / 3506 * 1.4 - 20px);
+  width: calc(var(--container-height) * 0.9 * 2479 / 3506);
+}
+.choose-template[_ngcontent-serverApp-c3036021743]   .templates-container[_ngcontent-serverApp-c3036021743]   .template.prev-prev[_ngcontent-serverApp-c3036021743] {
+  display: block;
+  left: calc(50% - (var(--container-height)) * 2479 / 3506 * 2.3 - 40px);
+  width: calc(var(--container-height) * 0.9 * 2479 / 3506);
+}
+.choose-template[_ngcontent-serverApp-c3036021743]   .templates-container[_ngcontent-serverApp-c3036021743]   .template.prev-prev-prev[_ngcontent-serverApp-c3036021743] {
+  display: block;
+  left: calc(50% - (var(--container-height)) * 2479 / 3506 * 3.2 - 60px);
+  width: calc(var(--container-height) * 0.9 * 2479 / 3506);
+}
+.choose-template[_ngcontent-serverApp-c3036021743]   .templates-container[_ngcontent-serverApp-c3036021743]   .template[_ngcontent-serverApp-c3036021743]   .image[_ngcontent-serverApp-c3036021743] {
+  height: 100%;
+}
+.choose-template[_ngcontent-serverApp-c3036021743]   .templates-container[_ngcontent-serverApp-c3036021743]   .template[_ngcontent-serverApp-c3036021743]   .image[_ngcontent-serverApp-c3036021743]     * {
+  height: 100% !important;
+  width: initial !important;
+  border-radius: 8px;
+}
+.choose-template[_ngcontent-serverApp-c3036021743]   .select-button-container[_ngcontent-serverApp-c3036021743] {
+  height: 75px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+}
+.choose-template[_ngcontent-serverApp-c3036021743]   .select-button-container[_ngcontent-serverApp-c3036021743]   .select-button[_ngcontent-serverApp-c3036021743] {
+  background-color: #0066ff;
+  color: white;
+  padding: 8px 52px;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 2px;
+}
+.choose-template[_ngcontent-serverApp-c3036021743]   .select-button-container[_ngcontent-serverApp-c3036021743]   .select-button[_ngcontent-serverApp-c3036021743]:hover {
+  filter: brightness(90%);
+}
+.choose-template[_ngcontent-serverApp-c3036021743]   .prev-button[_ngcontent-serverApp-c3036021743], .choose-template[_ngcontent-serverApp-c3036021743]   .next-button[_ngcontent-serverApp-c3036021743] {
+  position: absolute;
+  color: #d8d8d8;
+  font-size: 55px;
+  top: 50%;
+  cursor: pointer;
+  width: 42px;
+  outline: none;
+  transform: unset;
+  bottom: 0;
+  margin: auto;
+  left: auto;
+  top: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+.choose-template[_ngcontent-serverApp-c3036021743]   .prev-button[_ngcontent-serverApp-c3036021743]:hover, .choose-template[_ngcontent-serverApp-c3036021743]   .next-button[_ngcontent-serverApp-c3036021743]:hover {
+  color: #b5b5b5;
+}
+.choose-template[_ngcontent-serverApp-c3036021743]   .prev-button[_ngcontent-serverApp-c3036021743] {
+  left: -60px;
+}
+.choose-template[_ngcontent-serverApp-c3036021743]   .next-button[_ngcontent-serverApp-c3036021743] {
+  right: -70px;
+}
+
+.templates-container-continaer[_ngcontent-serverApp-c3036021743] {
+  height: 100%;
+  display: flex;
+  width: 100%;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+@media (max-width: 1025px) {
+  .prev-button[_ngcontent-serverApp-c3036021743], .next-button[_ngcontent-serverApp-c3036021743] {
+    width: 30px !important;
+  }
+  .prev-button[_ngcontent-serverApp-c3036021743] {
+    left: -40px !important;
+  }
+  .next-button[_ngcontent-serverApp-c3036021743] {
+    right: -50px !important;
+  }
+  .choose-template.regular[_ngcontent-serverApp-c3036021743] {
+    height: calc(100vh - 180px);
+  }
+  .language-container[_ngcontent-serverApp-c3036021743] {
+    display: block !important;
+    margin-bottom: 25px;
+    direction: ltr;
+  }
+  .choose-template[_ngcontent-serverApp-c3036021743]   .header[_ngcontent-serverApp-c3036021743] {
+    font-size: 26px;
+  }
+}
+@media (max-width: 351px) {
+  .choose-template[_ngcontent-serverApp-c3036021743]   .header[_ngcontent-serverApp-c3036021743] {
+    font-size: 22px !important;
+  }
+}
+.tempate-select-container[_ngcontent-serverApp-c3036021743] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.template-select[_ngcontent-serverApp-c3036021743] {
+  background-color: #3094ff;
+  color: white;
+  padding: 0 20px;
+  border-radius: 4px;
+  display: inline-table;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 10px 24px;
+}
+.template-select[_ngcontent-serverApp-c3036021743]:hover {
+  background-color: #007bff;
+}
+
+@keyframes _ngcontent-serverApp-c3036021743_next-to-main {
+  from {
+    left: calc(50% + (var(--container-height)) * 2479 / 3506 / 2 + 20px);
+    height: 90%;
+    width: calc(var(--container-height) * 0.9 * 2479 / 3506);
+  }
+  to {
+    left: calc(50% - (var(--container-height)) * 2479 / 3506 / 2);
+    height: 100%;
+    width: calc(var(--container-height) * 2479 / 3506);
+  }
+}
+@keyframes _ngcontent-serverApp-c3036021743_prev-to-main {
+  from {
+    left: calc(50% - (var(--container-height)) * 2479 / 3506 * 1.4 - 20px);
+    height: 90%;
+    width: calc(var(--container-height) * 0.9 * 2479 / 3506);
+  }
+  to {
+    left: calc(50% - (var(--container-height)) * 2479 / 3506 / 2);
+    height: 100%;
+    width: calc(var(--container-height) * 2479 / 3506);
+  }
+}
+@keyframes _ngcontent-serverApp-c3036021743_next-next-to-next {
+  from {
+    left: calc(50% + (var(--container-height)) * 2479 / 3506 * 1.4 + 40px);
+  }
+  to {
+    left: calc(50% + (var(--container-height)) * 2479 / 3506 / 2 + 20px);
+  }
+}
+@keyframes _ngcontent-serverApp-c3036021743_next-next-next-to-next-next {
+  from {
+    left: calc(50% + (var(--container-height)) * 2479 / 3506 * 2.3 + 60px);
+  }
+  to {
+    left: calc(50% + (var(--container-height)) * 2479 / 3506 * 1.4 + 40px);
+  }
+}
+@keyframes _ngcontent-serverApp-c3036021743_main-to-prev {
+  from {
+    left: calc(50% - (var(--container-height)) * 2479 / 3506 / 2);
+    height: 100%;
+    width: calc(var(--container-height) * 2479 / 3506);
+  }
+  to {
+    left: calc(50% - (var(--container-height)) * 2479 / 3506 * 1.4 - 20px);
+    height: 90%;
+    width: calc(var(--container-height) * 0.9 * 2479 / 3506);
+  }
+}
+@keyframes _ngcontent-serverApp-c3036021743_prev-to-prev-prev {
+  from {
+    left: calc(50% - (var(--container-height)) * 2479 / 3506 * 1.4 - 20px);
+  }
+  to {
+    left: calc(50% - (var(--container-height)) * 2479 / 3506 * 2.3 - 40px);
+  }
+}
+@keyframes _ngcontent-serverApp-c3036021743_prev-prev-to-prev-prev-prev {
+  from {
+    left: calc(50% - (var(--container-height)) * 2479 / 3506 * 2.3 - 40px);
+  }
+  to {
+    left: calc(50% - (var(--container-height)) * 2479 / 3506 * 3.2 - 60px);
+  }
+}
+@keyframes _ngcontent-serverApp-c3036021743_prev-prev-prev-to-prev-prev {
+  from {
+    left: calc(50% - (var(--container-height)) * 2479 / 3506 * 3.2 - 60px);
+  }
+  to {
+    left: calc(50% - (var(--container-height)) * 2479 / 3506 * 2.3 - 40px);
+  }
+}
+@keyframes _ngcontent-serverApp-c3036021743_prev-prev-to-prev {
+  from {
+    left: calc(50% - (var(--container-height)) * 2479 / 3506 * 2.3 - 40px);
+  }
+  to {
+    left: calc(50% - (var(--container-height)) * 2479 / 3506 * 1.4 - 20px);
+  }
+}
+@keyframes _ngcontent-serverApp-c3036021743_prev-to-main {
+  from {
+    left: calc(50% - (var(--container-height)) * 2479 / 3506 * 1.4 - 20px);
+    height: 90%;
+    width: calc(var(--container-height) * 0.9 * 2479 / 3506);
+  }
+  to {
+    left: calc(50% - (var(--container-height)) * 2479 / 3506 / 2);
+    height: 100%;
+    width: calc(var(--container-height) * 2479 / 3506);
+  }
+}
+@keyframes _ngcontent-serverApp-c3036021743_main-to-next {
+  from {
+    left: calc(50% - (var(--container-height)) * 2479 / 3506 / 2);
+    height: 100%;
+    width: calc(var(--container-height) * 2479 / 3506);
+  }
+  to {
+    left: calc(50% + (var(--container-height)) * 2479 / 3506 / 2 + 20px);
+    height: 90%;
+    width: calc(var(--container-height) * 0.9 * 2479 / 3506);
+  }
+}
+@keyframes _ngcontent-serverApp-c3036021743_next-to-next-next {
+  from {
+    left: calc(50% + (var(--container-height)) * 2479 / 3506 / 2 + 20px);
+  }
+  to {
+    left: calc(50% + (var(--container-height)) * 2479 / 3506 * 1.4 + 40px);
+  }
+}
+@keyframes _ngcontent-serverApp-c3036021743_next-next-to-next-next-next {
+  from {
+    left: calc(50% + (var(--container-height)) * 2479 / 3506 * 1.4 + 40px);
+  }
+  to {
+    left: calc(50% + (var(--container-height)) * 2479 / 3506 * 2.3 + 60px);
+  }
+}
+.nav-arrow[_ngcontent-serverApp-c3036021743] {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 50px;
+  border-radius: 351px;
+  cursor: pointer;
+  background-color: #5496fd;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav-arrow[_ngcontent-serverApp-c3036021743]:hover {
+  background-color: #007bff;
+}
+
+.left-arrow[_ngcontent-serverApp-c3036021743] {
+  left: 50px;
+}
+
+.right-arrow[_ngcontent-serverApp-c3036021743] {
+  right: 50px;
+}
+
+@media (max-width: 800px) {
+  .left-arrow[_ngcontent-serverApp-c3036021743] {
+    left: 10px;
+    font-size: 34px;
+    height: 34px;
+    width: 34px;
+  }
+  .right-arrow[_ngcontent-serverApp-c3036021743] {
+    right: 10px;
+    font-size: 34px;
+    height: 34px;
+    width: 34px;
+  }
+  .right-arrow[_ngcontent-serverApp-c3036021743]   svg[_ngcontent-serverApp-c3036021743], .left-arrow[_ngcontent-serverApp-c3036021743]   svg[_ngcontent-serverApp-c3036021743] {
+    width: 20px;
+    height: 20px;
+  }
+  .templates-container-continaer[_ngcontent-serverApp-c3036021743] {
+    max-height: 400px;
+  }
+  .template-select[_ngcontent-serverApp-c3036021743] {
+    font-size: 16px;
+  }
+  .choose-template.regular[_ngcontent-serverApp-c3036021743] {
+    justify-content: flex-start;
+    padding-top: 40px;
+  }
+}
+.templates-container-continaer.regular[_ngcontent-serverApp-c3036021743] {
+  --container-height: calc(100vh - 140px);
+}
+@media (max-width: 800px) {
+  .templates-container-continaer.regular[_ngcontent-serverApp-c3036021743] {
+    --container-height: 380px;
+  }
+}
+
+.templates-container[_ngcontent-serverApp-c3036021743] {
+  display: none;
+}
+.templates-container.show[_ngcontent-serverApp-c3036021743] {
+  display: block;
+}
+
+.loading-container[_ngcontent-serverApp-c3036021743] {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loading-container.hide[_ngcontent-serverApp-c3036021743] {
+  display: none;
+}
+
+.loading-gif[_ngcontent-serverApp-c3036021743] {
+  height: 50px;
+}
+
+@media (max-width: 750px) {
+  .choose-template-h1[_ngcontent-serverApp-c3036021743] {
+    font-size: 20px !important;
+  }
+}
+.header-lanaguge-container[_ngcontent-serverApp-c3036021743] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header-lanaguge-container[_ngcontent-serverApp-c3036021743]   app-language-chooser[_ngcontent-serverApp-c3036021743] {
+  height: 34px;
+  margin: 0 10px;
+}
+
+.arrow[_ngcontent-serverApp-c3036021743] {
+  cursor: pointer;
+  height: 120px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  transition: transform 0.1s;
+  width: 80px;
+}
+.arrow-top[_ngcontent-serverApp-c3036021743], .arrow-bottom[_ngcontent-serverApp-c3036021743] {
+  background-color: #3094ff;
+  height: 4px;
+  left: -5px;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+}
+.arrow-top[_ngcontent-serverApp-c3036021743]:after, .arrow-bottom[_ngcontent-serverApp-c3036021743]:after {
+  background-color: #007bff;
+  content: "";
+  height: 100%;
+  position: absolute;
+  top: 0;
+  transition: all 0.15s;
+}
+.arrow-top[_ngcontent-serverApp-c3036021743] {
+  transform: rotate(45deg);
+  transform-origin: bottom right;
+}
+.arrow-top[_ngcontent-serverApp-c3036021743]:after {
+  left: 100%;
+  right: 0;
+  transition-delay: 0s;
+}
+.arrow-top.reverse[_ngcontent-serverApp-c3036021743] {
+  transform-origin: top left;
+}
+.arrow-top.reverse[_ngcontent-serverApp-c3036021743]:after {
+  transition-delay: 0.15s;
+}
+.arrow-bottom[_ngcontent-serverApp-c3036021743] {
+  transform: rotate(-45deg);
+  transform-origin: top right;
+}
+.arrow-bottom.reverse[_ngcontent-serverApp-c3036021743] {
+  transform-origin: bottom left;
+}
+.arrow-bottom.reverse[_ngcontent-serverApp-c3036021743]:after {
+  transition-delay: 0s;
+}
+.arrow-bottom[_ngcontent-serverApp-c3036021743]:after {
+  left: 0;
+  right: 100%;
+  transition-delay: 0.15s;
+}
+.arrow[_ngcontent-serverApp-c3036021743]:hover   .arrow-top[_ngcontent-serverApp-c3036021743]:after {
+  left: 0;
+  transition-delay: 0.15s;
+}
+.arrow[_ngcontent-serverApp-c3036021743]:hover   .arrow-top.reverse[_ngcontent-serverApp-c3036021743]:after {
+  transition-delay: 0s;
+}
+.arrow[_ngcontent-serverApp-c3036021743]:hover   .arrow-bottom[_ngcontent-serverApp-c3036021743]:after {
+  right: 0;
+  transition-delay: 0s;
+}
+.arrow[_ngcontent-serverApp-c3036021743]:hover   .arrow-bottom.reverse[_ngcontent-serverApp-c3036021743]:after {
+  transition-delay: 0.15s;
+}
+.arrow[_ngcontent-serverApp-c3036021743]:active {
+  transform: translateX(-50%) translateY(-50%) scale(0.9);
+}</style><title>Create a Perfect Resume | Free Resume Builder | Resumaker.ai</title><meta name="description" content="Create your professional resume with this online resume maker. Choose a designer-made template and grab any employer attention in seconds."><meta property="og:description" content="Create your professional resume with this online resume maker. Choose a designer-made template and grab any employer attention in seconds."><meta property="og:type" content="website"><meta property="og:image:type" content="&quot;image/png&quot;"><meta property="og:url" content="https://resumaker.ai"><meta property="og:image" content="https://resumaker.ai/assets/og/OG.png"></head>
+
+  <body id="page-top"><!--nghm-->
+    <app-root _nghost-serverapp-c1702761957 ng-version="16.2.3" ngh="5" ng-server-context="ssg|httpcache,hydration"><app-base-component-nav _ngcontent-serverapp-c1702761957 ngskiphydration _nghost-serverapp-c3127548941><div _ngcontent-serverapp-c3127548941 class="scroll-helper home"></div><div _ngcontent-serverapp-c3127548941 class="nav home"><div _ngcontent-serverapp-c3127548941 class="row"><div _ngcontent-serverapp-c3127548941 class="logo-container"><ngx-picture _ngcontent-serverapp-c3127548941 src="/assets/logo.png?max=300" alt="resumaker-logo" mode="lcp" class="logo" _nghost-serverapp-c752811285><picture _ngcontent-serverapp-c752811285 class="ngx-picture__picture"><source _ngcontent-serverapp-c752811285 type="image/webp" srcset="https://images.resumaker.ai/AI//assets/logo.png?v=1.2.60&amp;tr=w-300,f-webp" media="(max-width: 599.99px)"><source _ngcontent-serverapp-c752811285 type="image/webp" srcset="https://images.resumaker.ai/AI//assets/logo.png?v=1.2.60&amp;tr=w-300,f-webp" media="(min-width: 1280px) and (max-width: 1919.99px)"><source _ngcontent-serverapp-c752811285 type="image/webp" srcset="https://images.resumaker.ai/AI//assets/logo.png?v=1.2.60&amp;tr=w-300,f-webp" media="(min-width: 1920px)"><source _ngcontent-serverapp-c752811285 type="image/webp" srcset="https://images.resumaker.ai/AI//assets/logo.png?v=1.2.60&amp;tr=w-300,f-webp" media="(min-width: 600px) and (max-width: 959.99px)"><source _ngcontent-serverapp-c752811285 type="image/webp" srcset="https://images.resumaker.ai/AI//assets/logo.png?v=1.2.60&amp;tr=w-300,f-webp" media="(min-width: 960px) and (max-width: 1279.99px)"><!----><!----><source _ngcontent-serverapp-c752811285 type="image/jpeg" srcset="https://images.resumaker.ai/AI//assets/logo.png?v=1.2.60&amp;tr=w-300,f-jpeg" media="(max-width: 599.99px)"><source _ngcontent-serverapp-c752811285 type="image/jpeg" srcset="https://images.resumaker.ai/AI//assets/logo.png?v=1.2.60&amp;tr=w-300,f-jpeg" media="(min-width: 1280px) and (max-width: 1919.99px)"><source _ngcontent-serverapp-c752811285 type="image/jpeg" srcset="https://images.resumaker.ai/AI//assets/logo.png?v=1.2.60&amp;tr=w-300,f-jpeg" media="(min-width: 1920px)"><source _ngcontent-serverapp-c752811285 type="image/jpeg" srcset="https://images.resumaker.ai/AI//assets/logo.png?v=1.2.60&amp;tr=w-300,f-jpeg" media="(min-width: 600px) and (max-width: 959.99px)"><source _ngcontent-serverapp-c752811285 type="image/jpeg" srcset="https://images.resumaker.ai/AI//assets/logo.png?v=1.2.60&amp;tr=w-300,f-jpeg" media="(min-width: 960px) and (max-width: 1279.99px)"><!----><!----><source _ngcontent-serverapp-c752811285 type="image/png" srcset="https://images.resumaker.ai/AI//assets/logo.png?v=1.2.60&amp;tr=w-300,f-png" media="(max-width: 599.99px)"><source _ngcontent-serverapp-c752811285 type="image/png" srcset="https://images.resumaker.ai/AI//assets/logo.png?v=1.2.60&amp;tr=w-300,f-png" media="(min-width: 1280px) and (max-width: 1919.99px)"><source _ngcontent-serverapp-c752811285 type="image/png" srcset="https://images.resumaker.ai/AI//assets/logo.png?v=1.2.60&amp;tr=w-300,f-png" media="(min-width: 1920px)"><source _ngcontent-serverapp-c752811285 type="image/png" srcset="https://images.resumaker.ai/AI//assets/logo.png?v=1.2.60&amp;tr=w-300,f-png" media="(min-width: 600px) and (max-width: 959.99px)"><source _ngcontent-serverapp-c752811285 type="image/png" srcset="https://images.resumaker.ai/AI//assets/logo.png?v=1.2.60&amp;tr=w-300,f-png" media="(min-width: 960px) and (max-width: 1279.99px)"><!----><!----><!----><img _ngcontent-serverapp-c752811285 onload="this.parentNode.parentNode.classList.add('imageLoaded')" class="ngx-picture__picture__img" src="/assets/logo.png?max=300" alt="resumaker-logo" loading><!----><!----></picture><!----><!----><!----></ngx-picture></div><div _ngcontent-serverapp-c3127548941 class="buttons"><a _ngcontent-serverapp-c3127548941 newi18n="@@Nav.Links.Templates" class="link-button" href="/app/build/templates/">Resume Templates</a><a _ngcontent-serverapp-c3127548941 newi18n="@@Nav.Links.ResumeExamples" class="link-button" href="/resume-examples/">Resume Examples</a><!----><a _ngcontent-serverapp-c3127548941 class="link-button" href="/cv-examples/">CV Examples</a><!----><a _ngcontent-serverapp-c3127548941 newi18n="@@Nav.Links.CoverLetter" class="link-button" href="/cover-letter/">Cover Letter Builder</a><!----><a _ngcontent-serverapp-c3127548941 newi18n="@@Nav.Links.HowToWriteResume" class="link-button" href="/how-to-write-a-resume/">How to Write a Resume</a><!----><!----><div _ngcontent-serverapp-c3127548941 newi18n="@@Nav.Links.SignIn" class="login-button">Sign In</div><div _ngcontent-serverapp-c3127548941 newi18n="@@Nav.Links.SignUp" class="my-account-button">Sign Up</div><!----><!----><!----><!----><!----><!----></div><div _ngcontent-serverapp-c3127548941 class="mobile-button"><svg _ngcontent-serverapp-c3127548941="" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 448 512" class="fas fa-bars icon svg-icon"><path _ngcontent-serverapp-c3127548941="" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg><!----><!----></div><div _ngcontent-serverapp-c3127548941 class="mobile-menu"><div _ngcontent-serverapp-c3127548941 class="menu-upper"><div _ngcontent-serverapp-c3127548941 class="menu-upper-items"><a _ngcontent-serverapp-c3127548941 newi18n="@@Nav.Mobile.Links.Templates" class="menu-link-button" href="/app/build/templates/">Templates</a><a _ngcontent-serverapp-c3127548941 newi18n="@@Nav.Mobile.Links.ResumeExamples" class="menu-link-button" href="/resume-examples/">Resume Examples</a><!----><a _ngcontent-serverapp-c3127548941 class="menu-link-button" href="/cv-examples/"> CV Examples </a><!----><a _ngcontent-serverapp-c3127548941 newi18n="@@Nav.Mobile.Links.CoverLetter" class="menu-link-button" href="/cover-letter/"> Cover Letter Builder</a><!----><a _ngcontent-serverapp-c3127548941 newi18n="@@Nav.Mobile.Links.HowToWriteResume" class="menu-link-button" href="/how-to-write-a-resume/">How to Write a Resume</a><!----><!----><div _ngcontent-serverapp-c3127548941 class="menu-link-button bold"><span _ngcontent-serverapp-c3127548941 newi18n="@@Nav.Mobile.Links.SignIn">Sign In</span><i _ngcontent-serverapp-c3127548941 class="fas fa-arrow-right icon"></i></div><div _ngcontent-serverapp-c3127548941 class="menu-link-button bold"><span _ngcontent-serverapp-c3127548941 newi18n="@@Nav.Mobile.Links.SignUp">Sign Up</span><i _ngcontent-serverapp-c3127548941 class="fas fa-arrow-right icon"></i></div><!----><!----></div></div><div _ngcontent-serverapp-c3127548941 class="menu-lower"><div _ngcontent-serverapp-c3127548941 class="menu-lower-items"><a _ngcontent-serverapp-c3127548941 newi18n="@@Nav.Mobile.Links.Privacy" class="menu-link-button" href="/privacy/">Privacy</a><a _ngcontent-serverapp-c3127548941 newi18n="@@Nav.Mobile.Links.TOS" class="menu-link-button" href="/tos/">Terms of use</a><a _ngcontent-serverapp-c3127548941 newi18n="@@Nav.Mobile.Links.Accessibility" class="menu-link-button" href="/accessibility/">Accessibility </a><a _ngcontent-serverapp-c3127548941 newi18n="@@Nav.Mobile.Links.About" class="menu-link-button" href="/about/">About </a><a _ngcontent-serverapp-c3127548941 newi18n="@@Nav.Mobile.Links.Contact" class="menu-link-button" href="/contact/">Contact us</a></div><div _ngcontent-serverapp-c3127548941 newi18n="@@Nav.Mobile.Copyright" class="copyright">© All rights reserved - Resumaker.ai</div></div></div></div></div></app-base-component-nav><div _ngcontent-serverapp-c1702761957 class="router-outlet-container"><router-outlet _ngcontent-serverapp-c1702761957 class="router-outlet"></router-outlet><app-home-component _nghost-serverapp-c3596918864 ngh="3"><div _ngcontent-serverapp-c3596918864 class="home"><div _ngcontent-serverapp-c3596918864 class="header-section section"><div _ngcontent-serverapp-c3596918864 class="text-button-container"><h1 _ngcontent-serverapp-c3596918864 newi18n="@@Home.TopSection.H1" class="h1-text">Online Resume Builder</h1><h2 _ngcontent-serverapp-c3596918864 class="main-text">It takes only 5 seconds to screen your resume. Write it well.</h2><h3 _ngcontent-serverapp-c3596918864 newi18n="@@Home.TopSection.SubText" class="sub-text">Writing a resume has never been easier. Try now for free and create your professional resume within minutes. What are you waiting for?</h3><div _ngcontent-serverapp-c3596918864 class="create-resume-button-container"><a _ngcontent-serverapp-c3596918864 class="create-resume-button" href="/app/build/templates/"><span _ngcontent-serverapp-c3596918864>Create My Resume</span><div _ngcontent-serverapp-c3596918864 class="today-created en-US"><svg _ngcontent-serverapp-c3596918864="" height="10" width="10" class="blinking"><circle _ngcontent-serverapp-c3596918864="" cx="5" cy="5" r="5" fill="#38c569"/></svg><span _ngcontent-serverapp-c3596918864><span _ngcontent-serverapp-c3596918864 newi18n="@@Home.TopSection.TodayCreatedTextBeforeNumber"></span>15563 <span _ngcontent-serverapp-c3596918864 newi18n="@@Home.TopSection.TodayCreatedText">resumes created today</span></span></div></a><a _ngcontent-serverapp-c3596918864 class="upload-resume-button" href="/app/build/templates/?cv=true"><span _ngcontent-serverapp-c3596918864 newi18n="@@Home.TopSection.UploadCV">Upload CV</span></a></div><div _ngcontent-serverapp-c3596918864 class="resume-image-container-mobile"><a _ngcontent-serverapp-c3596918864 class="mobile-helper" href="/app/build/templates/"><ngx-picture _ngcontent-serverapp-c3596918864 src="/assets/components/home/template/template-1500w.png" alt="template-image" id="main-mobile-resume-image" mode="lcp" _nghost-serverapp-c752811285 ngh="0"><picture _ngcontent-serverapp-c752811285 class="ngx-picture__picture"><source _ngcontent-serverapp-c752811285 type="image/webp" srcset="https://images.resumaker.ai/AI//assets/components/home/template/template-1500w.png?v=1.2.60&amp;tr=w-300,f-webp" media="(max-width: 599.99px)"><source _ngcontent-serverapp-c752811285 type="image/webp" srcset="https://images.resumaker.ai/AI//assets/components/home/template/template-1500w.png?v=1.2.60&amp;tr=w-1280,f-webp" media="(min-width: 1280px) and (max-width: 1919.99px)"><source _ngcontent-serverapp-c752811285 type="image/webp" srcset="https://images.resumaker.ai/AI//assets/components/home/template/template-1500w.png?v=1.2.60&amp;tr=w-1920,f-webp" media="(min-width: 1920px)"><source _ngcontent-serverapp-c752811285 type="image/webp" srcset="https://images.resumaker.ai/AI//assets/components/home/template/template-1500w.png?v=1.2.60&amp;tr=w-600,f-webp" media="(min-width: 600px) and (max-width: 959.99px)"><source _ngcontent-serverapp-c752811285 type="image/webp" srcset="https://images.resumaker.ai/AI//assets/components/home/template/template-1500w.png?v=1.2.60&amp;tr=w-960,f-webp" media="(min-width: 960px) and (max-width: 1279.99px)"><!----><!----><source _ngcontent-serverapp-c752811285 type="image/jpeg" srcset="https://images.resumaker.ai/AI//assets/components/home/template/template-1500w.png?v=1.2.60&amp;tr=w-300,f-jpeg" media="(max-width: 599.99px)"><source _ngcontent-serverapp-c752811285 type="image/jpeg" srcset="https://images.resumaker.ai/AI//assets/components/home/template/template-1500w.png?v=1.2.60&amp;tr=w-1280,f-jpeg" media="(min-width: 1280px) and (max-width: 1919.99px)"><source _ngcontent-serverapp-c752811285 type="image/jpeg" srcset="https://images.resumaker.ai/AI//assets/components/home/template/template-1500w.png?v=1.2.60&amp;tr=w-1920,f-jpeg" media="(min-width: 1920px)"><source _ngcontent-serverapp-c752811285 type="image/jpeg" srcset="https://images.resumaker.ai/AI//assets/components/home/template/template-1500w.png?v=1.2.60&amp;tr=w-600,f-jpeg" media="(min-width: 600px) and (max-width: 959.99px)"><source _ngcontent-serverapp-c752811285 type="image/jpeg" srcset="https://images.resumaker.ai/AI//assets/components/home/template/template-1500w.png?v=1.2.60&amp;tr=w-960,f-jpeg" media="(min-width: 960px) and (max-width: 1279.99px)"><!----><!----><source _ngcontent-serverapp-c752811285 type="image/png" srcset="https://images.resumaker.ai/AI//assets/components/home/template/template-1500w.png?v=1.2.60&amp;tr=w-300,f-png" media="(max-width: 599.99px)"><source _ngcontent-serverapp-c752811285 type="image/png" srcset="https://images.resumaker.ai/AI//assets/components/home/template/template-1500w.png?v=1.2.60&amp;tr=w-1280,f-png" media="(min-width: 1280px) and (max-width: 1919.99px)"><source _ngcontent-serverapp-c752811285 type="image/png" srcset="https://images.resumaker.ai/AI//assets/components/home/template/template-1500w.png?v=1.2.60&amp;tr=w-1920,f-png" media="(min-width: 1920px)"><source _ngcontent-serverapp-c752811285 type="image/png" srcset="https://images.resumaker.ai/AI//assets/components/home/template/template-1500w.png?v=1.2.60&amp;tr=w-600,f-png" media="(min-width: 600px) and (max-width: 959.99px)"><source _ngcontent-serverapp-c752811285 type="image/png" srcset="https://images.resumaker.ai/AI//assets/components/home/template/template-1500w.png?v=1.2.60&amp;tr=w-960,f-png" media="(min-width: 960px) and (max-width: 1279.99px)"><!----><!----><!----><img _ngcontent-serverapp-c752811285 onload="this.parentNode.parentNode.classList.add('imageLoaded')" class="ngx-picture__picture__img" src="/assets/components/home/template/template-1500w.png" alt="template-image" loading><!----><!----></picture><!----><!----><!----></ngx-picture></a></div></div><a _ngcontent-serverapp-c3596918864 class="resume-image-container" href="/app/build/templates/"><ngx-picture _ngcontent-serverapp-c3596918864 src="/assets/components/home/template/template-1500w.png" alt="template-image" id="main-resume-image" mode="lcp" _nghost-serverapp-c752811285 ngh="0"><picture _ngcontent-serverapp-c752811285 class="ngx-picture__picture"><source _ngcontent-serverapp-c752811285 type="image/webp" srcset="https://images.resumaker.ai/AI//assets/components/home/template/template-1500w.png?v=1.2.60&amp;tr=w-300,f-webp" media="(max-width: 599.99px)"><source _ngcontent-serverapp-c752811285 type="image/webp" srcset="https://images.resumaker.ai/AI//assets/components/home/template/template-1500w.png?v=1.2.60&amp;tr=w-1280,f-webp" media="(min-width: 1280px) and (max-width: 1919.99px)"><source _ngcontent-serverapp-c752811285 type="image/webp" srcset="https://images.resumaker.ai/AI//assets/components/home/template/template-1500w.png?v=1.2.60&amp;tr=w-1920,f-webp" media="(min-width: 1920px)"><source _ngcontent-serverapp-c752811285 type="image/webp" srcset="https://images.resumaker.ai/AI//assets/components/home/template/template-1500w.png?v=1.2.60&amp;tr=w-600,f-webp" media="(min-width: 600px) and (max-width: 959.99px)"><source _ngcontent-serverapp-c752811285 type="image/webp" srcset="https://images.resumaker.ai/AI//assets/components/home/template/template-1500w.png?v=1.2.60&amp;tr=w-960,f-webp" media="(min-width: 960px) and (max-width: 1279.99px)"><!----><!----><source _ngcontent-serverapp-c752811285 type="image/jpeg" srcset="https://images.resumaker.ai/AI//assets/components/home/template/template-1500w.png?v=1.2.60&amp;tr=w-300,f-jpeg" media="(max-width: 599.99px)"><source _ngcontent-serverapp-c752811285 type="image/jpeg" srcset="https://images.resumaker.ai/AI//assets/components/home/template/template-1500w.png?v=1.2.60&amp;tr=w-1280,f-jpeg" media="(min-width: 1280px) and (max-width: 1919.99px)"><source _ngcontent-serverapp-c752811285 type="image/jpeg" srcset="https://images.resumaker.ai/AI//assets/components/home/template/template-1500w.png?v=1.2.60&amp;tr=w-1920,f-jpeg" media="(min-width: 1920px)"><source _ngcontent-serverapp-c752811285 type="image/jpeg" srcset="https://images.resumaker.ai/AI//assets/components/home/template/template-1500w.png?v=1.2.60&amp;tr=w-600,f-jpeg" media="(min-width: 600px) and (max-width: 959.99px)"><source _ngcontent-serverapp-c752811285 type="image/jpeg" srcset="https://images.resumaker.ai/AI//assets/components/home/template/template-1500w.png?v=1.2.60&amp;tr=w-960,f-jpeg" media="(min-width: 960px) and (max-width: 1279.99px)"><!----><!----><source _ngcontent-serverapp-c752811285 type="image/png" srcset="https://images.resumaker.ai/AI//assets/components/home/template/template-1500w.png?v=1.2.60&amp;tr=w-300,f-png" media="(max-width: 599.99px)"><source _ngcontent-serverapp-c752811285 type="image/png" srcset="https://images.resumaker.ai/AI//assets/components/home/template/template-1500w.png?v=1.2.60&amp;tr=w-1280,f-png" media="(min-width: 1280px) and (max-width: 1919.99px)"><source _ngcontent-serverapp-c752811285 type="image/png" srcset="https://images.resumaker.ai/AI//assets/components/home/template/template-1500w.png?v=1.2.60&amp;tr=w-1920,f-png" media="(min-width: 1920px)"><source _ngcontent-serverapp-c752811285 type="image/png" srcset="https://images.resumaker.ai/AI//assets/components/home/template/template-1500w.png?v=1.2.60&amp;tr=w-600,f-png" media="(min-width: 600px) and (max-width: 959.99px)"><source _ngcontent-serverapp-c752811285 type="image/png" srcset="https://images.resumaker.ai/AI//assets/components/home/template/template-1500w.png?v=1.2.60&amp;tr=w-960,f-png" media="(min-width: 960px) and (max-width: 1279.99px)"><!----><!----><!----><img _ngcontent-serverapp-c752811285 onload="this.parentNode.parentNode.classList.add('imageLoaded')" class="ngx-picture__picture__img" src="/assets/components/home/template/template-1500w.png" alt="template-image" loading><!----><!----></picture><!----><!----><!----></ngx-picture></a></div><div _ngcontent-serverapp-c3596918864 class="trustpilot-section"><div _ngcontent-serverapp-c3596918864 class="trustpilot-link"><span _ngcontent-serverapp-c3596918864 newi18n="@@Home.TrustpilotSection.Text" class="tp-text">Excellent</span><img _ngcontent-serverapp-c3596918864 src="/assets/components/home/tp/stars.png" alt="stars" class="stars"><span _ngcontent-serverapp-c3596918864 newi18n="@@Home.TrustpilotSection.Score" class="score">4.6 on</span><img _ngcontent-serverapp-c3596918864 src="/assets/components/home/tp/tp.png" alt="trustpilot" class="tp"></div></div><!----><div _ngcontent-serverapp-c3596918864 class="companies-section"><h6 _ngcontent-serverapp-c3596918864 newi18n="@@Home.CompaniesSection.CompaniesText" class="text">Our professional resumes get people jobs at top companies</h6><div _ngcontent-serverapp-c3596918864 class="companies"><div _ngcontent-serverapp-c3596918864 class="company"><ngx-picture _ngcontent-serverapp-c3596918864 src="/assets/components/home/companies/1.png" alt="company" class="company-image" _nghost-serverapp-c752811285 ngh="1"><!----><noscript _ngcontent-serverapp-c752811285><img _ngcontent-serverapp-c752811285 src="/assets/components/home/companies/1.png" alt="company"></noscript><!----><!----></ngx-picture><span _ngcontent-serverapp-c3596918864 class="company-hired-count"><span _ngcontent-serverapp-c3596918864 newi18n="@@Home.CompaniesSection.1.Count">35,810</span>+</span></div><div _ngcontent-serverapp-c3596918864 class="company"><ngx-picture _ngcontent-serverapp-c3596918864 src="/assets/components/home/companies/2.png" alt="company" class="company-image" _nghost-serverapp-c752811285 ngh="1"><!----><noscript _ngcontent-serverapp-c752811285><img _ngcontent-serverapp-c752811285 src="/assets/components/home/companies/2.png" alt="company"></noscript><!----><!----></ngx-picture><span _ngcontent-serverapp-c3596918864 class="company-hired-count"><span _ngcontent-serverapp-c3596918864 newi18n="@@Home.CompaniesSection.2.Count">21,620</span>+</span></div><div _ngcontent-serverapp-c3596918864 class="company"><ngx-picture _ngcontent-serverapp-c3596918864 src="/assets/components/home/companies/3.png" alt="company" class="company-image" _nghost-serverapp-c752811285 ngh="1"><!----><noscript _ngcontent-serverapp-c752811285><img _ngcontent-serverapp-c752811285 src="/assets/components/home/companies/3.png" alt="company"></noscript><!----><!----></ngx-picture><span _ngcontent-serverapp-c3596918864 class="company-hired-count"><span _ngcontent-serverapp-c3596918864 newi18n="@@Home.CompaniesSection.3.Count">73,970</span>+</span></div><div _ngcontent-serverapp-c3596918864 class="company"><ngx-picture _ngcontent-serverapp-c3596918864 src="/assets/components/home/companies/4.png" alt="company" class="company-image" _nghost-serverapp-c752811285 ngh="1"><!----><noscript _ngcontent-serverapp-c752811285><img _ngcontent-serverapp-c752811285 src="/assets/components/home/companies/4.png" alt="company"></noscript><!----><!----></ngx-picture><span _ngcontent-serverapp-c3596918864 class="company-hired-count"><span _ngcontent-serverapp-c3596918864 newi18n="@@Home.CompaniesSection.4.Count">13,190</span>+</span></div><div _ngcontent-serverapp-c3596918864 class="company"><ngx-picture _ngcontent-serverapp-c3596918864 src="/assets/components/home/companies/5.png" alt="company" class="company-image" _nghost-serverapp-c752811285 ngh="1"><!----><noscript _ngcontent-serverapp-c752811285><img _ngcontent-serverapp-c752811285 src="/assets/components/home/companies/5.png" alt="company"></noscript><!----><!----></ngx-picture><span _ngcontent-serverapp-c3596918864 class="company-hired-count"><span _ngcontent-serverapp-c3596918864 newi18n="@@Home.CompaniesSection.5.Count">61,550</span>+</span></div></div></div><div _ngcontent-serverapp-c3596918864 class="designs-section section"><ngx-picture _ngcontent-serverapp-c3596918864 src="/assets/components/home/resumes.png" alt="resumes" class="resumes-background" _nghost-serverapp-c752811285 ngh="1"><!----><noscript _ngcontent-serverapp-c752811285><img _ngcontent-serverapp-c752811285 src="/assets/components/home/resumes.png" alt="resumes"></noscript><!----><!----></ngx-picture><div _ngcontent-serverapp-c3596918864 class="content"><h3 _ngcontent-serverapp-c3596918864 newi18n="@@Home.DesignsSection.MainText" class="main-text">Impressive &amp; HR-Approved templates to land your dream job</h3><h4 _ngcontent-serverapp-c3596918864 newi18n="@@Home.DesignsSection.SubText" class="sub-text">Choose one of our professional templates. You can easily change colors to any resume format you choose.</h4><div _ngcontent-serverapp-c3596918864 class="buttons-continaer"><a _ngcontent-serverapp-c3596918864 class="create-button en-US" href="/app/build/templates/"><span _ngcontent-serverapp-c3596918864 newi18n="@@Home.DesignsSection.CreateButton" class="desktop-text">Create My Resume</span><span _ngcontent-serverapp-c3596918864 newi18n="@@Home.DesignsSection.CreateButtonMobile" class="mobile-text">Create My Resume</span><i _ngcontent-serverapp-c3596918864 class="fas fa-arrow-right icon"></i></a><div _ngcontent-serverapp-c3596918864 newi18n="@@Home.DesignsSection.WatchVideo" class="watch-video-button">Watch Video</div></div></div></div><div _ngcontent-serverapp-c3596918864 class="templates-section section"><h3 _ngcontent-serverapp-c3596918864 newi18n="@@Home.TemplatesSection.Header" class="text big-header-secondary">Ready to use templates that will help your resume stand out to recruiters</h3><app-choose-template _ngcontent-serverapp-c3596918864 _nghost-serverapp-c3036021743 ngh="2"><div _ngcontent-serverapp-c3036021743 class="choose-template"><div _ngcontent-serverapp-c3036021743 class="templates-container-continaer" style="--container-height: undefinedpx;"><div _ngcontent-serverapp-c3036021743 class="loading-container"><ngx-picture _ngcontent-serverapp-c3036021743 alt="load" src="/assets/icons/loading.gif" class="loading-gif" _nghost-serverapp-c752811285 ngh="1"><!----><noscript _ngcontent-serverapp-c752811285><img _ngcontent-serverapp-c752811285 src="/assets/icons/loading.gif" alt="load"></noscript><!----><!----></ngx-picture><img _ngcontent-serverapp-c3036021743></div><div _ngcontent-serverapp-c3036021743 class="templates-container"><div _ngcontent-serverapp-c3036021743 class="template main loaded"><div _ngcontent-serverapp-c3036021743 class="tempate-select-container"><div _ngcontent-serverapp-c3036021743 class="template-select"><!--ngetn--></div></div><!----><ngx-picture _ngcontent-serverapp-c3036021743 alt="template" class="image" _nghost-serverapp-c752811285 ngh="1"><!----><noscript _ngcontent-serverapp-c752811285><img _ngcontent-serverapp-c752811285 src="/assets/components/editor/templates/en-US/high/7.png?min=600" alt="template"></noscript><!----><!----></ngx-picture></div><div _ngcontent-serverapp-c3036021743 class="template next loaded"><!----><ngx-picture _ngcontent-serverapp-c3036021743 alt="template" class="image" _nghost-serverapp-c752811285 ngh="1"><!----><noscript _ngcontent-serverapp-c752811285><img _ngcontent-serverapp-c752811285 src="/assets/components/editor/templates/en-US/high/9.png?min=600" alt="template"></noscript><!----><!----></ngx-picture></div><div _ngcontent-serverapp-c3036021743 class="template next-next loaded"><!----><ngx-picture _ngcontent-serverapp-c3036021743 alt="template" class="image" _nghost-serverapp-c752811285 ngh="1"><!----><noscript _ngcontent-serverapp-c752811285><img _ngcontent-serverapp-c752811285 src="/assets/components/editor/templates/en-US/high/8.png?min=600" alt="template"></noscript><!----><!----></ngx-picture></div><div _ngcontent-serverapp-c3036021743 class="template next-next-next loaded"><!----><ngx-picture _ngcontent-serverapp-c3036021743 alt="template" class="image" _nghost-serverapp-c752811285 ngh="1"><!----><noscript _ngcontent-serverapp-c752811285><img _ngcontent-serverapp-c752811285 src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="template"></noscript><!----><!----></ngx-picture></div><div _ngcontent-serverapp-c3036021743 class="template hidded loaded"><!----><ngx-picture _ngcontent-serverapp-c3036021743 alt="template" class="image" _nghost-serverapp-c752811285 ngh="1"><!----><noscript _ngcontent-serverapp-c752811285><img _ngcontent-serverapp-c752811285 src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="template"></noscript><!----><!----></ngx-picture></div><div _ngcontent-serverapp-c3036021743 class="template hidded loaded"><!----><ngx-picture _ngcontent-serverapp-c3036021743 alt="template" class="image" _nghost-serverapp-c752811285 ngh="1"><!----><noscript _ngcontent-serverapp-c752811285><img _ngcontent-serverapp-c752811285 src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="template"></noscript><!----><!----></ngx-picture></div><div _ngcontent-serverapp-c3036021743 class="template hidded loaded"><!----><ngx-picture _ngcontent-serverapp-c3036021743 alt="template" class="image" _nghost-serverapp-c752811285 ngh="1"><!----><noscript _ngcontent-serverapp-c752811285><img _ngcontent-serverapp-c752811285 src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="template"></noscript><!----><!----></ngx-picture></div><div _ngcontent-serverapp-c3036021743 class="template hidded loaded"><!----><ngx-picture _ngcontent-serverapp-c3036021743 alt="template" class="image" _nghost-serverapp-c752811285 ngh="1"><!----><noscript _ngcontent-serverapp-c752811285><img _ngcontent-serverapp-c752811285 src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="template"></noscript><!----><!----></ngx-picture></div><div _ngcontent-serverapp-c3036021743 class="template hidded loaded"><!----><ngx-picture _ngcontent-serverapp-c3036021743 alt="template" class="image" _nghost-serverapp-c752811285 ngh="1"><!----><noscript _ngcontent-serverapp-c752811285><img _ngcontent-serverapp-c752811285 src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="template"></noscript><!----><!----></ngx-picture></div><div _ngcontent-serverapp-c3036021743 class="template prev-prev-prev loaded"><!----><ngx-picture _ngcontent-serverapp-c3036021743 alt="template" class="image" _nghost-serverapp-c752811285 ngh="1"><!----><noscript _ngcontent-serverapp-c752811285><img _ngcontent-serverapp-c752811285 src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="template"></noscript><!----><!----></ngx-picture></div><div _ngcontent-serverapp-c3036021743 class="template prev-prev loaded"><!----><ngx-picture _ngcontent-serverapp-c3036021743 alt="template" class="image" _nghost-serverapp-c752811285 ngh="1"><!----><noscript _ngcontent-serverapp-c752811285><img _ngcontent-serverapp-c752811285 src="/assets/components/editor/templates/en-US/high/17.png?min=600" alt="template"></noscript><!----><!----></ngx-picture></div><div _ngcontent-serverapp-c3036021743 class="template prev loaded"><!----><ngx-picture _ngcontent-serverapp-c3036021743 alt="template" class="image" _nghost-serverapp-c752811285 ngh="1"><!----><noscript _ngcontent-serverapp-c752811285><img _ngcontent-serverapp-c752811285 src="/assets/components/editor/templates/en-US/high/18.png?min=600" alt="template"></noscript><!----><!----></ngx-picture></div><!----></div><span _ngcontent-serverapp-c3036021743 class="left-arrow nav-arrow"><svg _ngcontent-serverapp-c3036021743="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35px" height="35px" viewBox="0 0 35 35" version="1.1"><g _ngcontent-serverapp-c3036021743="" id="surface1"><path _ngcontent-serverapp-c3036021743="" d="M 22.300781 4.800781 L 9.605469 17.5 L 22.300781 30.199219 
+            L 24.363281 28.136719 L 13.730469 17.5 L 24.363281 6.863281 Z M 22.300781 4.800781 " style="stroke: none; fill-rule: nonzero; fill: rgb(255, 255, 255); fill-opacity: 1;"/></g></svg></span><!----><span _ngcontent-serverapp-c3036021743 class="right-arrow nav-arrow"><svg _ngcontent-serverapp-c3036021743="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35" height="35px" width="35px"><g _ngcontent-serverapp-c3036021743="" xmlns="http://www.w3.org/2000/svg" transform="matrix(-1 0 0 -1 35 35)"><g _ngcontent-serverapp-c3036021743="" id="surface1"><path _ngcontent-serverapp-c3036021743="" d="M 22.300781 4.800781 L 9.605469 17.5 L 
+              22.300781 30.199219 L 24.363281 28.136719 L 13.730469 17.5 L 24.363281 6.863281 Z M 22.300781 4.800781 " style="stroke: none; fill-rule: nonzero; fill: rgb(255, 255, 255); fill-opacity: 1;"/></g></g></svg></span><!----></div></div></app-choose-template></div><div _ngcontent-serverapp-c3596918864 class="points-section section"><div _ngcontent-serverapp-c3596918864 class="points-container"><h3 _ngcontent-serverapp-c3596918864 newi18n="@@Home.PointsSection.Header" class="text big-header-secondary">Easy-to-use platform. Create your job winning resume and start your job search!</h3><div _ngcontent-serverapp-c3596918864 class="points"><div _ngcontent-serverapp-c3596918864 class="point"><ngx-picture _ngcontent-serverapp-c3596918864 src="/assets/components/home/icons/saas.png" alt="saas" class="point-icon" _nghost-serverapp-c752811285 ngh="1"><!----><noscript _ngcontent-serverapp-c752811285><img _ngcontent-serverapp-c752811285 src="/assets/components/home/icons/saas.png" alt="saas"></noscript><!----><!----></ngx-picture><div _ngcontent-serverapp-c3596918864 class="point-content"><div _ngcontent-serverapp-c3596918864 newi18n="@@Home.PointsSection.Points.WriteOnlineResume.Header" class="point-header">Online Resume Builder</div><div _ngcontent-serverapp-c3596918864 newi18n="@@Home.PointsSection.Points.WriteOnlineResume.Text" class="point-text">Create a perfect resume in minutes. All-in-one site, SaaS product.</div></div></div><div _ngcontent-serverapp-c3596918864 class="point"><ngx-picture _ngcontent-serverapp-c3596918864 src="/assets/components/home/icons/ai.png" alt="ai" class="point-icon" _nghost-serverapp-c752811285 ngh="1"><!----><noscript _ngcontent-serverapp-c752811285><img _ngcontent-serverapp-c752811285 src="/assets/components/home/icons/ai.png" alt="ai"></noscript><!----><!----></ngx-picture><div _ngcontent-serverapp-c3596918864 class="point-content"><div _ngcontent-serverapp-c3596918864 newi18n="@@Home.PointsSection.Points.AI.Header" class="point-header">AI Engine</div><div _ngcontent-serverapp-c3596918864 newi18n="@@Home.PointsSection.Points.AI.Text" class="point-text">Built-in AI engine. Auto-complete and fill data for you.</div></div></div><div _ngcontent-serverapp-c3596918864 class="point"><ngx-picture _ngcontent-serverapp-c3596918864 src="/assets/components/home/icons/encrypt.png" alt="encrypt" class="point-icon" _nghost-serverapp-c752811285 ngh="1"><!----><noscript _ngcontent-serverapp-c752811285><img _ngcontent-serverapp-c752811285 src="/assets/components/home/icons/encrypt.png" alt="encrypt"></noscript><!----><!----></ngx-picture><div _ngcontent-serverapp-c3596918864 class="point-content"><div _ngcontent-serverapp-c3596918864 newi18n="@@Home.PointsSection.Points.Security.Header" class="point-header">Data Encryption</div><div _ngcontent-serverapp-c3596918864 newi18n="@@Home.PointsSection.Points.Security.Text" class="point-text">Your data is safe. Protected by strong 256-bit encryption and SSL certificate.</div></div></div><div _ngcontent-serverapp-c3596918864 class="point"><ngx-picture _ngcontent-serverapp-c3596918864 src="/assets/components/home/icons/approved.png" alt="approved" class="point-icon" _nghost-serverapp-c752811285 ngh="1"><!----><noscript _ngcontent-serverapp-c752811285><img _ngcontent-serverapp-c752811285 src="/assets/components/home/icons/approved.png" alt="approved"></noscript><!----><!----></ngx-picture><div _ngcontent-serverapp-c3596918864 class="point-content"><div _ngcontent-serverapp-c3596918864 newi18n="@@Home.PointsSection.Points.Approved.Header" class="point-header">Approved by Recruiters</div><div _ngcontent-serverapp-c3596918864 newi18n="@@Home.PointsSection.Points.Approved.Text" class="point-text">Create impressive resumes based on expert knowledge from HR experts.</div></div></div><div _ngcontent-serverapp-c3596918864 class="point"><ngx-picture _ngcontent-serverapp-c3596918864 src="/assets/components/home/icons/templates.png" alt="templates" class="point-icon" _nghost-serverapp-c752811285 ngh="1"><!----><noscript _ngcontent-serverapp-c752811285><img _ngcontent-serverapp-c752811285 src="/assets/components/home/icons/templates.png" alt="templates"></noscript><!----><!----></ngx-picture><div _ngcontent-serverapp-c3596918864 class="point-content"><div _ngcontent-serverapp-c3596918864 newi18n="@@Home.PointsSection.Points.Templates.Header" class="point-header">Designed Templates</div><div _ngcontent-serverapp-c3596918864 newi18n="@@Home.PointsSection.Points.Templates.Text" class="point-text">Professionally  designed resume templates. Get a beautiful resume in 5 minutes.</div></div></div><div _ngcontent-serverapp-c3596918864 class="point"><ngx-picture _ngcontent-serverapp-c3596918864 src="/assets/components/home/icons/time.png" alt="time" class="point-icon" _nghost-serverapp-c752811285 ngh="1"><!----><noscript _ngcontent-serverapp-c752811285><img _ngcontent-serverapp-c752811285 src="/assets/components/home/icons/time.png" alt="time"></noscript><!----><!----></ngx-picture><div _ngcontent-serverapp-c3596918864 class="point-content"><div _ngcontent-serverapp-c3596918864 newi18n="@@Home.PointsSection.Points.Time.Header" class="point-header">Save Time</div><div _ngcontent-serverapp-c3596918864 newi18n="@@Home.PointsSection.Points.Time.Text" class="point-text">Focus on job search. Build a resume in minutes and start your job search.</div></div></div></div></div></div><div _ngcontent-serverapp-c3596918864 class="last-section section"><!----><div _ngcontent-serverapp-c3596918864 class="bottom"><h3 _ngcontent-serverapp-c3596918864 newi18n="@@Home.TrySection.Text" class="try-text">Try Resumaker's professional resume builder now. Start for free!</h3><div _ngcontent-serverapp-c3596918864 class="create-resume-button-container"><a _ngcontent-serverapp-c3596918864 newi18n="@@Home.TrySection.Button" class="resume-button" href="/app/build/templates/">Create My Resume</a></div></div></div><div _ngcontent-serverapp-c3596918864 class="seo-section"><h3 _ngcontent-serverapp-c3596918864 newi18n="@@Home.10TipsSection.Header" class="main-text">10 Resume Writing Tips that will Make You Stand Out </h3><div _ngcontent-serverapp-c3596918864 class="sub-text"><span _ngcontent-serverapp-c3596918864 newi18n="@@Home.10TipsSection.MainText">A resume is a self-marketing tool, which highlights your relevant skills, experience, and knowledge. This is the key to getting the job you are interested in and part of the first impression you make on the employer. Employers devote no more than few seconds to reviews resumes, so it is important to know how to stand out and spark the interests of recruiters. </span><span _ngcontent-serverapp-c3596918864 style="padding: 2px;"></span><span _ngcontent-serverapp-c3596918864 class="read-more"><span _ngcontent-serverapp-c3596918864 newi18n="@@Home.10TipsSection.ReadMore">Read More</span><!----><!----> ... </span><div _ngcontent-serverapp-c3596918864 class="read-more-text"><app-html-assets _ngcontent-serverapp-c3596918864 path="home/10tips.html" _nghost-serverapp-c2772942848 ngskiphydration><div _ngcontent-serverapp-c2772942848><p>Here are some helpful tips on how you can ensure that your resume not only highlights your
+  accomplishments and skills, but also captures employers’ attention immediately.<br>
+  <br>
+  1. Tailor your resume to the job you are applying for. Your resume should showcase your skills and
+  accomplishments as it relates to the role you are applying for. Even if your employment history is
+  not aligned with the role, it is important to find elements that match the requirements of the
+  position you are applying for. This will show employers that you have the potential to grow within
+  the role, and therefore will be more inclined to move forward with your candidacy.<br>
+  <br>
+  2. A good self-introduction can do wonders. Before you dive into the technical details of your
+  past roles and education, try to add a short introduction of no more than 2-3 sentences. This is
+  your place to tell employers a little about yourself and don’t be afraid to be creative. A
+  few sentences can give employers a chance to get to know you and your potential contribution to
+  their companies. Also, a self-introduction can be useful if you are applying for a role that is
+  outside your current field - use this section as a means to tell employers why this specific
+  position or field interests you.<br>
+  <br>
+  3. Remember to use a reverse chronological order when listing your jobs, degrees and/or projects
+  (from new to old). Your resume space is limited to one page (unless you have particularly
+  extensive experience) and employers read it from top to bottom when looking for the latest
+  employment experience at the top.<br>
+  <br>
+  4. Do not use first person in your writing, such as "I made presentations", or “I
+  managed people". This is incorrect and it makes the resume seem like a story. Since this is
+  an official document, it should speak a professional language. For example, you should write that
+  your role in a certain company included: "Preparing presentations", "Managing
+  employees", "Creating collaborations". These should appear as bullet points and
+  neatly organized.<br>
+  <br>
+  5. Be brief! It is not necessary to list all the roles you have ever held. You want to showcase
+  your most recent experience as it is most relevant to who you are today, and share your less
+  relevant experience in one line at the bottom of your resume. Refrain from including short-term
+  positions that are not relevant to the skills that are required for the position you are
+  interested in (working as a waiter during the studying for a degree, etc.). Also, be careful not
+  to leave "blanks" in your resume, or period during which you did not work. This can make
+  employers wonder about your credibility and reduce your chances of being considered for the
+  role.<br>
+  <br>
+  6. Use quantitative information to outline your accomplishments. People find it easier to grasp
+  quantitative information, so try to use numbers and percentages when describing your professional
+  experience. Using data will not only specify your experience, but also make it sound more powerful
+  by using concrete examples. For example, instead of saying "budget management", try
+  using "budget management of 10 million dollars per year". Or instead of "employee
+  management", you can say "managing 6 employees". This tip is also useful for
+  entry-level jobs - instead of saying "responsibility for handling customer inquiries",
+  try saying "responsibility for handling about 10,000 customer inquiries a month".<br>
+  <br>
+  7. Don’t forget to include your soft skills. In your skills section, you should emphasize
+  both your technical and analytical skills, as well your human relations skills. Employers want to
+  know that you will be able to get along with others on the team, so even if you are a security
+  expert with extensive knowledge on the most innovative software, your resume should also emphasize
+  your ability to work in a team environment and communicate well with others.<br>
+  <br>
+  8. Incorporate keywords into your resume. Use keywords that derive from the job description, from
+  recruiting company’s website, or from descriptions of similar jobs in other companies. For
+  example, if it says that candidates must have knowledge in Microsoft office, add it to your resume
+  - do not let the employer make assumptions about your experience. Be mindful to not overdo it -
+  stay true to yourself and your experience.<br>
+  <br>
+  9. Pay attention to the smallest details. Impressive design, no spelling errors, a uniform font,
+  bulleted chapter headings, and spaces between paragraphs with reasonable margins. All of these
+  finer details show that you not only invested in your resume, but also you are organized and
+  attentive to detail – which are important qualities to have in any position.<br>
+  <br>
+  10. Make sure your resume is neat, easy to read and symmetrical. You will have a lot to say about
+  your accomplishments, but the important highlights of your career will be lost if your resume is
+  cluttered and tires the employer. Choose a professional design that highlights your experience and
+  capabilities, and do not be afraid to add a little color so that your resume stands out from other
+  candidates.<br>
+  &nbsp;</p>
+
+<h3><strong>Why Resumaker.ai is the best AI resumer builder?</strong></h3>
+
+<p>Welcome to the Future of Resume Building: Unveiling Our Unparalleled AI-Powered Resume Builder!
+  In a world where first impressions matter more than ever, crafting a standout resume that captures
+  your unique professional essence is non-negotiable. This is where our AI Resume Builder steps in,
+  ready to revolutionize your job application game and elevate your career journey like never
+  before. What sets our AI Resume Builder apart from the crowded market is not just its cutting-edge
+  technology, but the seamless synergy of innovation and human touch. Here's why we confidently
+  claim to be the best:</p>
+
+<ol>
+  <li>Precision Redefined: Our AI Resume Builder employs state-of-the-art natural language processing
+    (NLP) algorithms to meticulously analyze your input and understand your career objectives. By
+    comprehending nuanced industry jargon and specific job requirements, it tailors your resume to
+    perfection, presenting your skills and experiences in the most relevant and impactful
+    manner.</li>
+  <li>Your Story, Your Way: We understand that each individual has a unique professional narrative.
+    Our AI doesn't just generate a generic template – it intuitively adapts to your
+    personal style and preferences. The result? A resume that feels authentically you, resonating
+    with recruiters and employers.</li>
+  <li>Time-Saving Brilliance: In today's fast-paced world, time is of the essence. Our AI Resume
+    Builder streamlines the resume creation process, minimizing the hours spent on formatting and
+    content structuring. You provide the information; our AI does the heavy lifting, delivering a
+    polished resume within minutes.</li>
+  <li>Adaptability to Trends: The job market evolves, and so should your resume. Our AI Resume
+    Builder keeps pace with the ever-changing recruitment landscape. It is programmed to understand
+    the latest industry trends and incorporate them into your resume, ensuring that you remain ahead
+    of the curve.</li>
+  <li>Error-Proof Guarantee: Say goodbye to typos, grammatical slip-ups, and formatting blunders. Our
+    AI Resume Builder is an infallible proofreader, catching even the tiniest mistakes that might
+    escape your notice. This attention to detail showcases your professionalism and commitment to
+    excellence.</li>
+  <li>Unrivaled Customization: Whether you're a recent graduate, a mid-career professional, or a
+    seasoned executive, our AI Resume Builder caters to all career stages. It crafts resumes for
+    diverse industries, roles, and skill sets, highlighting your strengths and achievements
+    effectively.</li>
+  <li>Confidence Booster: A resume created with our AI Resume Builder not only presents your
+    qualifications eloquently but also instills confidence in you. Knowing that your resume stands
+    out among the competition gives you an edge during interviews and negotiations.</li>
+  <li>Privacy and Security: Your personal information is valuable, and we treat it with utmost care.
+    Our platform employs industry-standard security protocols to safeguard your data, ensuring a
+    worry-free experience.</li>
+</ol>
+
+<p>In a world flooded with ordinary resume builders, our AI-powered solution emerges as the beacon
+  of innovation and effectiveness. Trust in a resume-building experience that combines the
+  brilliance of technology with the touch of human finesse. Join countless successful professionals
+  who have unlocked their career potential with our AI Resume Builder. Your dream job awaits –
+  let's build your path to it, together.</p>
+
+<h3><strong>What is the difference between Resume and CV?</strong></h3>
+
+<p>The distinction between a resume and a CV lies in their length, content, and purpose. In the
+  United States, the terms are often used interchangeably, but in other parts of the world like
+  Europe, they have different meanings.</p>
+
+<p>Resume:<br>
+  - Length: Typically 1-2 pages.<br>
+  - Content: Summarizes your work experience, education, skills, and achievements. It's tailored
+  to the specific job you're applying for, focusing on relevant qualifications.<br>
+  - Purpose: Mainly used for job applications in various industries. Its concise format makes it
+  suitable for quickly showcasing your qualifications to potential employers.</p>
+
+<p>CV (Curriculum Vitae):<br>
+  - Length: Can vary in length, often several pages.<br>
+  - Content: Provides a comprehensive overview of your entire professional history, including all
+  jobs, education, research, publications, presentations, awards, and more. It's more exhaustive
+  and doesn't necessarily get customized for each application.<br>
+  - Purpose: Commonly used in academic and research fields, as well as when applying for positions
+  where a detailed overview of your accomplishments is crucial.</p>
+
+<p>In the US, the distinction between these two terms is prevalent. However, in many other
+  countries, especially in Europe, the term "CV" is used as a synonym for what Americans
+  would call a resume.</p>
+
+<p>It's important to note that conventions can vary, so when applying for jobs or academic
+  opportunities, it's always wise to follow the regional norms and expectations.<br>
+  If you're interested in delving deeper into the subject of Curriculum Vitae, explore our
+  comprehensive guide: "How to write a Resume."<br>
+  &nbsp;</p>
+
+<h3><strong>What to include in a Resume?</strong></h3>
+
+<p>A resume is a concise document that highlights your qualifications, skills, and experiences,
+  tailored specifically for a job application. It should effectively showcase your suitability for a
+  particular role and capture the attention of potential employers. Here's what you should
+  include in a resume:</p>
+
+<ol>
+  <li>Contact Information:
+    <ul>
+      <li>Full Name</li>
+      <li>Phone Number</li>
+      <li>Email Address</li>
+      <li>Optional: LinkedIn Profile (if it's professional and up-to-date)</li>
+    </ul>
+  </li>
+  <li>Professional Summary:
+    <ul>
+      <li>A brief statement that summarizes your career goals, skills, and what you bring to the
+        role.</li>
+      <li>Tailor this section to match the specific job you're applying for.</li>
+    </ul>
+  </li>
+  <li>Skills:
+    <ul>
+      <li>Highlight relevant skills that align with the job description.</li>
+      <li>Categorize skills into sections like Technical Skills, Soft Skills, Language Proficiencies,
+        etc.</li>
+    </ul>
+  </li>
+  <li>Work Experience:
+    <ul>
+      <li>List your relevant work experiences in reverse chronological order.</li>
+      <li>Include the job title, company name, location, dates of employment, and key
+        responsibilities and achievements.</li>
+      <li>Use bullet points to describe your accomplishments in each role.</li>
+      <li>Quantify your achievements when possible (e.g., "Increased sales by 20%,"
+        "Managed a team of 10").</li>
+    </ul>
+  </li>
+  <li>Education:
+    <ul>
+      <li>List your educational background in reverse chronological order.</li>
+      <li>Include the degree(s) earned, institution name, location, dates attended, and any honors or
+        awards.</li>
+    </ul>
+  </li>
+  <li>Certifications and Training:
+    <ul>
+      <li>Include relevant certifications, workshops, seminars, and training programs.</li>
+      <li>This section can demonstrate your commitment to continuous learning and professional
+        development.</li>
+    </ul>
+  </li>
+  <li>Projects (Optional):
+    <ul>
+      <li>Highlight relevant projects you've worked on, especially if they demonstrate your
+        skills and accomplishments.</li>
+      <li>Include the project's name, your role, a brief description, and outcomes.</li>
+    </ul>
+  </li>
+  <li>Achievements and Awards (Optional):
+    <ul>
+      <li>Include any relevant awards, honors, or achievements that showcase your capabilities.</li>
+    </ul>
+  </li>
+  <li>Professional Memberships (Optional):
+    <ul>
+      <li>List memberships in industry associations, organizations, or societies that pertain to the
+        role.</li>
+    </ul>
+  </li>
+  <li>Volunteer Work or Extracurricular Activities (Optional):
+    <ul>
+      <li>Include relevant volunteer work or extracurricular activities that highlight your character
+        and skills.</li>
+    </ul>
+  </li>
+  <li>References (Available Upon Request):
+    <ul>
+      <li>Similar to the resume, you can mention that references are available if required.</li>
+    </ul>
+  </li>
+  <li>Formatting and Design:
+    <ul>
+      <li>Use a clean and professional format with a readable font.</li>
+      <li>Use bullet points for easy scanning.</li>
+      <li>Keep the resume to one page for early-career professionals; consider a second page for more
+        experienced candidates.</li>
+      <li>Ensure consistent formatting for headings, bullet points, and text alignment.</li>
+    </ul>
+  </li>
+</ol>
+
+<p>Tailor your resume for each application by aligning your experiences and skills with the job
+  description. Focus on the most relevant information that will make you stand out as a strong
+  candidate. Proofread carefully to ensure accuracy and clarity. A well-crafted resume will enhance
+  your chances of getting noticed and progressing to the interview stage.</p>
+
+<h3><strong>What is a chronological resume, and what order should it be in?</strong></h3>
+
+<p>A chronological resume is a type of resume format that focuses on presenting your work history in
+  reverse chronological order. This means that you list your most recent job or experience first and
+  then proceed in reverse order, highlighting your earlier roles. This format is commonly used and
+  is particularly effective if you have a consistent and strong work history.<br>
+  <br>
+  The order of sections in a chronological resume typically follows this structure:</p>
+
+<p>Remember to keep the layout clean, use clear headings, and employ bullet points for easy
+  readability. Tailor your descriptions and achievements to align with the job you're seeking.
+  The chronological format is effective for showcasing a strong work history, but if you have gaps
+  in employment or are changing careers, you might consider other resume formats that better
+  highlight your strengths in those situations.</p>
+
+<ol>
+  <li>Contact Information: Include your name, address, phone number, and email address at the top of
+    the page.</li>
+  <li>Summary or Objective Statement: Provide a brief overview of your skills, experiences, and
+    career goals. This section is optional but can be beneficial if tailored to the specific job
+    you're applying for.</li>
+  <li>Work Experience: List your work history in reverse chronological order. For each position,
+    include:
+    <ul>
+      <li>Job Title: Your job title in that role.</li>
+      <li>Company: The name of the company you worked for.</li>
+      <li>Dates: The duration of your employment (month and year).</li>
+      <li>Responsibilities and Achievements: Use bullet points to outline your key responsibilities
+        and accomplishments for each role. Focus on quantifiable achievements and specific
+        contributions.</li>
+    </ul>
+  </li>
+  <li>Education: List your educational background, starting with the most recent. Include:
+    <ul>
+      <li>Degree: The degree you earned.</li>
+      <li>Major: Your field of study.</li>
+      <li>Institution: The name of the institution where you studied.</li>
+      <li>Graduation Date: The date you graduated or expect to graduate.</li>
+    </ul>
+  </li>
+  <li>Skills: Highlight relevant skills, both hard and soft, that are pertinent to the job you're
+    applying for. This can include technical skills, languages, software proficiency, and more.</li>
+  <li>Optional Sections: Depending on your circumstances, you might include additional sections such
+    as certifications, awards, volunteer work, or relevant projects.</li>
+  <li>References: Mention that references are available upon request. You can include this statement,
+    or if requested by the employer, provide references' contact information.</li>
+</ol>
+
+<p>Remember to keep the layout clean, use clear headings, and employ bullet points for easy
+  readability. Tailor your descriptions and achievements to align with the job you're seeking.
+  The chronological format is effective for showcasing a strong work history, but if you have gaps
+  in employment or are changing careers, you might consider other resume formats that better
+  highlight your strengths in those situations.<br>
+  &nbsp;</p>
+
+<h3><strong>What is a Cover Letter?</strong></h3>
+
+<p>A cover letter is a formal document that accompanies your resume or CV when applying for a job,
+  internship, or other professional opportunities. It's typically sent along with your
+  application materials, either as a physical letter or as part of an email. A cover letter serves
+  as an introduction to your application and provides additional context about your qualifications
+  and motivations.</p>
+
+<p>Key components of a cover letter include:</p>
+
+<ol>
+  <li>Contact Information: Similar to your resume, include your name, address, phone number, and
+    email address at the top of the letter.</li>
+  <li>Date: The date on which you're writing the letter.</li>
+  <li>Recipient's Information: Address the letter to the hiring manager or relevant person. If
+    you have their name, use it. If not, a generic salutation like "Dear Hiring Manager"
+    can suffice.</li>
+  <li>Introduction: Begin with a professional and engaging opening paragraph. Mention the specific
+    job title you're applying for and briefly state how you learned about the position or the
+    company.</li>
+  <li>Body Paragraphs: Use one or two paragraphs to highlight your relevant skills, qualifications,
+    and experiences. You can expand upon points from your resume, but avoid restating everything
+    verbatim. Focus on specific examples that demonstrate your suitability for the position and how
+    your skills align with the company's needs.</li>
+  <li>Motivation and Fit: Explain why you're interested in the role and the company. Show that
+    you've done your research and discuss how your goals and values align with the company's
+    mission and culture.</li>
+  <li>Closing Paragraph: Express your enthusiasm for the opportunity and invite the reader to review
+    your resume or CV for more details. Indicate your willingness to discuss your application
+    further and provide your contact information.</li>
+  <li>Closing Salutation: Use a professional closing, such as "Sincerely" or "Best
+    regards."</li>
+  <li>Signature: Sign your name above your typed name.</li>
+</ol>
+
+<p>A well-crafted cover letter allows you to showcase your communication skills, demonstrate your
+  genuine interest in the position, and provide insights that may not be fully covered in your
+  resume. It's an opportunity to make a personalized connection with the employer and stand out
+  from other applicants. Customize each cover letter for the specific job you're applying for,
+  addressing the company's needs and showcasing how you can contribute to their success.</p>
+</div></app-html-assets></div></div></div></div></app-home-component><!----></div><app-base-component-footer _ngcontent-serverapp-c1702761957 _nghost-serverapp-c906790912 ngh="4"><footer _ngcontent-serverapp-c906790912 class="footer simple"><div _ngcontent-serverapp-c906790912 class="links-sections"><div _ngcontent-serverapp-c906790912 class="link-section"><h5 _ngcontent-serverapp-c906790912 class="link-header">Job Seekers</h5><div _ngcontent-serverapp-c906790912 class="links"><div _ngcontent-serverapp-c906790912 class="link-container"><a _ngcontent-serverapp-c906790912 class="link" href="/app/build/templates/">Create a Resume</a><!----><!----></div><div _ngcontent-serverapp-c906790912 class="link-container"><a _ngcontent-serverapp-c906790912 class="link" href="/resume-templates/">Resume Templates</a><!----><!----></div><div _ngcontent-serverapp-c906790912 class="link-container"><a _ngcontent-serverapp-c906790912 class="link" href="/how-to-write-a-resume/">How to Write a Resume</a><!----><!----></div><div _ngcontent-serverapp-c906790912 class="link-container"><a _ngcontent-serverapp-c906790912 class="link" href="/cover-letter/">Cover Letter Builder</a><!----><!----></div><div _ngcontent-serverapp-c906790912 class="link-container"><a _ngcontent-serverapp-c906790912 class="link" href="/app/build/letter/templates/">Cover Letter Templates</a><!----><!----></div><div _ngcontent-serverapp-c906790912 class="link-container"><a _ngcontent-serverapp-c906790912 class="link" href="/cover-letter-examples/">Cover Letter Examples</a><!----><!----></div><div _ngcontent-serverapp-c906790912 class="link-container"><a _ngcontent-serverapp-c906790912 class="link" href="/cv-examples/">CV Examples</a><!----><!----></div><!----></div></div><div _ngcontent-serverapp-c906790912 class="link-section"><h5 _ngcontent-serverapp-c906790912 class="link-header">Our Company</h5><div _ngcontent-serverapp-c906790912 class="links"><div _ngcontent-serverapp-c906790912 class="link-container"><a _ngcontent-serverapp-c906790912 class="link" href="/about/">About Us</a><!----><!----></div><div _ngcontent-serverapp-c906790912 class="link-container"><!----><a _ngcontent-serverapp-c906790912 target="_blank" class="link" href="https://www.facebook.com/resumaker1">Facebook</a><!----></div><div _ngcontent-serverapp-c906790912 class="link-container"><a _ngcontent-serverapp-c906790912 class="link" href="/pricing/">Pricing</a><!----><!----></div><div _ngcontent-serverapp-c906790912 class="link-container"><!----><a _ngcontent-serverapp-c906790912 target="_blank" class="link" href="https://www.linkedin.com/company/resumaker-ai/">Linkedin</a><!----></div><!----></div></div><div _ngcontent-serverapp-c906790912 class="link-section"><h5 _ngcontent-serverapp-c906790912 class="link-header">Support</h5><div _ngcontent-serverapp-c906790912 class="links"><div _ngcontent-serverapp-c906790912 class="link-container"><a _ngcontent-serverapp-c906790912 class="link" href="/contact/">Contact Us</a><!----><!----></div><div _ngcontent-serverapp-c906790912 class="link-container"><a _ngcontent-serverapp-c906790912 class="link" href="/privacy/">Privacy</a><!----><!----></div><div _ngcontent-serverapp-c906790912 class="link-container"><a _ngcontent-serverapp-c906790912 class="link" href="/tos/">Terms of Service</a><!----><!----></div><div _ngcontent-serverapp-c906790912 class="link-container"><a _ngcontent-serverapp-c906790912 class="link" href="/accessibility/">Accessibility</a><!----><!----></div><div _ngcontent-serverapp-c906790912 class="link-container"><a _ngcontent-serverapp-c906790912 class="link" href="/cookies/">Cookies</a><!----><!----></div><!----></div></div><div _ngcontent-serverapp-c906790912 class="link-section"><h5 _ngcontent-serverapp-c906790912 class="link-header">Languages</h5><div _ngcontent-serverapp-c906790912 class="links"><div _ngcontent-serverapp-c906790912 class="link-container"><!----><a _ngcontent-serverapp-c906790912 target="_blank" class="link" href="https://resumaker.ai/">English</a><!----></div><div _ngcontent-serverapp-c906790912 class="link-container"><!----><a _ngcontent-serverapp-c906790912 target="_blank" class="link" href="https://resumaker.pl/">Polski</a><!----></div><div _ngcontent-serverapp-c906790912 class="link-container"><!----><a _ngcontent-serverapp-c906790912 target="_blank" class="link" href="https://resumaker.fr/">Français</a><!----></div><div _ngcontent-serverapp-c906790912 class="link-container"><!----><a _ngcontent-serverapp-c906790912 target="_blank" class="link" href="https://cv-ar.com/">Arabic</a><!----></div><div _ngcontent-serverapp-c906790912 class="link-container"><!----><a _ngcontent-serverapp-c906790912 target="_blank" class="link" href="https://resumaker.es/">Español</a><!----></div><div _ngcontent-serverapp-c906790912 class="link-container"><!----><a _ngcontent-serverapp-c906790912 target="_blank" class="link" href="https://cv-br.com/">Português</a><!----></div><div _ngcontent-serverapp-c906790912 class="link-container"><!----><a _ngcontent-serverapp-c906790912 target="_blank" class="link" href="https://ozgecmis.app/">Türkçe</a><!----></div><div _ngcontent-serverapp-c906790912 class="link-container"><!----><a _ngcontent-serverapp-c906790912 target="_blank" class="link" href="https://resumaker.it/">Italiano</a><!----></div><div _ngcontent-serverapp-c906790912 class="link-container"><!----><a _ngcontent-serverapp-c906790912 target="_blank" class="link" href="https://resumaker.cz/">Čeština</a><!----></div><div _ngcontent-serverapp-c906790912 class="link-container"><!----><a _ngcontent-serverapp-c906790912 target="_blank" class="link" href="https://resumaker.de/">Deutsch</a><!----></div><div _ngcontent-serverapp-c906790912 class="link-container"><!----><a _ngcontent-serverapp-c906790912 target="_blank" class="link" href="https://cv-hu.com/">Magyar</a><!----></div><div _ngcontent-serverapp-c906790912 class="link-container"><!----><a _ngcontent-serverapp-c906790912 target="_blank" class="link" href="https://cv-ro.com/">Română</a><!----></div><div _ngcontent-serverapp-c906790912 class="link-container"><!----><a _ngcontent-serverapp-c906790912 target="_blank" class="link" href="https://resumaker.se/">Svenska</a><!----></div><div _ngcontent-serverapp-c906790912 class="link-container"><!----><a _ngcontent-serverapp-c906790912 target="_blank" class="link" href="https://cv-norge.com/">Norsk</a><!----></div><div _ngcontent-serverapp-c906790912 class="link-container"><!----><a _ngcontent-serverapp-c906790912 target="_blank" class="link" href="https://cv-gr.com/">Ελληνικά</a><!----></div><div _ngcontent-serverapp-c906790912 class="link-container"><!----><a _ngcontent-serverapp-c906790912 target="_blank" class="link" href="https://www.resumake.co.il/">עברית</a><!----></div><div _ngcontent-serverapp-c906790912 class="link-container"><!----><a _ngcontent-serverapp-c906790912 target="_blank" class="link" href="https://resumaker.nl/">Nederlands</a><!----></div><div _ngcontent-serverapp-c906790912 class="link-container"><!----><a _ngcontent-serverapp-c906790912 target="_blank" class="link" href="https://resumaker.dk/">Danmark</a><!----></div><div _ngcontent-serverapp-c906790912 class="link-container"><!----><a _ngcontent-serverapp-c906790912 target="_blank" class="link" href="https://resumaker.fi/">Suomi</a><!----></div><div _ngcontent-serverapp-c906790912 class="link-container"><!----><a _ngcontent-serverapp-c906790912 target="_blank" class="link" href="https://contoh-cv.co.id/">Indonesia</a><!----></div><!----></div></div><!----></div><span _ngcontent-serverapp-c906790912 newi18n="@@Footer.Copyright" class="copyright">© All Rights Reserved - Resumaker.ai</span></footer><!----><!----><!----></app-base-component-footer><!----><!----></app-root>
+  <script src="runtime.d54b91314c78319d.js" type="module"></script><script src="polyfills.6848fa739fefd253.js" type="module"></script><script src="main.3c437855cb1bc8ac.js" type="module"></script>
+
+<script id="serverApp-state" type="application/json">{"__ɵnghData__":[{"t":{"0":"t0","1":"t4","2":"t5"},"c":{"0":[{"i":"t0","r":1,"t":{"1":"t1","3":"t3"},"c":{"1":[{"i":"t1","r":7,"e":{"0":6},"t":{"1":"t2"},"c":{"1":[{"i":"t2","r":1,"x":5}]},"x":3}],"2":[{"i":"t3","r":1}],"3":[]}}],"1":[],"2":[]}},{"t":{"0":"t0","1":"t4","2":"t5"},"c":{"0":[],"1":[{"i":"t4","r":1}],"2":[]}},{"t":{"7":"t7","8":"t9","9":"t10"},"c":{"7":[{"i":"t7","r":1,"t":{"1":"t8"},"c":{"1":[{"i":"t8","r":1}]}},{"i":"t7","r":1,"t":{"1":"t8"},"c":{"1":[]},"x":11}],"8":[{"i":"t9","r":1}],"9":[{"i":"t10","r":1}]}},{"t":{"31":"t6","134":"t11","149":"t12","150":"t13"},"c":{"31":[{"i":"t6","r":1}],"134":[],"149":[{"i":"t12","r":1}],"150":[]}},{"t":{"0":"t14","1":"t19","2":"t20"},"c":{"0":[{"i":"t14","r":1,"t":{"2":"t15"},"c":{"2":[{"i":"t15","r":1,"t":{"4":"t16"},"c":{"4":[{"i":"t16","r":1,"t":{"1":"t17","2":"t18"},"c":{"1":[{"i":"t17","r":1}],"2":[]},"x":7}]}},{"i":"t15","r":1,"t":{"4":"t16"},"c":{"4":[{"i":"t16","r":1,"t":{"1":"t17","2":"t18"},"c":{"1":[{"i":"t17","r":1}],"2":[]}},{"i":"t16","r":1,"t":{"1":"t17","2":"t18"},"c":{"1":[],"2":[{"i":"t18","r":1}]}},{"i":"t16","r":1,"t":{"1":"t17","2":"t18"},"c":{"1":[{"i":"t17","r":1}],"2":[]}},{"i":"t16","r":1,"t":{"1":"t17","2":"t18"},"c":{"1":[],"2":[{"i":"t18","r":1}]}}]}},{"i":"t15","r":1,"t":{"4":"t16"},"c":{"4":[{"i":"t16","r":1,"t":{"1":"t17","2":"t18"},"c":{"1":[{"i":"t17","r":1}],"2":[]},"x":5}]}},{"i":"t15","r":1,"t":{"4":"t16"},"c":{"4":[{"i":"t16","r":1,"t":{"1":"t17","2":"t18"},"c":{"1":[],"2":[{"i":"t18","r":1}]},"x":20}]}}]}}],"1":[],"2":[]}},{"e":{"0":4},"c":{"3":[{"i":"c3596918864","r":1}],"5":[]},"t":{"5":"t21"}}]}</script></body></html>

@@ -1,0 +1,14 @@
+/googlesearch
+/googlesearch2
+/testdata1
+/log
+/error
+/__pycache__
+**/*.pyc
+**/*.pyo
+**/*.pyd
+**/*.json
+**/*.log
+**/*.txt
+/extract_data.py
+/hvac_keywords.py

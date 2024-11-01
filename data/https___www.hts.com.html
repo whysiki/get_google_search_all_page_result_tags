@@ -1,0 +1,2598 @@
+<!DOCTYPE html>
+<!--[if IE 9 ]> <html lang="en-US" prefix="og: https://ogp.me/ns#" class="ie9 loading-site no-js"> <![endif]-->
+<!--[if IE 8 ]> <html lang="en-US" prefix="og: https://ogp.me/ns#" class="ie8 loading-site no-js"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en-US" prefix="og: https://ogp.me/ns#" class="loading-site no-js"> <!--<![endif]-->
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+	<link rel="profile" href="https://gmpg.org/xfn/11" />
+	<link rel="pingback" href="https://www.hts.com/xmlrpc.php" />
+	<script async defer
+   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeokK_KWi8eriW6I0dla7uZTcgM3ScaB0&callback=initMap&v=3&libraries=geometry">
+	 
+
+
+
+ </script>
+<script type="text/javascript">
+ var is_single_job = "";
+ setTimeout(function(){
+     
+ is_single_job =	document.getElementsByClassName("single-job");
+ is_project_archive = document.getElementsByClassName('yes_project_page');
+ 
+	 if(is_single_job.length > 0 || is_project_archive.length > 0){
+	     
+	 		document.getElementsByClassName("loading")[0].style.visibility = 'hidden';
+		}
+},3000);
+
+ </script>
+
+	                           
+                                  
+
+    <script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+            <script async src='https://www.clickcease.com/monitor/stat.js'>
+            </script>
+            <style>
+        .pro-wccp:before {
+            content: "\f160";
+            top: 3px;
+        }
+        .pro-wccp:before{
+            color:#02CA03 !important
+        }
+        .pro-wccp {
+            transform: rotate(45deg);
+        }
+    </style>
+    <script id="wccp_pro_class_exclusion">
+function copyToClipboard(elem) {
+	  // create hidden text element, if it doesn't already exist
+    var targetId = "_wccp_pro_hiddenCopyText_";
+    {
+        // must use a temporary form element for the selection and copy
+        target = document.getElementById(targetId);
+        if (!target) {
+            var target = document.createElement("textarea");
+            target.style.position = "absolute";
+            target.style.left = "-9999px";
+            target.style.top = "0";
+            target.id = targetId;
+            document.body.appendChild(target);
+        }
+        target.textContent = elem.textContent;
+    }
+    // select the content
+    var currentFocus = document.activeElement;
+    target.focus();
+    target.setSelectionRange(0, target.value.length);
+    
+    // copy the selection
+    var succeed;
+    try {
+    	  succeed = document.execCommand("copy");
+    } catch(e) {
+        succeed = false;
+    }
+
+    // restore original focus
+    if (currentFocus && typeof currentFocus.focus === "function") {
+        currentFocus.focus();
+    }
+    
+    
+	// clear temporary content
+	target.textContent = "";
+	document.getElementsByTagName('span')[0].innerHTML = " ";
+    return succeed;
+}
+/**************************************************/
+function wccp_pro_log_to_console_if_allowed(title = "title", data = "")
+{
+	var myName = "";
+	
+	if(wccp_pro_log_to_console_if_allowed.caller != null) myName = wccp_pro_log_to_console_if_allowed.caller.toString();
+	
+	myName = myName.substr('function '.length);
+	
+	myName = myName.substr(0, myName.indexOf('('));
+
+	//console.log("function_name: " + myName);
+	
+	}
+/**************************************************/
+function fallbackCopyTextToClipboard(text) {
+  var textArea = document.createElement("textarea");
+  textArea.value = text;
+  document.body.appendChild(textArea);
+  textArea.focus();
+  textArea.select();
+
+  try {
+    var successful = document.execCommand("copy");
+    var msg = successful ? "successful" : "unsuccessful";
+    console.log("Fallback: Copying text command was " + msg);
+  } catch (err) {
+    console.error("Fallback: Oops, unable to copy", err);
+  }
+
+  document.body.removeChild(textArea);
+}
+/*****************************************/
+function copyTextToClipboard(text) {
+  if (!navigator.clipboard) {
+    fallbackCopyTextToClipboard(text);
+    return;
+  }
+  navigator.clipboard.writeText(text).then(
+    function() {
+      console.log("Async: Copying to clipboard was successful!");
+    },
+    function(err) {
+      console.error("Async: Could not copy text: ", err);
+    }
+  );
+}
+/*****************************************/
+/*getSelectionTextAndContainerElement*/
+function getSelectionTextAndContainerElement()
+{
+    var text = "", containerElement = null;
+    if (typeof window.getSelection != "undefined") {
+        var sel = window.getSelection();
+        if (sel.rangeCount) {
+            var node = sel.getRangeAt(0).commonAncestorContainer;
+            containerElement = node.nodeType == 1 ? node : node.parentNode;
+			if (typeof(containerElement.parentElement) != 'undefined') current_clicked_object = containerElement.parentElement;
+            text = sel.toString();
+        }
+    } else if (typeof document.selection != "undefined" && document.selection.type != "Control")
+	{
+        var textRange = document.selection.createRange();
+        containerElement = textRange.parentElement();
+        text = textRange.text;
+    }
+    
+	return {
+        text: text,
+        containerElement: containerElement
+    };
+}
+
+function getSelectionParentElement() {
+    var parentEl = null, sel;
+	
+    if (window.getSelection) {
+        sel = window.getSelection();
+        if (sel.rangeCount) {
+            parentEl = sel.getRangeAt(0).commonAncestorContainer;
+			//sel.getRangeAt(0).startContainer.parentNode;
+            if (parentEl.nodeType != 1) {
+                parentEl = parentEl.parentNode;
+            }
+        }
+    } else if ( (sel = document.selection) && sel.type != "Control") {
+        parentEl = sel.createRange().parentElement();
+    }
+	
+	let arr = new Array();
+	
+	arr["nodeName"] = "cant_find_parent_element";
+	
+	if(parentEl != null)
+		return parentEl;
+	else
+		return arr;
+}
+/*****************************************/
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+/*****************************************/
+</script>
+
+<script id="apply_class_exclusion">
+function apply_class_exclusion(e)
+{
+	wccp_pro_log_to_console_if_allowed("function", "apply_class_exclusion" + e);
+	
+	var my_return = 'No';
+	
+	var e = e || window.event; // also there is no e.target property in IE. instead IE uses window.event.srcElement
+  	
+	var target = e.target || e.srcElement || 'nothing';
+	
+	//if(target.parentElement != null) console.log (target.parentElement.className);
+	
+	var excluded_classes = '' + '';
+	
+	var class_to_exclude = "";
+	
+	if(target.parentElement != null)
+	{
+		class_to_exclude = target.className + ' ' + target.parentElement.className || '';
+	}else{
+		class_to_exclude = target.className;
+	}
+	
+	var class_to_exclude_array = Array();
+	
+	//console.log(class_to_exclude);
+	
+	if (typeof(class_to_exclude) != 'undefined') class_to_exclude_array = class_to_exclude.split(" ");
+	
+	//console.log (class_to_exclude_array);
+	
+	class_to_exclude_array.forEach(function(item)
+	{
+		if(item != '' && excluded_classes.indexOf(item)>=0)
+		{
+			//target.style.cursor = "text";
+			
+			//console.log ('Yes');
+			
+			my_return = 'Yes';
+		}
+	});
+
+	try {
+		class_to_exclude = target.parentElement.getAttribute('class') || target.parentElement.className || '';
+		}
+	catch(err) 
+		{
+		class_to_exclude = '';
+		}
+	
+	if(class_to_exclude != '' && excluded_classes.indexOf(class_to_exclude)>=0)
+	{
+		//target.style.cursor = "text";
+		my_return = 'Yes';
+	}
+
+	return my_return;
+}
+</script>
+<style id="wccp_pro_style2" data-asas-style="">
+
+	
+	*[contenteditable] , [contenteditable] *,*[contenteditable="true"] , [contenteditable="true"] * { /* for contenteditable tags*/ , /* for tags inside contenteditable tags*/
+	  -webkit-user-select: auto !important;
+	  cursor: text !important;
+	  user-select: text !important;
+	  pointer-events: auto !important;
+	}
+	
+	/*
+	*[contenteditable]::selection, [contenteditable] *::selection, [contenteditable="true"]::selection, [contenteditable="true"] *::selection { background: Highlight !important; color: HighlightText !important;}
+	*[contenteditable]::-moz-selection, [contenteditable="true"] *::-moz-selection { background: Highlight !important; color: HighlightText !important;}
+	input::selection,textarea::selection, code::selection, code > *::selection { background: Highlight !important; color: HighlightText !important;}
+	input::-moz-selection,textarea::-moz-selection, code::-moz-selection, code > *::-moz-selection { background: Highlight !important; color: HighlightText !important;}
+	*/
+	a{ cursor: pointer ; pointer-events: auto !important;}
+
+	</style><style>TEXT,TEXTAREA,input[type="text"] {cursor: text !important; user-select: text !important;}</style><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<!-- Search Engine Optimization by Rank Math PRO - https://s.rankmath.com/home -->
+<title>Commercial &amp; Industrial | HVAC Systems &amp; Services</title>
+<meta name="description" content="HTS is the largest independent built-to-order commercial &amp; industrial full-service HVAC distributor in North America. Contact us today to learn more."/>
+<meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"/>
+<link rel="canonical" href="https://www.hts.com/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Commercial &amp; Industrial | HVAC Systems &amp; Services" />
+<meta property="og:description" content="HTS is the largest independent built-to-order commercial &amp; industrial full-service HVAC distributor in North America. Contact us today to learn more." />
+<meta property="og:url" content="https://www.hts.com/" />
+<meta property="og:site_name" content="HTS | Commercial &amp; Industrial HVAC Systems, Parts, &amp; Services Company" />
+<meta property="og:updated_time" content="2023-04-28T16:51:26+00:00" />
+<meta property="article:published_time" content="2017-05-26T18:24:35+00:00" />
+<meta property="article:modified_time" content="2023-04-28T16:51:26+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Commercial &amp; Industrial | HVAC Systems &amp; Services" />
+<meta name="twitter:description" content="HTS is the largest independent built-to-order commercial &amp; industrial full-service HVAC distributor in North America. Contact us today to learn more." />
+<meta name="twitter:label1" content="Written by" />
+<meta name="twitter:data1" content="astoundz" />
+<meta name="twitter:label2" content="Time to read" />
+<meta name="twitter:data2" content="6 minutes" />
+<script type="application/ld+json" class="rank-math-schema-pro">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.hts.com/#organization","name":"HTS | Commercial &amp; Industrial HVAC Systems, Parts, &amp; Services Company"},{"@type":"WebSite","@id":"https://www.hts.com/#website","url":"https://www.hts.com","name":"HTS | Commercial &amp; Industrial HVAC Systems, Parts, &amp; Services Company","publisher":{"@id":"https://www.hts.com/#organization"},"inLanguage":"en-US","potentialAction":{"@type":"SearchAction","target":"https://www.hts.com/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://www.hts.com/#webpage","url":"https://www.hts.com/","name":"Commercial &amp; Industrial | HVAC Systems &amp; Services","datePublished":"2017-05-26T18:24:35+00:00","dateModified":"2023-04-28T16:51:26+00:00","about":{"@id":"https://www.hts.com/#organization"},"isPartOf":{"@id":"https://www.hts.com/#website"},"inLanguage":"en-US"},{"@type":"Person","@id":"https://www.hts.com/author/astoundz/","name":"astoundz","url":"https://www.hts.com/author/astoundz/","image":{"@type":"ImageObject","@id":"https://secure.gravatar.com/avatar/ab654d86b608a52b804e4c5067b6a3b5?s=96&amp;d=mm&amp;r=g","url":"https://secure.gravatar.com/avatar/ab654d86b608a52b804e4c5067b6a3b5?s=96&amp;d=mm&amp;r=g","caption":"astoundz","inLanguage":"en-US"},"worksFor":{"@id":"https://www.hts.com/#organization"}},{"@type":"Article","headline":"Commercial &amp; Industrial | HVAC Systems &amp; Services","datePublished":"2017-05-26T18:24:35+00:00","dateModified":"2023-04-28T16:51:26+00:00","author":{"@id":"https://www.hts.com/author/astoundz/"},"publisher":{"@id":"https://www.hts.com/#organization"},"description":"HTS is the largest independent built-to-order commercial &amp; industrial full-service HVAC distributor in North America. Contact us today to learn more.","name":"Commercial &amp; Industrial | HVAC Systems &amp; Services","@id":"https://www.hts.com/#richSnippet","isPartOf":{"@id":"https://www.hts.com/#webpage"},"inLanguage":"en-US","mainEntityOfPage":{"@id":"https://www.hts.com/#webpage"}}]}</script>
+<!-- /Rank Math WordPress SEO plugin -->
+
+<link rel='dns-prefetch' href='//cdn.jsdelivr.net' />
+<link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel='dns-prefetch' href='//cdn.openshareweb.com' />
+<link rel='dns-prefetch' href='//cdn.shareaholic.net' />
+<link rel='dns-prefetch' href='//www.shareaholic.net' />
+<link rel='dns-prefetch' href='//analytics.shareaholic.com' />
+<link rel='dns-prefetch' href='//recs.shareaholic.com' />
+<link rel='dns-prefetch' href='//partner.shareaholic.com' />
+<link rel="alternate" type="application/rss+xml" title="HTS | Commercial &amp; Industrial HVAC Systems, Parts, &amp; Services Company &raquo; Feed" href="https://www.hts.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="HTS | Commercial &amp; Industrial HVAC Systems, Parts, &amp; Services Company &raquo; Comments Feed" href="https://www.hts.com/comments/feed/" />
+<link rel="prefetch" href="https://www.hts.com/wp-content/themes/flatsome/assets/js/chunk.countup.fe2c1016.js" />
+<link rel="prefetch" href="https://www.hts.com/wp-content/themes/flatsome/assets/js/chunk.sticky-sidebar.a58a6557.js" />
+<link rel="prefetch" href="https://www.hts.com/wp-content/themes/flatsome/assets/js/chunk.tooltips.29144c1c.js" />
+<link rel="prefetch" href="https://www.hts.com/wp-content/themes/flatsome/assets/js/chunk.vendors-popups.947eca5c.js" />
+<link rel="prefetch" href="https://www.hts.com/wp-content/themes/flatsome/assets/js/chunk.vendors-slider.c7f2bd49.js" />
+<!-- Shareaholic - https://www.shareaholic.com -->
+<link rel='preload' href='//cdn.shareaholic.net/assets/pub/shareaholic.js' as='script'/>
+<script data-no-minify='1' data-cfasync='false'>
+_SHR_SETTINGS = {"endpoints":{"local_recs_url":"https:\/\/www.hts.com\/wp-admin\/admin-ajax.php?action=shareaholic_permalink_related","ajax_url":"https:\/\/www.hts.com\/wp-admin\/admin-ajax.php","share_counts_url":"https:\/\/www.hts.com\/wp-admin\/admin-ajax.php?action=shareaholic_share_counts_api"},"site_id":"229779de6361e1c0b0f1b660722c7cf0","url_components":{"year":"2017","monthnum":"05","day":"26","hour":"18","minute":"24","second":"35","post_id":"39","postname":"home-2-2-2-2","category":"uncategorized"}};
+</script>
+<script data-no-minify='1' data-cfasync='false' src='//cdn.shareaholic.net/assets/pub/shareaholic.js' data-shr-siteid='229779de6361e1c0b0f1b660722c7cf0' async ></script>
+
+<!-- Shareaholic Content Tags -->
+<meta name='shareaholic:site_name' content='HTS | Commercial &amp; Industrial HVAC Systems, Parts, &amp; Services Company' />
+<meta name='shareaholic:language' content='en-US' />
+<meta name='shareaholic:article_visibility' content='private' />
+<meta name='shareaholic:site_id' content='229779de6361e1c0b0f1b660722c7cf0' />
+<meta name='shareaholic:wp_version' content='9.7.12' />
+
+<!-- Shareaholic Content Tags End -->
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.hts.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.8.10"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([10084,65039,8205,55357,56613],[10084,65039,8203,55357,56613])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<style id='wp-block-library-inline-css' type='text/css'>
+:root{--wp-admin-theme-color:#007cba;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-border-width-focus:2px}@media (-webkit-min-device-pixel-ratio:2),(min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}:root .has-pale-pink-background-color{background-color:#f78da7}:root .has-vivid-red-background-color{background-color:#cf2e2e}:root .has-luminous-vivid-orange-background-color{background-color:#ff6900}:root .has-luminous-vivid-amber-background-color{background-color:#fcb900}:root .has-light-green-cyan-background-color{background-color:#7bdcb5}:root .has-vivid-green-cyan-background-color{background-color:#00d084}:root .has-pale-cyan-blue-background-color{background-color:#8ed1fc}:root .has-vivid-cyan-blue-background-color{background-color:#0693e3}:root .has-vivid-purple-background-color{background-color:#9b51e0}:root .has-white-background-color{background-color:#fff}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-cyan-bluish-gray-background-color{background-color:#abb8c3}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-black-background-color{background-color:#000}:root .has-pale-pink-color{color:#f78da7}:root .has-vivid-red-color{color:#cf2e2e}:root .has-luminous-vivid-orange-color{color:#ff6900}:root .has-luminous-vivid-amber-color{color:#fcb900}:root .has-light-green-cyan-color{color:#7bdcb5}:root .has-vivid-green-cyan-color{color:#00d084}:root .has-pale-cyan-blue-color{color:#8ed1fc}:root .has-vivid-cyan-blue-color{color:#0693e3}:root .has-vivid-purple-color{color:#9b51e0}:root .has-white-color{color:#fff}:root .has-very-light-gray-color{color:#eee}:root .has-cyan-bluish-gray-color{color:#abb8c3}:root .has-very-dark-gray-color{color:#313131}:root .has-black-color{color:#000}:root .has-vivid-cyan-blue-to-vivid-purple-gradient-background{background:linear-gradient(135deg,#0693e3,#9b51e0)}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-light-green-cyan-to-vivid-green-cyan-gradient-background{background:linear-gradient(135deg,#7adcb4,#00d082)}:root .has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background:linear-gradient(135deg,#fcb900,#ff6900)}:root .has-luminous-vivid-orange-to-vivid-red-gradient-background{background:linear-gradient(135deg,#ff6900,#cf2e2e)}:root .has-very-light-gray-to-cyan-bluish-gray-gradient-background{background:linear-gradient(135deg,#eee,#a9b8c3)}:root .has-cool-to-warm-spectrum-gradient-background{background:linear-gradient(135deg,#4aeadc,#9778d1 20%,#cf2aba 40%,#ee2c82 60%,#fb6962 80%,#fef84c)}:root .has-blush-light-purple-gradient-background{background:linear-gradient(135deg,#ffceec,#9896f0)}:root .has-blush-bordeaux-gradient-background{background:linear-gradient(135deg,#fecda5,#fe2d2d 50%,#6b003e)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-luminous-dusk-gradient-background{background:linear-gradient(135deg,#ffcb70,#c751c0 50%,#4158d0)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-pale-ocean-gradient-background{background:linear-gradient(135deg,#fff5cb,#b6e3d4 50%,#33a7b5)}:root .has-electric-grass-gradient-background{background:linear-gradient(135deg,#caf880,#71ce7e)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}.has-small-font-size{font-size:.8125em}.has-normal-font-size,.has-regular-font-size{font-size:1em}.has-medium-font-size{font-size:1.25em}.has-large-font-size{font-size:2.25em}.has-huge-font-size,.has-larger-font-size{font-size:2.625em}.has-text-align-center{text-align:center}.has-text-align-left{text-align:left}.has-text-align-right{text-align:right}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{border:0;clip:rect(1px,1px,1px,1px);-webkit-clip-path:inset(50%);clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-wrap:normal!important}.screen-reader-text:focus{background-color:#ddd;clip:auto!important;-webkit-clip-path:none;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}
+</style>
+<link rel='stylesheet' id='menu-image-css'  href='https://www.hts.com/wp-content/plugins/menu-image/includes/css/menu-image.css?ver=3.11' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='https://www.hts.com/wp-includes/css/dashicons.min.css?ver=5.8.10' type='text/css' media='all' />
+<link rel='stylesheet' id='widgetopts-styles-css'  href='https://www.hts.com/wp-content/plugins/widget-options/assets/css/widget-options.css' type='text/css' media='all' />
+<style id='woocommerce-inline-inline-css' type='text/css'>
+.woocommerce form .form-row .required { visibility: visible; }
+</style>
+<link rel='stylesheet' id='flexslider_css-css'  href='https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/flexslider.css?ver=5.8.10' type='text/css' media='all' />
+<link rel='stylesheet' id='style_1-css'  href='https://www.hts.com/wp-content/themes/flatsome-child/assets/css/style_1.css?ver=1.0.19' type='text/css' media='all' />
+<link rel='stylesheet' id='style_2-css'  href='https://www.hts.com/wp-content/themes/flatsome-child/assets/css/style_2.css?ver=1.0.50' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css'  href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css?ver=1' type='text/css' media='all' />
+<link rel='stylesheet' id='prdctfltr-css'  href='https://www.hts.com/wp-content/plugins/prdctfltr/lib/css/style.min.css?ver=6.6.5' type='text/css' media='all' />
+<link rel='stylesheet' id='popup-maker-site-css'  href='//www.hts.com/wp-content/uploads/pum/pum-site-styles.css?generated=1730316339&#038;ver=1.19.1' type='text/css' media='all' />
+<link rel='stylesheet' id='wpjb-glyphs-css'  href='https://www.hts.com/wp-content/plugins/wpjobboard/public/css/wpjb-glyphs.css?ver=5.8.6' type='text/css' media='all' />
+<link rel='stylesheet' id='wpjb-css-css'  href='https://www.hts.com/wp-content/plugins/wpjobboard/public/css/frontend.css?ver=5.8.6' type='text/css' media='all' />
+<link rel='stylesheet' id='flatsome-main-css'  href='https://www.hts.com/wp-content/themes/flatsome/assets/css/flatsome.css?ver=3.15.7' type='text/css' media='all' />
+<style id='flatsome-main-inline-css' type='text/css'>
+@font-face {
+				font-family: "fl-icons";
+				font-display: block;
+				src: url(https://www.hts.com/wp-content/themes/flatsome/assets/css/icons/fl-icons.eot?v=3.15.7);
+				src:
+					url(https://www.hts.com/wp-content/themes/flatsome/assets/css/icons/fl-icons.eot#iefix?v=3.15.7) format("embedded-opentype"),
+					url(https://www.hts.com/wp-content/themes/flatsome/assets/css/icons/fl-icons.woff2?v=3.15.7) format("woff2"),
+					url(https://www.hts.com/wp-content/themes/flatsome/assets/css/icons/fl-icons.ttf?v=3.15.7) format("truetype"),
+					url(https://www.hts.com/wp-content/themes/flatsome/assets/css/icons/fl-icons.woff?v=3.15.7) format("woff"),
+					url(https://www.hts.com/wp-content/themes/flatsome/assets/css/icons/fl-icons.svg?v=3.15.7#fl-icons) format("svg");
+			}
+</style>
+<link rel='stylesheet' id='flatsome-shop-css'  href='https://www.hts.com/wp-content/themes/flatsome/assets/css/flatsome-shop.css?ver=3.15.7' type='text/css' media='all' />
+<link rel='stylesheet' id='flatsome-style-css'  href='https://www.hts.com/wp-content/themes/flatsome-child/style.css?ver=3.22' type='text/css' media='all' />
+<link rel='stylesheet' id='flatsome-googlefonts-css'  href='//fonts.googleapis.com/css?family=Open+Sans%3Aregular%2C700%2Cregular%2C600%7CDancing+Script%3Aregular%2Cdefault&#038;display=swap&#038;ver=3.9' type='text/css' media='all' />
+<script type='text/javascript' src='https://www.hts.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://www.hts.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<script type='text/javascript' src='https://www.hts.com/wp-content/themes/flatsome-child/assets/js/jquery.flexslider.js?ver=1' id='flexslider_js-js'></script>
+<script type='text/javascript' id='wpjb-js-js-extra'>
+/* <![CDATA[ */
+var WpjbData = {"no_jobs_found":"No job listings found","no_resumes_found":"No resumes found","load_x_more":"Load %d more","date_format":"Y\/m\/d","datepicker_date_format":"yy\/mm\/dd","max_date":"9999\/12\/31"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.hts.com/wp-content/plugins/wpjobboard/public/js/frontend.js?ver=5.8.6' id='wpjb-js-js'></script>
+<link rel="https://api.w.org/" href="https://www.hts.com/wp-json/" /><link rel="alternate" type="application/json" href="https://www.hts.com/wp-json/wp/v2/pages/39" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.hts.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.hts.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='shortlink' href='https://www.hts.com/' />
+<link rel="alternate" type="application/json+oembed" href="https://www.hts.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.hts.com%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.hts.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.hts.com%2F&#038;format=xml" />
+<!-- organization Schema optimized by Schema Pro --><script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"organization","name":"HTS | Commercial &amp; Industrial HVAC Systems, Parts, &amp; Services Company","url":"https:\/\/www.hts.com","logo":{"@type":"ImageObject","url":"https:\/\/www.hts.com\/wp-content\/uploads\/2019\/03\/logo-64x60.png","width":64,"height":60},"sameAs":["https:\/\/www.facebook.com\/HTSEngineering\/","https:\/\/www.instagram.com\/accounts\/login\/","https:\/\/twitter.com\/HTS_Engineering","https:\/\/www.linkedin.com\/company\/hts-engineering\/"]}</script><!-- / organization Schema optimized by Schema Pro --><!-- site-navigation-element Schema optimized by Schema Pro --><script type="application/ld+json">{"@context":"https:\/\/schema.org","@graph":[{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Products","url":"https:\/\/www.hts.com\/products\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Services","url":"https:\/\/www.hts.com\/services\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Solutions","url":"#"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Airside Products Group","url":"https:\/\/www.hts.com\/services\/airside-products-group\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Building Automation","url":"https:\/\/www.hts.com\/services\/building-automation\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Client Services","url":"https:\/\/www.hts.com\/services\/client-services\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"FIT Building","url":"https:\/\/www.hts.com\/services\/fit-building\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"HVAC Parts &#038; Aftermarket","url":"https:\/\/www.hts.com\/services\/parts\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"HVAC Service &#038; Maintenance","url":"https:\/\/www.hts.com\/services\/service-maintenance\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Our Partners","url":"#"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Architects","url":"https:\/\/www.hts.com\/services\/architects\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Engineers","url":"https:\/\/www.hts.com\/services\/engineers\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Building Owners","url":"https:\/\/www.hts.com\/services\/building-owners\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Facilities Maintenance","url":"https:\/\/www.hts.com\/services\/facilities-maintenance\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"General Contractors","url":"https:\/\/www.hts.com\/services\/general-contractors\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Mechanical Contractors","url":"https:\/\/www.hts.com\/services\/mechanical-contractors\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Manufacturers","url":"https:\/\/www.hts.com\/services\/manufacturers\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Resources","url":"#"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Engineering Toolbox","url":"https:\/\/www.hts.com\/services\/engineering-toolbox\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"LEED Certification","url":"https:\/\/www.hts.com\/services\/leed-certification\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Tax &#038; Utility Incentives","url":"https:\/\/www.hts.com\/services\/tax-utility-incentives\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Our Employees","url":"https:\/\/www.hts.com\/services\/our-employees\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Systems","url":"https:\/\/www.hts.com\/systems\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Projects","url":"https:\/\/www.hts.com\/projects\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"About","url":"https:\/\/www.hts.com\/about\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Leadership","url":"https:\/\/www.hts.com\/leadership\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Careers","url":"https:\/\/www.hts.com\/careers\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Awards &#038; Recognition","url":"https:\/\/www.hts.com\/awards-recognition\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Contact","url":"https:\/\/www.hts.com\/contact\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"News","url":"https:\/\/www.hts.com\/news\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Events","url":"https:\/\/www.hts.com\/events\/"}]}</script><!-- / site-navigation-element Schema optimized by Schema Pro --><!-- sitelink-search-box Schema optimized by Schema Pro --><script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"WebSite","name":"HTS | Commercial &amp; Industrial HVAC Systems, Parts, &amp; Services Company","url":"https:\/\/www.hts.com","potentialAction":[{"@type":"SearchAction","target":"https:\/\/www.hts.com\/?s={search_term_string}","query-input":"required name=search_term_string"}]}</script><!-- / sitelink-search-box Schema optimized by Schema Pro --><style type="text/css" >.wpjb-fieldset-fill-this-in { display: none !important; }</style><style>.bg{opacity: 0; transition: opacity 1s; -webkit-transition: opacity 1s;} .bg-loaded{opacity: 1;}</style><!--[if IE]><link rel="stylesheet" type="text/css" href="https://www.hts.com/wp-content/themes/flatsome/assets/css/ie-fallback.css"><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"></script><script>var head = document.getElementsByTagName('head')[0],style = document.createElement('style');style.type = 'text/css';style.styleSheet.cssText = ':before,:after{content:none !important';head.appendChild(style);setTimeout(function(){head.removeChild(style);}, 0);</script><script src="https://www.hts.com/wp-content/themes/flatsome/assets/libs/ie-flexibility.js"></script><![endif]--><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-202712624-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-202712624-1');
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MLDR529');</script>
+<!-- End Google Tag Manager -->
+
+<meta name="robots" content="follow">
+
+<meta name="revisit-after" content="3 days">
+
+<meta name="google-site-verification" content="2u8IA5NL73jue7Qgdu8m3iHnZ7GjqQGAgGX05vmJ3mU" />
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7MP0DL5386"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7MP0DL5386');
+</script>	<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+	<script id='nitro-telemetry-meta' nitro-exclude>window.NPTelemetryMetadata={missReason: (!window.NITROPACK_STATE ? 'url not allowed' : 'hit'),pageType: 'home',isEligibleForOptimization: false,}</script><script id='nitro-generic' nitro-exclude>(()=>{window.NitroPack={loadStartTime:Date.now(),coreVersion:'na'};let t=document.createElement("script");t.src="https://nitroscripts.com/generic/YCmcCcqTIrjbgQfgoAZCuCOpttkflXWb",t.async=!0,t.id="nitro-script",document.head.appendChild(t)})();</script>			<style id="wpsp-style-frontend"></style>
+			<link rel="icon" href="https://www.hts.com/wp-content/uploads/2019/03/logo-100x99.png" sizes="32x32" />
+<link rel="icon" href="https://www.hts.com/wp-content/uploads/2019/03/logo.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://www.hts.com/wp-content/uploads/2019/03/logo.png" />
+<meta name="msapplication-TileImage" content="https://www.hts.com/wp-content/uploads/2019/03/logo.png" />
+<meta name="generator" content="WooCommerce Product Filter - All in One WooCommerce Filter"/><style id="custom-css" type="text/css">:root {--primary-color: #0066a4;}.header-main{height: 100px}#logo img{max-height: 100px}#logo{width:80px;}#logo img{padding:5px 0;}.header-bottom{min-height: 55px}.header-top{min-height: 30px}.transparent .header-main{height: 90px}.transparent #logo img{max-height: 90px}.has-transparent + .page-title:first-of-type,.has-transparent + #main > .page-title,.has-transparent + #main > div > .page-title,.has-transparent + #main .page-header-wrapper:first-of-type .page-title{padding-top: 120px;}.header.show-on-scroll,.stuck .header-main{height:70px!important}.stuck #logo img{max-height: 70px!important}.search-form{ width: 100%;}.header-bg-color {background-color: #ffffff}.header-bottom {background-color: #f1f1f1}.header-main .nav > li > a{line-height: 16px }.stuck .header-main .nav > li > a{line-height: 50px }.header-bottom-nav > li > a{line-height: 16px }@media (max-width: 549px) {.header-main{height: 70px}#logo img{max-height: 70px}}.nav-dropdown{font-size:100%}.header-top{background-color:#0066a4!important;}/* Color */.accordion-title.active, .has-icon-bg .icon .icon-inner,.logo a, .primary.is-underline, .primary.is-link, .badge-outline .badge-inner, .nav-outline > li.active> a,.nav-outline >li.active > a, .cart-icon strong,[data-color='primary'], .is-outline.primary{color: #0066a4;}/* Color !important */[data-text-color="primary"]{color: #0066a4!important;}/* Background Color */[data-text-bg="primary"]{background-color: #0066a4;}/* Background */.scroll-to-bullets a,.featured-title, .label-new.menu-item > a:after, .nav-pagination > li > .current,.nav-pagination > li > span:hover,.nav-pagination > li > a:hover,.has-hover:hover .badge-outline .badge-inner,button[type="submit"], .button.wc-forward:not(.checkout):not(.checkout-button), .button.submit-button, .button.primary:not(.is-outline),.featured-table .title,.is-outline:hover, .has-icon:hover .icon-label,.nav-dropdown-bold .nav-column li > a:hover, .nav-dropdown.nav-dropdown-bold > li > a:hover, .nav-dropdown-bold.dark .nav-column li > a:hover, .nav-dropdown.nav-dropdown-bold.dark > li > a:hover, .header-vertical-menu__opener ,.is-outline:hover, .tagcloud a:hover,.grid-tools a, input[type='submit']:not(.is-form), .box-badge:hover .box-text, input.button.alt,.nav-box > li > a:hover,.nav-box > li.active > a,.nav-pills > li.active > a ,.current-dropdown .cart-icon strong, .cart-icon:hover strong, .nav-line-bottom > li > a:before, .nav-line-grow > li > a:before, .nav-line > li > a:before,.banner, .header-top, .slider-nav-circle .flickity-prev-next-button:hover svg, .slider-nav-circle .flickity-prev-next-button:hover .arrow, .primary.is-outline:hover, .button.primary:not(.is-outline), input[type='submit'].primary, input[type='submit'].primary, input[type='reset'].button, input[type='button'].primary, .badge-inner{background-color: #0066a4;}/* Border */.nav-vertical.nav-tabs > li.active > a,.scroll-to-bullets a.active,.nav-pagination > li > .current,.nav-pagination > li > span:hover,.nav-pagination > li > a:hover,.has-hover:hover .badge-outline .badge-inner,.accordion-title.active,.featured-table,.is-outline:hover, .tagcloud a:hover,blockquote, .has-border, .cart-icon strong:after,.cart-icon strong,.blockUI:before, .processing:before,.loading-spin, .slider-nav-circle .flickity-prev-next-button:hover svg, .slider-nav-circle .flickity-prev-next-button:hover .arrow, .primary.is-outline:hover{border-color: #0066a4}.nav-tabs > li.active > a{border-top-color: #0066a4}.widget_shopping_cart_content .blockUI.blockOverlay:before { border-left-color: #0066a4 }.woocommerce-checkout-review-order .blockUI.blockOverlay:before { border-left-color: #0066a4 }/* Fill */.slider .flickity-prev-next-button:hover svg,.slider .flickity-prev-next-button:hover .arrow{fill: #0066a4;}/* Background Color */[data-icon-label]:after, .secondary.is-underline:hover,.secondary.is-outline:hover,.icon-label,.button.secondary:not(.is-outline),.button.alt:not(.is-outline), .badge-inner.on-sale, .button.checkout, .single_add_to_cart_button, .current .breadcrumb-step{ background-color:#71a339; }[data-text-bg="secondary"]{background-color: #71a339;}/* Color */.secondary.is-underline,.secondary.is-link, .secondary.is-outline,.stars a.active, .star-rating:before, .woocommerce-page .star-rating:before,.star-rating span:before, .color-secondary{color: #71a339}/* Color !important */[data-text-color="secondary"]{color: #71a339!important;}/* Border */.secondary.is-outline:hover{border-color:#71a339}.success.is-underline:hover,.success.is-outline:hover,.success{background-color: #71a339}.success-color, .success.is-link, .success.is-outline{color: #71a339;}.success-border{border-color: #71a339!important;}/* Color !important */[data-text-color="success"]{color: #71a339!important;}/* Background Color */[data-text-bg="success"]{background-color: #71a339;}body{font-size: 100%;}@media screen and (max-width: 549px){body{font-size: 100%;}}body{font-family:"Open Sans", sans-serif}body{font-weight: 0}body{color: #404c55}.nav > li > a {font-family:"Open Sans", sans-serif;}.mobile-sidebar-levels-2 .nav > li > ul > li > a {font-family:"Open Sans", sans-serif;}.nav > li > a {font-weight: 600;}.mobile-sidebar-levels-2 .nav > li > ul > li > a {font-weight: 600;}h1,h2,h3,h4,h5,h6,.heading-font, .off-canvas-center .nav-sidebar.nav-vertical > li > a{font-family: "Open Sans", sans-serif;}h1,h2,h3,h4,h5,h6,.heading-font,.banner h1,.banner h2{font-weight: 700;}h1,h2,h3,h4,h5,h6,.heading-font{color: #404c55;}.section-title span{text-transform: none;}.alt-font{font-family: "Dancing Script", sans-serif;}.header:not(.transparent) .header-nav-main.nav > li > a {color: #5b7287;}.header:not(.transparent) .header-nav-main.nav > li > a:hover,.header:not(.transparent) .header-nav-main.nav > li.active > a,.header:not(.transparent) .header-nav-main.nav > li.current > a,.header:not(.transparent) .header-nav-main.nav > li > a.active,.header:not(.transparent) .header-nav-main.nav > li > a.current{color: #0066a4;}.header-nav-main.nav-line-bottom > li > a:before,.header-nav-main.nav-line-grow > li > a:before,.header-nav-main.nav-line > li > a:before,.header-nav-main.nav-box > li > a:hover,.header-nav-main.nav-box > li.active > a,.header-nav-main.nav-pills > li > a:hover,.header-nav-main.nav-pills > li.active > a{color:#FFF!important;background-color: #0066a4;}a{color: #0066a4;}.has-equal-box-heights .box-image {padding-top: 100%;}input[type='submit'], input[type="button"], button:not(.icon), .button:not(.icon){border-radius: 5px!important}@media screen and (min-width: 550px){.products .box-vertical .box-image{min-width: 247px!important;width: 247px!important;}}.footer-2{background-color: #004d7c}.absolute-footer, html{background-color: #0c334d}/* Custom CSS */body {line-height: 1.8em}/*---products catalog---*/p.category {color: #4e535a; opacity:1; font-weight: 700;font-size: 0.8em;}.product-section {background: #f5f5f5; padding: 20px; margin-bottom: 20px}.product-section .product-small .box {background: white; }.breadcrumbs a {color: #000}.flickity-viewport {box-shadow: 0px 0px 17.64px 0.36px rgba(0, 0, 0, 0.13);}.yikes-custom-woo-tab-title {display:none}/*---homepage styles---*/.home-icons {border-right: #eeeeee solid 5px; }.home-icons:first-child {border-left: #eeeeee solid 5px; }.lead {font-weight: 600; line-height: 1.7}.icon-box-bg {box-shadow: 0px 0px 17.64px 0.36px rgba(0, 0, 0, 0.13);}@media screen and (min-width: 850px){.home-boxes {background-color: #f5f5f5;padding: 0;max-width: 30%;margin: 10px;flex-basis: 30%}}/*--footer--*/span.widget-title {font-weight: 800}/*--main nav---*/.nav-left {justify-content: flex-end; padding-right: 10px }.nav.nav-small>li>a {font-weight: 800; color: #fff; text-transform: uppercase}/*---shop page---*/.page-title-inner {display: block}/*--Sitemap---*/.wsp-pages-list li, .wsp-products-list li {display: inline-block;width: 47%;float:left;}.wsp-product_cats-list li {width: 23%;display: inline-block;float:left;}.wsp-pages-list li ul li, .wsp-products-list li ul li {width: 100%;}/*--End Sitemap---*//* Custom CSS Tablet */@media (max-width: 849px){.wsp-pages-list li, .wsp-products-list li {display: inline-block;width: 48%;}.wsp-product_cats-list li {width: 48%;display: inline-block;}}/* Custom CSS Mobile */@media (max-width: 549px){.wsp-pages-list li, .wsp-products-list li {display: inline-block;width: 100%;}.wsp-product_cats-list li {width: 100%;display: inline-block;}}.label-new.menu-item > a:after{content:"New";}.label-hot.menu-item > a:after{content:"Hot";}.label-sale.menu-item > a:after{content:"Sale";}.label-popular.menu-item > a:after{content:"Popular";}</style>		<style type="text/css" id="wp-custom-css">
+			.contact_address strong {
+    font-weight: 600 !important;
+}
+.page-id-51508 .row.row-main {
+    width: 100% !important;
+    max-width: 100%;
+}
+.page-id-51508 .page-wrapper{
+	  padding-top: 0px;
+}
+#popmake-52122 button.pum-close.popmake-close {
+    margin: 0;
+    border-radius: 50px !important;
+}
+.product_linesheet_popup .modal_col {
+    min-height: auto;
+    max-height: 100px;
+    display: inline-block;
+    width: 50%;
+    margin-bottom: 15px;
+    vertical-align: text-bottom;
+    float: right;
+}
+#popmake-52122 {
+    padding: 70px;
+    border-radius: 10px;
+}
+.product_linesheet_popup h3 {
+    color: #404c55;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.ds_display{display:block !important;}
+.mb_display{display:none !important;}
+
+
+.popup-box-cnt {
+    padding: 0px;
+    text-align: center;
+    font-size: 26px;
+    line-height: 35px;
+		font-weight: 600;
+}
+.popup-box-cnt a {
+    color: #ffc65a;
+    font-weight: 600;
+}
+#popmake-51208 button.pum-close.popmake-close {
+    right: -29px !important;
+    left: auto !important;
+    top: -6px;
+	background-color: #ffc65a;
+    color: #000;
+}
+.pum-theme-51200 .pum-container, .pum-theme-lightbox .pum-container{
+	background-color: #1465a8;
+	padding: 10px 0;
+}
+.header-social-icons i.icon-twitter:before {
+    content: '';
+    position: absolute;
+    background-image: url(/wp-content/uploads/2024/02/twitter.png);
+    width: 16px;
+    height: 16px;
+    bottom: -4px;
+    background-size: 90%;
+    background-repeat: no-repeat;
+}
+.product_image_content {
+   box-shadow: none;
+  padding-bottom: 15px;
+	margin-bottom:15px;
+}
+.tax-manufacturer .product-small img {
+    max-height: 242px;
+}
+.row-full-width .col.small-12.large-12 {
+    padding: 0;
+}
+.modal.line-sheet .modal_col
+{
+	min-height: auto;
+    max-height: 100px;
+}
+.modal.line-sheet h4
+{
+	margin-top: 20px;
+}
+.modal-content
+{
+	min-width: 650px;
+}
+.events-list li
+{
+	display: inline-block;
+	width: 100%;
+}
+.events .header-events .shop-page-title .prdctfltr_filter_inner .prdctfltr_filter select
+{
+	padding: 0 20px;
+}
+.asc_system_inner
+{
+	width: 100%;
+}
+.service_t.products.row.row-small.large-columns-6.medium-columns-6.small-columns-6.has-shadow.row-box-shadow-1.has-equal-box-heights.equalize-box, .gf_browser_chrome.gform_wrapper.contact_form_section_wrapper
+{
+	margin-top: 55px;
+}
+li.service_heading
+{
+	list-style: none;
+    margin-left: -30px !important;
+    text-transform: uppercase;
+}
+li.service_heading h3
+{
+	font-size: 1em;
+}
+iframe#hs-form-iframe-0 {
+    max-width: 60%;
+    margin: auto;
+}
+.category_description_section {
+    padding: 40px 0;
+    background: #f5f5f5;
+}
+.category_description_section h2 {
+    margin-top: 10px;
+}
+
+.category_description_section ul {
+    padding-left: 20px;
+    padding-top: 15px;
+}
+@media(max-width: 1670px){
+	.product_linesheet_popup .modal_col {
+		    margin-bottom: 35px
+	}
+}
+@media(max-width: 1440px){
+	#popmake-52122{padding: 50px;}
+	.popup-box-cnt{
+		padding: 28px 10px 28px;
+    font-size: 18px;
+	}
+}
+@media(max-width: 1440px){
+	.popup-box-cnt{
+		padding: 20px 10px 20px;
+	}
+}
+@media(max-width: 1280px){
+	#popmake-52122{padding:25px; width: 60%;}
+	
+}
+
+
+
+
+@media(max-width: 980px){
+	.pum-theme-51200 .pum-container, .pum-theme-lightbox .pum-container{
+		width: 35% !important;
+	}
+}
+@media screen and (max-width: 767px){
+.modal-content
+{
+	min-width: 90%;
+}
+.modal_col
+	{
+		width:100%;
+	}
+.modal.line-sheet .modal_col
+{
+	min-height: auto;
+    max-height: none;
+}
+	.pum-theme-51200 .pum-container, .pum-theme-lightbox .pum-container {
+    width: 97% !important;
+    right: 12px !important;
+    left: auto !important;
+}
+}
+
+time.date {
+    display: none;
+}
+.home_putting_section img {
+    display: block;
+    text-align: center;
+}
+.service_full_section .service_content {
+    max-width: 1366px;
+    margin: auto;
+}
+.service_full_section{
+	background-color:#f2f2f2;
+	padding-left:15px;
+	padding-right:15px;
+}
+.service_full_section.service_img_reverse_section {
+	background-color:transparent;
+}
+@media(max-width:991px){
+	.service_content .medium-6 {
+    max-width: 100%;
+    flex-basis: 100%;
+}
+	.service_img_reverse_section .row {
+    flex-direction: column-reverse;
+}
+
+}
+@media(max-width:767px){
+	#popmake-52122{width: 96%;}
+	.product_linesheet_popup h3{font-size: 23px;
+    margin-bottom: 20px;}
+	.service_content> .col-inner {
+    padding: 30px 0 0 !important;
+		text-align:center !important;
+}
+.service_center_section .col-inner.text-center {
+    padding: 40px 15px 0px 15px !important;
+}
+}
+@media(max-width:575px){
+	.product_linesheet_popup .modal_col{
+		width: 100%;
+		max-height: 100% !important;
+    margin-bottom: 15px !important;
+	}
+	.ds_display{display:none !important;}
+.mb_display{display:block !important;}
+	.service_content_mb {
+    margin-top: -60px;
+    margin-bottom: -50px;
+}
+/* 	.m-reverse {
+    flex-direction: column-reverse;
+} */
+/* .m-reverse5 .col-inner.text-center {
+    padding-top: 0 !important;
+    margin-top: -50px;
+}*/
+
+}
+@media(max-width:479px){
+	.pum-theme-51200 .pum-container, .pum-theme-lightbox .pum-container{
+		right: 6px !important;
+	}
+.service-contact-section h3.av-special-heading-tag {
+    font-size: 18px;
+}
+}
+.hs-custom-style {
+    margin: auto;
+}		</style>
+		</head>
+
+<body data-rsssl=1 class="home page-template page-template-font_page_template page-template-font_page_template-php page page-id-39 theme-flatsome woocommerce-no-js wp-schema-pro-2.5.2 header-shadow lightbox nav-dropdown-has-arrow nav-dropdown-has-shadow nav-dropdown-has-border catalog-mode no-prices">
+
+    <!-- for the location popup start (17-02-2020) -->
+         <div class="modal fade modal_home" id="myModal_location" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header" style="border: none;">
+            <button type="button" class="non_location_close" data-dismiss="modal" style="background: black;color: white;width: 20px;border-radius: 10px;opacity: unset;">x</button>
+          </div>
+          <div class="modal-body" style="text-align:center;padding: 0px 40px 0px 40px;">
+            <h4 style="color: #71a339;font-size: 20px;font-weight: 700;">Choose Your Location</h4>
+            <p>HTS represents top HVAC manufacturers that offer localized products and services. Please select a location to see your custom solutions.</p>
+          </div>
+        </div>
+      </div>
+    </div> 
+        <!-- for the location popup end (17-02-2020) --> 
+
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLDR529"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<a class="skip-link screen-reader-text" href="#main">Skip to content</a>
+
+<div id="wrapper">
+
+
+<header id="header" class="header has-sticky sticky-jump">
+   <div class="header-wrapper">
+	<div id="top-bar" class="header-top hide-for-sticky nav-dark">
+    <div class="flex-row container">
+      <div class="flex-col hide-for-medium flex-left">
+          <ul class="nav nav-left medium-nav-center nav-small  nav-divided">
+                        </ul>
+      </div><!-- flex-col left -->
+
+      <div class="flex-col hide-for-medium flex-center">
+          <ul class="nav nav-center nav-small  nav-divided">
+                        </ul>
+      </div><!-- center -->
+      
+       <div class="flex-col hide-for-medium flex-right ">
+          
+              <ul id="menu-about" class="nav top-bar-nav nav-right nav-small nav-divided"><li id="menu-item-40477" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-40477 menu-item-design-default has-dropdown"><a href="https://www.hts.com/about/" class="nav-top-link">About<i class="icon-angle-down" ></i></a>
+<ul class="sub-menu nav-dropdown nav-dropdown-default">
+	<li id="menu-item-41445" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-41445"><a href="https://www.hts.com/leadership/">Leadership</a></li>
+	<li id="menu-item-41446" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-41446"><a href="https://www.hts.com/careers/">Careers</a></li>
+	<li id="menu-item-51537" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51537"><a href="https://www.hts.com/texas-culture/">Texas Culture</a></li>
+	<li id="menu-item-43863" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-43863"><a href="https://www.hts.com/awards-recognition/supplier-awards-recognition/">Awards</a></li>
+</ul>
+</li>
+<li id="menu-item-52191" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-52191 menu-item-design-default"><a target="_blank" rel="noopener noreferrer" href="https://hubs.la/Q02RSXW40" class="nav-top-link">Blog</a></li>
+<li id="menu-item-41444" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-41444 menu-item-design-default"><a href="https://www.hts.com/contact/" class="nav-top-link">Contact</a></li>
+</ul>            </div>
+
+      <div class="flex-col hide-for-medium flex-right top_menu">
+          
+         <ul class="nav top-bar-nav nav-right nav-small  nav-divided">
+              <li id="menu-item-44416" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor menu-item-has-children menu-item-44416 active menu-item-design-default has-dropdown"><a href="#" class="nav-top-link">Locations<i class="icon-angle-down" ></i></a>
+<ul class="sub-menu nav-dropdown nav-dropdown-default">
+	<li id="menu-item-24734" class="nav-dropdown-col menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-24734 nav-dropdown-col"><a href="#">Texas Offices</a>
+	<ul class="sub-menu nav-column nav-dropdown-default">
+		<li id="menu-item-41109" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41109"><a href="#">Austin</a></li>
+		<li id="menu-item-41044" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41044"><a href="#">Dallas</a></li>
+		<li id="menu-item-41045" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41045"><a href="#">Fort Worth</a></li>
+		<li id="menu-item-41979" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41979"><a href="#">Houston</a></li>
+		<li id="menu-item-41046" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41046"><a href="#">San Antonio</a></li>
+	</ul>
+</li>
+	<li id="menu-item-24735" class="nav-dropdown-col menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-24735 nav-dropdown-col"><a href="#">Ontario Offices</a>
+	<ul class="sub-menu nav-column nav-dropdown-default">
+		<li id="menu-item-41047" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41047"><a href="#">Hamilton</a></li>
+		<li id="menu-item-41048" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41048"><a href="#">Kitchener</a></li>
+		<li id="menu-item-41156" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41156"><a href="#">London</a></li>
+		<li id="menu-item-41050" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41050"><a href="#">Oshawa</a></li>
+		<li id="menu-item-41980" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41980"><a href="#">Ottawa</a></li>
+		<li id="menu-item-41051" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41051"><a href="#">Sudbury</a></li>
+		<li id="menu-item-41978" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41978"><a href="#">Toronto</a></li>
+	</ul>
+</li>
+	<li id="menu-item-24736" class="nav-dropdown-col menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-24736 active nav-dropdown-col"><a href="#">More Locations</a>
+	<ul class="sub-menu nav-column nav-dropdown-default">
+		<li id="menu-item-41110" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-41110 active"><a href="/" aria-current="page">Chicago</a></li>
+		<li id="menu-item-41111" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-41111 active"><a href="/" aria-current="page">New England</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li class="header-divider"></li><li class="html header-social-icons ml-0">
+	<div class="social-icons follow-icons" ><a href="https://www.facebook.com/HTSEngineering/" target="_blank" data-label="Facebook" rel="noopener noreferrer nofollow" class="icon plain facebook tooltip" title="Follow on Facebook" aria-label="Follow on Facebook"><i class="icon-facebook" ></i></a><a href="https://www.instagram.com/hts_engineering/" target="_blank" rel="noopener noreferrer nofollow" data-label="Instagram" class="icon plain  instagram tooltip" title="Follow on Instagram" aria-label="Follow on Instagram"><i class="icon-instagram" ></i></a><a href="https://twitter.com/HTS_Engineering" target="_blank" data-label="Twitter" rel="noopener noreferrer nofollow" class="icon plain  twitter tooltip" title="Follow on X" aria-label="Follow on X"><i class="icon-twitter" ></i></a><a href="https://www.linkedin.com/company/hts-engineering/" target="_blank" rel="noopener noreferrer nofollow" data-label="LinkedIn" class="icon plain  linkedin tooltip" title="Follow on LinkedIn" aria-label="Follow on LinkedIn"><i class="icon-linkedin" ></i></a></div></li>          </ul>
+      </div><!-- .flex-col right -->
+
+            <div class="flex-col show-for-medium flex-grow">
+          <ul class="nav nav-center nav-small mobile-nav  nav-divided">
+              <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor menu-item-has-children menu-item-44416 active menu-item-design-default has-dropdown"><a href="#" class="nav-top-link">Locations<i class="icon-angle-down" ></i></a>
+<ul class="sub-menu nav-dropdown nav-dropdown-default">
+	<li class="nav-dropdown-col menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-24734 nav-dropdown-col"><a href="#">Texas Offices</a>
+	<ul class="sub-menu nav-column nav-dropdown-default">
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41109"><a href="#">Austin</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41044"><a href="#">Dallas</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41045"><a href="#">Fort Worth</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41979"><a href="#">Houston</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41046"><a href="#">San Antonio</a></li>
+	</ul>
+</li>
+	<li class="nav-dropdown-col menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-24735 nav-dropdown-col"><a href="#">Ontario Offices</a>
+	<ul class="sub-menu nav-column nav-dropdown-default">
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41047"><a href="#">Hamilton</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41048"><a href="#">Kitchener</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41156"><a href="#">London</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41050"><a href="#">Oshawa</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41980"><a href="#">Ottawa</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41051"><a href="#">Sudbury</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41978"><a href="#">Toronto</a></li>
+	</ul>
+</li>
+	<li class="nav-dropdown-col menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-24736 active nav-dropdown-col"><a href="#">More Locations</a>
+	<ul class="sub-menu nav-column nav-dropdown-default">
+		<li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-41110 active"><a href="/" aria-current="page">Chicago</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-41111 active"><a href="/" aria-current="page">New England</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+          </ul>
+      </div>
+      
+    </div><!-- .flex-row -->
+</div><!-- #header-top -->
+<div id="masthead" class="header-main ">
+      <div class="header-inner flex-row container logo-left" role="navigation">
+
+          <!-- Logo -->
+          <div id="logo" class="flex-col logo">
+            <!-- Header logo -->
+<a href="https://www.hts.com/" title="HTS | Commercial &amp; Industrial HVAC Systems, Parts, &amp; Services Company" rel="home">
+    <img width="80" height="100" src="/wp-content/uploads/2019/03/logo.png" class="header_logo header-logo" alt="HTS | Commercial &amp; Industrial HVAC Systems, Parts, &amp; Services Company"/><img  width="80" height="100" src="24645" class="header-logo-dark" alt="HTS | Commercial &amp; Industrial HVAC Systems, Parts, &amp; Services Company"/></a>
+          </div>
+
+          <!-- Mobile Left Elements -->
+          <div class="flex-col show-for-medium flex-left">
+            <ul class="mobile-nav nav nav-left ">
+                          </ul>
+          </div>
+
+          <!-- Left Elements -->
+          <div class="flex-col hide-for-medium flex-left
+            flex-grow">
+            <ul class="header-nav header-nav-main nav nav-left  nav-size-large nav-spacing-medium" >
+              <li id="menu-item-51171" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51171 menu-item-design-default"><a href="https://www.hts.com/products/" class="nav-top-link">Products</a></li>
+<li id="menu-item-41361" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-41361 menu-item-design-default has-dropdown"><a href="https://www.hts.com/services/" class="nav-top-link">Services<i class="icon-angle-down" ></i></a>
+<ul class="sub-menu nav-dropdown nav-dropdown-default">
+	<li id="menu-item-41362" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41362 nav-dropdown-col"><a href="#">Solutions</a>
+	<ul class="sub-menu nav-column nav-dropdown-default">
+		<li id="menu-item-log-out" class="menu-item-log-out"><a href="https://www.hts.com/services/building-automation/">Building Automation</a></li>
+		<li class="menu-item-log-out"><a href="https://www.hts.com/services/client-services/">Client Services</a></li>
+		<li class="menu-item-log-out"><a href="https://www.hts.com/services/parts/">HVAC Parts &#038; Aftermarket</a></li>
+		<li class="menu-item-log-out"><a href="https://www.hts.com/services/service-maintenance/">HVAC Service &#038; Maintenance</a></li>
+		<li id="menu-item-custom_equipment" class="menu-item-custom_equipment"><a href="/products">Custom Equipment</a></li>
+	</ul>
+</li>
+	<li id="menu-item-41363" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41363 nav-dropdown-col"><a href="#">Our Partners</a>
+	<ul class="sub-menu nav-column nav-dropdown-default">
+		<li class="menu-item-log-out"><a href="https://www.hts.com/services/architects/">Architects</a></li>
+		<li class="menu-item-log-out"><a href="https://www.hts.com/services/building-owners/">Building Owners</a></li>
+		<li class="menu-item-log-out"><a href="https://www.hts.com/services/engineers/">Engineers</a></li>
+		<li class="menu-item-log-out"><a href="https://www.hts.com/services/facilities-maintenance/">Facilities Maintenance</a></li>
+		<li class="menu-item-log-out"><a href="https://www.hts.com/services/general-contractors/">General Contractors</a></li>
+		<li class="menu-item-log-out"><a href="https://www.hts.com/services/manufacturers/">Manufacturers</a></li>
+		<li class="menu-item-log-out"><a href="https://www.hts.com/services/mechanical-contractors/">Mechanical Contractors</a></li>
+	</ul>
+</li>
+	<li id="menu-item-41364" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41364 nav-dropdown-col"><a href="#">Resources</a>
+	<ul class="sub-menu nav-column nav-dropdown-default">
+		<li class="menu-item-log-out"><a href="https://www.hts.com/services/engineering-toolbox/">Engineering Toolbox</a></li>
+		<li class="menu-item-log-out"><a href="https://www.hts.com/services/leed-certification/">LEED Certification</a></li>
+		<li class="menu-item-log-out"><a href="https://www.hts.com/services/our-employees/">Our Employees</a></li>
+		<li class="menu-item-log-out"><a href="https://www.hts.com/services/tax-utility-incentives/">Tax &#038; Utility Incentives</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-41366" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-41366 menu-item-design-default"><a href="https://www.hts.com/systems/" class="nav-top-link">Systems</a></li>
+<li id="menu-item-41367" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-41367 menu-item-design-default"><a href="https://www.hts.com/projects/" class="nav-top-link">Projects</a></li>
+<li id="menu-item-41374" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-41374 menu-item-design-default"><a href="https://www.hts.com/news/" class="nav-top-link">News</a></li>
+<li id="menu-item-41375" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-41375 menu-item-design-default"><a href="https://www.hts.com/events/" class="nav-top-link">Events</a></li>
+            </ul>
+          </div>
+
+          <!-- Right Elements -->
+          <div class="flex-col hide-for-medium flex-right">
+            <ul class="header-nav header-nav-main nav nav-right  nav-size-large nav-spacing-medium">
+              <li class="header-search-form search-form html relative has-icon">
+	<div class="header-search-form-wrapper">
+		<form method="get" class="searchform" action="https://www.hts.com/" role="search">
+		<div class="flex-row relative">
+			<div class="flex-col flex-grow">
+	   	   <input type="search" class="search-field mb-0" name="s" value="" id="s" placeholder="Search&hellip;" />
+			</div>
+			<div class="flex-col">
+				<button type="submit" class="ux-search-submit submit-button secondary button icon mb-0" aria-label="Submit">
+					<i class="icon-search" ></i>				</button>
+			</div>
+		</div>
+    <div class="live-search-results text-left z-top"></div>
+</form>
+	</div>
+</li>            </ul>
+          </div>
+
+          <!-- Mobile Right Elements -->
+          <div class="flex-col show-for-medium flex-right">
+            <ul class="mobile-nav nav nav-right ">
+              <li class="nav-icon has-icon">
+  <div class="header-button">		<a href="#" data-open="#main-menu" data-pos="right" data-bg="main-menu-overlay" data-color="" class="icon primary button circle is-small" aria-controls="main-menu" aria-expanded="false">
+		
+		  <i class="icon-menu" ></i>
+		  		</a>
+	 </div> </li>            </ul>
+          </div>
+
+      </div><!-- .header-inner -->
+     
+      </div><!-- .header-main -->
+<div class="header-bg-container fill"><div class="header-bg-image fill"></div><div class="header-bg-color fill"></div></div><!-- .header-bg-container -->   </div><!-- header-wrapper-->
+</header>
+
+
+<main id="main" class="">
+
+<div class="slider-wrapper relative" id="slider-850521357" >
+    <div class="slider slider-nav-circle slider-nav-large slider-nav-light slider-style-normal"
+        data-flickity-options='{
+            "cellAlign": "center",
+            "imagesLoaded": true,
+            "lazyLoad": 1,
+            "freeScroll": false,
+            "wrapAround": true,
+            "autoPlay": 6000,
+            "pauseAutoPlayOnHover" : true,
+            "prevNextButtons": true,
+            "contain" : true,
+            "adaptiveHeight" : true,
+            "dragThreshold" : 10,
+            "percentPosition": true,
+            "pageDots": true,
+            "rightToLeft": false,
+            "draggable": true,
+            "selectedAttraction": 0.1,
+            "parallax" : 0,
+            "friction": 0.6        }'
+        >
+        
+
+
+  <div class="banner has-hover home-banner" id="banner-56652097">
+          <div class="banner-inner fill">
+        <div class="banner-bg fill" >
+            <div class="bg fill bg-fill "></div>
+                        <div class="overlay"></div>            
+                    </div>
+		
+        <div class="banner-layers container">
+            <div class="fill banner-link"></div>            
+
+   <div id="text-box-886805868" class="text-box banner-layer x50 md-x50 lg-x50 y50 md-y50 lg-y50 res-text">
+                                <div class="text-box-content text dark">
+              
+              <div class="text-inner text-center">
+                  
+
+<h2>Our Promise</h2><p class="lead">We are committed to the individual success of all those involved in a project’s HVAC system selection, design, purchase, installation, and maintenance.</p>
+<a href="/products" target="_self" class="button secondary is-large box-shadow-1"  style="border-radius:5px;">
+    <span>View Products</span>
+  </a>
+
+
+
+              </div>
+           </div>
+                            
+<style>
+#text-box-886805868 {
+  width: 93%;
+}
+#text-box-886805868 .text-box-content {
+  font-size: 113%;
+}
+@media (min-width:550px) {
+  #text-box-886805868 {
+    width: 76%;
+  }
+  #text-box-886805868 .text-box-content {
+    font-size: 100%;
+  }
+}
+@media (min-width:850px) {
+  #text-box-886805868 {
+    width: 60%;
+  }
+}
+</style>
+    </div>
+ 
+
+        </div>
+      </div>
+
+            
+<style>
+#banner-56652097 {
+  padding-top: 388px;
+}
+#banner-56652097 .bg.bg-loaded {
+  background-image: url(https://www.hts.com/wp-content/uploads/2019/03/banner.jpg);
+}
+#banner-56652097 .overlay {
+  background-color: rgba(0, 0, 0, 0.17);
+}
+#banner-56652097 .ux-shape-divider--top svg {
+  height: 150px;
+  --divider-top-width: 100%;
+}
+#banner-56652097 .ux-shape-divider--bottom svg {
+  height: 150px;
+  --divider-width: 100%;
+}
+@media (min-width:550px) {
+  #banner-56652097 {
+    padding-top: 399px;
+  }
+}
+@media (min-width:850px) {
+  #banner-56652097 {
+    padding-top: 500px;
+  }
+}
+</style>
+  </div>
+
+
+
+  <div class="banner has-hover home-banner" id="banner-208724335">
+          <div class="banner-inner fill">
+        <div class="banner-bg fill" >
+            <div class="bg fill bg-fill "></div>
+                        <div class="overlay"></div>            
+                    </div>
+		
+        <div class="banner-layers container">
+            <div class="fill banner-link"></div>            
+
+   <div id="text-box-963125253" class="text-box banner-layer x50 md-x50 lg-x50 y50 md-y50 lg-y50 res-text">
+                                <div class="text-box-content text dark">
+              
+              <div class="text-inner text-center">
+                  
+
+<h2>16 HTS offices across North America</h2><p class="lead">Let us help you find your HTS Representative from one of our 16 locations in Canada and the United States.</p>
+<a href="/locations" target="_self" class="button secondary is-large box-shadow-1"  style="border-radius:5px;">
+    <span>View Locations</span>
+  </a>
+
+
+
+              </div>
+           </div>
+                            
+<style>
+#text-box-963125253 {
+  width: 93%;
+}
+#text-box-963125253 .text-box-content {
+  font-size: 113%;
+}
+@media (min-width:550px) {
+  #text-box-963125253 {
+    width: 76%;
+  }
+  #text-box-963125253 .text-box-content {
+    font-size: 100%;
+  }
+}
+@media (min-width:850px) {
+  #text-box-963125253 {
+    width: 78%;
+  }
+}
+</style>
+    </div>
+ 
+
+        </div>
+      </div>
+
+            
+<style>
+#banner-208724335 {
+  padding-top: 388px;
+}
+#banner-208724335 .bg.bg-loaded {
+  background-image: url(https://www.hts.com/wp-content/uploads/2019/09/new_Office-Locations2.jpg);
+}
+#banner-208724335 .overlay {
+  background-color: rgba(1, 17, 72, 0.5);
+}
+#banner-208724335 .ux-shape-divider--top svg {
+  height: 150px;
+  --divider-top-width: 100%;
+}
+#banner-208724335 .ux-shape-divider--bottom svg {
+  height: 150px;
+  --divider-width: 100%;
+}
+@media (min-width:550px) {
+  #banner-208724335 {
+    padding-top: 399px;
+  }
+}
+@media (min-width:850px) {
+  #banner-208724335 {
+    padding-top: 500px;
+  }
+}
+</style>
+  </div>
+
+
+
+  <div class="banner has-hover home-banner" id="banner-850213692">
+          <div class="banner-inner fill">
+        <div class="banner-bg fill" >
+            <div class="bg fill bg-fill "></div>
+                        <div class="overlay"></div>            
+                    </div>
+		
+        <div class="banner-layers container">
+            <div class="fill banner-link"></div>            
+
+   <div id="text-box-1117960255" class="text-box banner-layer x50 md-x50 lg-x50 y50 md-y50 lg-y50 res-text">
+                                <div class="text-box-content text dark">
+              
+              <div class="text-inner text-center">
+                  
+
+<h2>Our Services</h2><p class="lead">HTS offers expert solutions with custom equipment, parts, service, building automation, FIT building, and airside products</p>
+<a href="/services/client-services" target="_self" class="button secondary is-large box-shadow-1"  style="border-radius:5px;">
+    <span>Learn More</span>
+  </a>
+
+
+
+              </div>
+           </div>
+                            
+<style>
+#text-box-1117960255 {
+  width: 93%;
+}
+#text-box-1117960255 .text-box-content {
+  font-size: 113%;
+}
+@media (min-width:550px) {
+  #text-box-1117960255 {
+    width: 76%;
+  }
+  #text-box-1117960255 .text-box-content {
+    font-size: 100%;
+  }
+}
+@media (min-width:850px) {
+  #text-box-1117960255 {
+    width: 60%;
+  }
+}
+</style>
+    </div>
+ 
+
+        </div>
+      </div>
+
+            
+<style>
+#banner-850213692 {
+  padding-top: 388px;
+}
+#banner-850213692 .bg.bg-loaded {
+  background-image: url(https://www.hts.com/wp-content/uploads/2019/09/new_Our-Services.jpg);
+}
+#banner-850213692 .overlay {
+  background-color: rgba(1, 17, 72, 0.5);
+}
+#banner-850213692 .ux-shape-divider--top svg {
+  height: 150px;
+  --divider-top-width: 100%;
+}
+#banner-850213692 .ux-shape-divider--bottom svg {
+  height: 150px;
+  --divider-width: 100%;
+}
+@media (min-width:550px) {
+  #banner-850213692 {
+    padding-top: 399px;
+  }
+}
+@media (min-width:850px) {
+  #banner-850213692 {
+    padding-top: 500px;
+  }
+}
+</style>
+  </div>
+
+
+
+  <div class="banner has-hover home-banner" id="banner-2115016383">
+          <div class="banner-inner fill">
+        <div class="banner-bg fill" >
+            <div class="bg fill bg-fill "></div>
+                        <div class="overlay"></div>            
+                    </div>
+		
+        <div class="banner-layers container">
+            <div class="fill banner-link"></div>            
+
+   <div id="text-box-105126269" class="text-box banner-layer x50 md-x50 lg-x50 y50 md-y50 lg-y50 res-text">
+                                <div class="text-box-content text dark">
+              
+              <div class="text-inner text-center">
+                  
+
+<h2>Building Automation Controls</h2><p class="lead">Seamless integration, reduced energy costs, extended equipment life, and precise temperature and humidity control.</p>
+<a href="/services/building-automation/" target="_self" class="button secondary is-large box-shadow-1"  style="border-radius:5px;">
+    <span>Learn More</span>
+  </a>
+
+
+
+              </div>
+           </div>
+                            
+<style>
+#text-box-105126269 {
+  width: 93%;
+}
+#text-box-105126269 .text-box-content {
+  font-size: 113%;
+}
+@media (min-width:550px) {
+  #text-box-105126269 {
+    width: 76%;
+  }
+  #text-box-105126269 .text-box-content {
+    font-size: 100%;
+  }
+}
+@media (min-width:850px) {
+  #text-box-105126269 {
+    width: 65%;
+  }
+}
+</style>
+    </div>
+ 
+
+        </div>
+      </div>
+
+            
+<style>
+#banner-2115016383 {
+  padding-top: 388px;
+}
+#banner-2115016383 .bg.bg-loaded {
+  background-image: url(https://www.hts.com/wp-content/uploads/2019/09/new_BASweb.jpg);
+}
+#banner-2115016383 .overlay {
+  background-color: rgba(1, 17, 72, 0.5);
+}
+#banner-2115016383 .ux-shape-divider--top svg {
+  height: 150px;
+  --divider-top-width: 100%;
+}
+#banner-2115016383 .ux-shape-divider--bottom svg {
+  height: 150px;
+  --divider-width: 100%;
+}
+@media (min-width:550px) {
+  #banner-2115016383 {
+    padding-top: 399px;
+  }
+}
+@media (min-width:850px) {
+  #banner-2115016383 {
+    padding-top: 500px;
+  }
+}
+</style>
+  </div>
+
+
+
+  <div class="banner has-hover home-banner" id="banner-1436896528">
+          <div class="banner-inner fill">
+        <div class="banner-bg fill" >
+            <div class="bg fill bg-fill "></div>
+                        <div class="overlay"></div>            
+                    </div>
+		
+        <div class="banner-layers container">
+            <div class="fill banner-link"></div>            
+
+   <div id="text-box-1107772105" class="text-box banner-layer x50 md-x50 lg-x50 y50 md-y50 lg-y50 res-text">
+                                <div class="text-box-content text dark">
+              
+              <div class="text-inner text-center">
+                  
+
+<h2>HTS Parts &amp; Aftermarket</h2><p class="lead">We’re problem solvers; we can find any parts from any manufacturer your project or equipment requires. We provide unparalleled customer service, competitive pricing, fully-stocked showrooms and conveniently located warehouses.</p>
+<a href="/services/parts/" target="_self" class="button secondary is-large box-shadow-1"  style="border-radius:5px;">
+    <span>Learn More</span>
+  </a>
+
+
+
+              </div>
+           </div>
+                            
+<style>
+#text-box-1107772105 {
+  width: 93%;
+}
+#text-box-1107772105 .text-box-content {
+  font-size: 113%;
+}
+@media (min-width:550px) {
+  #text-box-1107772105 {
+    width: 76%;
+  }
+  #text-box-1107772105 .text-box-content {
+    font-size: 100%;
+  }
+}
+@media (min-width:850px) {
+  #text-box-1107772105 {
+    width: 60%;
+  }
+}
+</style>
+    </div>
+ 
+
+        </div>
+      </div>
+
+            
+<style>
+#banner-1436896528 {
+  padding-top: 388px;
+}
+#banner-1436896528 .bg.bg-loaded {
+  background-image: url(https://www.hts.com/wp-content/uploads/2019/09/new_hts_7622-1500x1255.jpg);
+}
+#banner-1436896528 .overlay {
+  background-color: rgba(1, 17, 72, 0.5);
+}
+#banner-1436896528 .ux-shape-divider--top svg {
+  height: 150px;
+  --divider-top-width: 100%;
+}
+#banner-1436896528 .ux-shape-divider--bottom svg {
+  height: 150px;
+  --divider-width: 100%;
+}
+@media (min-width:550px) {
+  #banner-1436896528 {
+    padding-top: 399px;
+  }
+}
+@media (min-width:850px) {
+  #banner-1436896528 {
+    padding-top: 500px;
+  }
+}
+</style>
+  </div>
+
+
+
+     </div>
+
+     <div class="loading-spin dark large centered"></div>
+
+     	</div>
+
+
+	<section class="section icon-box-bg" id="section_1347280200">
+		<div class="bg section-bg fill bg-fill  bg-loaded" >
+
+			
+			
+			
+
+		</div>
+
+		
+
+		<div class="section-content relative">
+			
+
+<div class="row"  id="row-1043722963">
+
+
+	<div id="col-1813779409" class="col home-icons medium-4 small-12 large-4"  >
+				<div class="col-inner"  >
+			
+			
+
+
+	<a class="plain" href="/services/building-automation/"  >	<div class="icon-box featured-box icon-box-center text-center"  >
+					<div class="icon-box-img" style="width: 60px">
+				<div class="icon">
+					<div class="icon-inner" >
+						<img width="62" height="62" src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2062%2062%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E" data-src="https://www.hts.com/wp-content/uploads/2019/03/icons-market-1.png" class="lazy-load attachment-medium size-medium" alt="icons market 1" title="icons market 1 HTS | Commercial &amp; Industrial HVAC Systems, Parts, &amp; Services Company">					</div>
+				</div>
+			</div>
+				<div class="icon-box-text last-reset">
+									
+
+<h4 style="text-align: center;"><span data-text-color="primary">Building Automation</span></h4>
+
+		</div>
+	</div>
+	</a>
+	
+
+		</div>
+					</div>
+
+	
+
+	<div id="col-1281645076" class="col home-icons medium-4 small-12 large-4"  >
+				<div class="col-inner"  >
+			
+			
+
+
+	<a class="plain" href="/services/parts/"  >	<div class="icon-box featured-box icon-box-center text-center"  >
+					<div class="icon-box-img" style="width: 60px">
+				<div class="icon">
+					<div class="icon-inner" >
+						<img width="62" height="62" src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2062%2062%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E" data-src="https://www.hts.com/wp-content/uploads/2019/03/icons-market-7.png" class="lazy-load attachment-medium size-medium" alt="icons market 7" title="icons market 7 HTS | Commercial &amp; Industrial HVAC Systems, Parts, &amp; Services Company">					</div>
+				</div>
+			</div>
+				<div class="icon-box-text last-reset">
+									
+
+<h4 style="text-align: center;"><span data-text-color="primary">Parts &amp; Aftermarket</span></h4>
+
+		</div>
+	</div>
+	</a>
+	
+
+		</div>
+					</div>
+
+	
+
+	<div id="col-1944945612" class="col home-icons medium-4 small-12 large-4"  >
+				<div class="col-inner"  >
+			
+			
+
+
+	<a class="plain" href="/services/service-maintenance/"  >	<div class="icon-box featured-box icon-box-center text-center"  >
+					<div class="icon-box-img" style="width: 60px">
+				<div class="icon">
+					<div class="icon-inner" >
+						<img width="62" height="62" src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2062%2062%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E" data-src="https://www.hts.com/wp-content/uploads/2019/03/icons-market-9.png" class="lazy-load attachment-medium size-medium" alt="icons market 9" title="icons market 9 HTS | Commercial &amp; Industrial HVAC Systems, Parts, &amp; Services Company">					</div>
+				</div>
+			</div>
+				<div class="icon-box-text last-reset">
+									
+
+<h4 style="text-align: center;"><span data-text-color="primary">Services &amp; Maintenance</span></h4>
+
+		</div>
+	</div>
+	</a>
+	
+
+		</div>
+					</div>
+
+	
+
+</div>
+
+		</div>
+
+		
+<style>
+#section_1347280200 {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+#section_1347280200 .ux-shape-divider--top svg {
+  height: 150px;
+  --divider-top-width: 100%;
+}
+#section_1347280200 .ux-shape-divider--bottom svg {
+  height: 150px;
+  --divider-width: 100%;
+}
+</style>
+	</section>
+	
+<div class="row align-center"  id="row-1357183255">
+
+
+	<div id="col-274397892" class="col small-12 large-12"  >
+				<div class="col-inner"  >
+			
+			
+
+<h1 style="text-align: center; font-size: 1.8em;"><span data-text-color="secondary">A Leading Commercial HVAC Distributor </span></h1><p class="lead" style="text-align: center;">HTS is the largest independent built-to-order commercial and industrial full-service HVAC distributor in North America. We are committed to the shared success for all involved in the design, selection, installation and maintenance of the right HVAC solution for each project.</p>
+
+		</div>
+				
+<style>
+#col-274397892 > .col-inner {
+  margin: 19px 0px 0px 0px;
+}
+</style>
+	</div>
+
+	
+
+</div>
+	<section class="section" id="section_1524819506">
+		<div class="bg section-bg fill bg-fill  bg-loaded" >
+
+			
+			
+			
+
+		</div>
+
+		
+
+		<div class="section-content relative">
+			
+
+<div class="row"  id="row-727602562">
+
+
+	<div id="col-467344289" class="col small-12 large-12"  >
+				<div class="col-inner text-center"  >
+			
+			
+
+<h2 style="text-align: center;"><span data-text-color="primary">Markets We Serve</span></h2><h3 class="thin-font" style="text-align: center;">Our industry experience spans industrial, institutional, and commercial projects of all sizes throughout the US and Canada.</h3>
+
+		</div>
+					</div>
+
+	
+<div class="col medium-3 small-12 large-3">
+                            <div class="col-inner">
+                            <div class="box has-hover   has-hover box-bounce box-text-bottom">
+                            <div class="box-image"><a href="https://www.hts.com/market/commercial-office/" ><img class="lazy-load" src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E" data-src="https://www.hts.com/wp-content/uploads/2019/08/proj_by_mkt_comm_offices.jpg" alt="proj by mkt comm offices HTS | Commercial &amp; Industrial HVAC Systems, Parts, &amp; Services Company" title="proj by mkt comm offices HTS | Commercial &amp; Industrial HVAC Systems, Parts, &amp; Services Company"></a>
+                    </div><div class='box-text text-center'>
+                        <div class='box-text-inner'><h5><a href="https://www.hts.com/market/commercial-office/" >Commercial Office</h5></a></div>
+                        </div>
+                        </div>
+                        </div>
+                        </div><div class="col medium-3 small-12 large-3">
+                            <div class="col-inner">
+                            <div class="box has-hover   has-hover box-bounce box-text-bottom">
+                            <div class="box-image"><a href="https://www.hts.com/market/education-k-12/" ><img class="lazy-load" src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E" data-src="https://www.hts.com/wp-content/uploads/2019/04/proj_by_mkt_education_K-12-290x290.jpg" alt="proj by mkt education K 12 HTS | Commercial &amp; Industrial HVAC Systems, Parts, &amp; Services Company" title="proj by mkt education K 12 HTS | Commercial &amp; Industrial HVAC Systems, Parts, &amp; Services Company"></a>
+                    </div><div class='box-text text-center'>
+                        <div class='box-text-inner'><h5><a href="https://www.hts.com/market/education-k-12/" >Education K-12</h5></a></div>
+                        </div>
+                        </div>
+                        </div>
+                        </div><div class="col medium-3 small-12 large-3">
+                            <div class="col-inner">
+                            <div class="box has-hover   has-hover box-bounce box-text-bottom">
+                            <div class="box-image"><a href="https://www.hts.com/market/government-public/" ><img class="lazy-load" src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E" data-src="https://www.hts.com/wp-content/uploads/2019/08/proj_by_mkt_govt_public.jpg" alt="proj by mkt govt public HTS | Commercial &amp; Industrial HVAC Systems, Parts, &amp; Services Company" title="proj by mkt govt public HTS | Commercial &amp; Industrial HVAC Systems, Parts, &amp; Services Company"></a>
+                    </div><div class='box-text text-center'>
+                        <div class='box-text-inner'><h5><a href="https://www.hts.com/market/government-public/" >Government &amp; Public</h5></a></div>
+                        </div>
+                        </div>
+                        </div>
+                        </div><div class="col medium-3 small-12 large-3">
+                            <div class="col-inner">
+                            <div class="box has-hover   has-hover box-bounce box-text-bottom">
+                            <div class="box-image"><a href="https://www.hts.com/market/healthcare/" ><img class="lazy-load" src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E" data-src="https://www.hts.com/wp-content/uploads/2019/08/proj_by_mkt_healthcare.jpg" alt="proj by mkt healthcare HTS | Commercial &amp; Industrial HVAC Systems, Parts, &amp; Services Company" title="proj by mkt healthcare HTS | Commercial &amp; Industrial HVAC Systems, Parts, &amp; Services Company"></a>
+                    </div><div class='box-text text-center'>
+                        <div class='box-text-inner'><h5><a href="https://www.hts.com/market/healthcare/" >Healthcare</h5></a></div>
+                        </div>
+                        </div>
+                        </div>
+                        </div><div class="col medium-3 small-12 large-3">
+                            <div class="col-inner">
+                            <div class="box has-hover   has-hover box-bounce box-text-bottom">
+                            <div class="box-image"><a href="https://www.hts.com/market/higher-education-research/" ><img class="lazy-load" src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E" data-src="https://www.hts.com/wp-content/uploads/2019/08/mission_critical_0004_higher_ed.jpg" alt="mission critical 0004 higher ed HTS | Commercial &amp; Industrial HVAC Systems, Parts, &amp; Services Company" title="mission critical 0004 higher ed HTS | Commercial &amp; Industrial HVAC Systems, Parts, &amp; Services Company"></a>
+                    </div><div class='box-text text-center'>
+                        <div class='box-text-inner'><h5><a href="https://www.hts.com/market/higher-education-research/" >Higher Education &amp; Research</h5></a></div>
+                        </div>
+                        </div>
+                        </div>
+                        </div><div class="col medium-3 small-12 large-3">
+                            <div class="col-inner">
+                            <div class="box has-hover   has-hover box-bounce box-text-bottom">
+                            <div class="box-image"><a href="https://www.hts.com/market/hospitality-retail/" ><img class="lazy-load" src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E" data-src="https://www.hts.com/wp-content/uploads/2019/08/mission_critical_0005_hospitality.jpg" alt="mission critical 0005 hospitality HTS | Commercial &amp; Industrial HVAC Systems, Parts, &amp; Services Company" title="mission critical 0005 hospitality HTS | Commercial &amp; Industrial HVAC Systems, Parts, &amp; Services Company"></a>
+                    </div><div class='box-text text-center'>
+                        <div class='box-text-inner'><h5><a href="https://www.hts.com/market/hospitality-retail/" >Hospitality &amp; Retail</h5></a></div>
+                        </div>
+                        </div>
+                        </div>
+                        </div><div class="col medium-3 small-12 large-3">
+                            <div class="col-inner">
+                            <div class="box has-hover   has-hover box-bounce box-text-bottom">
+                            <div class="box-image"><a href="https://www.hts.com/market/industrial/" ><img class="lazy-load" src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E" data-src="https://www.hts.com/wp-content/uploads/2019/08/mission_critical_0006_industrial_manu.jpg" alt="mission critical 0006 industrial manu HTS | Commercial &amp; Industrial HVAC Systems, Parts, &amp; Services Company" title="mission critical 0006 industrial manu HTS | Commercial &amp; Industrial HVAC Systems, Parts, &amp; Services Company"></a>
+                    </div><div class='box-text text-center'>
+                        <div class='box-text-inner'><h5><a href="https://www.hts.com/market/industrial/" >Industrial</h5></a></div>
+                        </div>
+                        </div>
+                        </div>
+                        </div><div class="col medium-3 small-12 large-3">
+                            <div class="col-inner">
+                            <div class="box has-hover   has-hover box-bounce box-text-bottom">
+                            <div class="box-image"><a href="https://www.hts.com/market/laboratories-biopharmaceutical/" ><img class="lazy-load" src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E" data-src="https://www.hts.com/wp-content/uploads/2019/08/mission_critical_0007_lab_biopharm-1.jpg" alt="mission critical 0007 lab biopharm 1 HTS | Commercial &amp; Industrial HVAC Systems, Parts, &amp; Services Company" title="mission critical 0007 lab biopharm 1 HTS | Commercial &amp; Industrial HVAC Systems, Parts, &amp; Services Company"></a>
+                    </div><div class='box-text text-center'>
+                        <div class='box-text-inner'><h5><a href="https://www.hts.com/market/laboratories-biopharmaceutical/" >Laboratories &amp; Biopharmaceutical</h5></a></div>
+                        </div>
+                        </div>
+                        </div>
+                        </div><div class="col medium-3 small-12 large-3">
+                            <div class="col-inner">
+                            <div class="box has-hover   has-hover box-bounce box-text-bottom">
+                            <div class="box-image"><a href="https://www.hts.com/market/leisure/" ><img class="lazy-load" src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E" data-src="https://www.hts.com/wp-content/uploads/2021/03/mission_critical_0008_leisure.jpg" alt="mission critical 0008 leisure HTS | Commercial &amp; Industrial HVAC Systems, Parts, &amp; Services Company" title="mission critical 0008 leisure HTS | Commercial &amp; Industrial HVAC Systems, Parts, &amp; Services Company"></a>
+                    </div><div class='box-text text-center'>
+                        <div class='box-text-inner'><h5><a href="https://www.hts.com/market/leisure/" >Leisure</h5></a></div>
+                        </div>
+                        </div>
+                        </div>
+                        </div><div class="col medium-3 small-12 large-3">
+                            <div class="col-inner">
+                            <div class="box has-hover   has-hover box-bounce box-text-bottom">
+                            <div class="box-image"><a href="https://www.hts.com/market/liturgical/" ><img class="lazy-load" src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E" data-src="https://www.hts.com/wp-content/uploads/2021/03/mission_critical_0009_liturgical.jpg" alt="mission critical 0009 liturgical HTS | Commercial &amp; Industrial HVAC Systems, Parts, &amp; Services Company" title="mission critical 0009 liturgical HTS | Commercial &amp; Industrial HVAC Systems, Parts, &amp; Services Company"></a>
+                    </div><div class='box-text text-center'>
+                        <div class='box-text-inner'><h5><a href="https://www.hts.com/market/liturgical/" >Liturgical</h5></a></div>
+                        </div>
+                        </div>
+                        </div>
+                        </div><div class="col medium-3 small-12 large-3">
+                            <div class="col-inner">
+                            <div class="box has-hover   has-hover box-bounce box-text-bottom">
+                            <div class="box-image"><a href="https://www.hts.com/market/mission-critical/" ><img class="lazy-load" src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E" data-src="https://www.hts.com/wp-content/uploads/2021/03/mission-critical.png" alt="mission critical HTS | Commercial &amp; Industrial HVAC Systems, Parts, &amp; Services Company" title="mission critical HTS | Commercial &amp; Industrial HVAC Systems, Parts, &amp; Services Company"></a>
+                    </div><div class='box-text text-center'>
+                        <div class='box-text-inner'><h5><a href="https://www.hts.com/market/mission-critical/" >Mission Critical</h5></a></div>
+                        </div>
+                        </div>
+                        </div>
+                        </div><div class="col medium-3 small-12 large-3">
+                            <div class="col-inner">
+                            <div class="box has-hover   has-hover box-bounce box-text-bottom">
+                            <div class="box-image"><a href="https://www.hts.com/market/multi-family-residential/" ><img class="lazy-load" src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E" data-src="https://www.hts.com/wp-content/uploads/2021/03/multi-family.png" alt="multi family HTS | Commercial &amp; Industrial HVAC Systems, Parts, &amp; Services Company" title="multi family HTS | Commercial &amp; Industrial HVAC Systems, Parts, &amp; Services Company"></a>
+                    </div><div class='box-text text-center'>
+                        <div class='box-text-inner'><h5><a href="https://www.hts.com/market/multi-family-residential/" >Multi-Family Residential</h5></a></div>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+
+	<div id="col-755433743" class="col small-12 large-12"  >
+				<div class="col-inner text-center"  >
+			
+			
+
+<a href="/projects/" target="_self" class="button primary"  style="border-radius:5px;">
+    <span>View All Projects</span>
+  </a>
+
+
+
+		</div>
+					</div>
+
+	
+
+</div>
+
+		</div>
+
+		
+<style>
+#section_1524819506 {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: rgb(245, 245, 245);
+}
+#section_1524819506 .ux-shape-divider--top svg {
+  height: 150px;
+  --divider-top-width: 100%;
+}
+#section_1524819506 .ux-shape-divider--bottom svg {
+  height: 150px;
+  --divider-width: 100%;
+}
+</style>
+	</section>
+	
+<div class="row"  id="row-1447593008">
+
+
+	<div id="col-1154120042" class="col small-12 large-12"  >
+				<div class="col-inner"  >
+			
+			
+
+<h2 style="text-align: center; font-size: 1.8em;"><span data-text-color="secondary">Partners We Serve</span></h2>
+
+		</div>
+					</div>
+
+	
+
+</div>
+<div class="row"  id="row-225197941">
+
+
+	<div id="col-1646004493" class="col home-boxes medium-3 small-6 large-3"  >
+				<div class="col-inner" style="background-color:rgb(245, 245, 245);" >
+			
+			
+
+	<div class="box has-hover   has-hover box-text-bottom" >
+
+		<div class="box-image" >
+			<a href="/services/architects/"  >			<div class="" >
+				<img width="435" height="220" src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20435%20220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E" data-src="https://www.hts.com/wp-content/uploads/2020/03/general-contractors-img.jpg" class="lazy-load attachment- size-" alt="general contractors img HTS | Commercial &amp; Industrial HVAC Systems, Parts, &amp; Services Company" srcset="" data-srcset="https://www.hts.com/wp-content/uploads/2020/03/general-contractors-img.jpg 435w, https://www.hts.com/wp-content/uploads/2020/03/general-contractors-img-300x152.jpg 300w, https://www.hts.com/wp-content/uploads/2020/03/general-contractors-img-265x134.jpg 265w" sizes="(max-width: 435px) 100vw, 435px" title="general contractors img HTS | Commercial &amp; Industrial HVAC Systems, Parts, &amp; Services Company">											</div>
+			</a>		</div>
+
+		<div class="box-text text-center" >
+			<div class="box-text-inner">
+				
+
+<h3><a href="/services/architects/"><span data-text-color="secondary">Architects</span></a></h3>As a vital partner to architects, HTS offers strategic insights from technical equipment specs to detailed concept drawings.
+
+			</div>
+		</div>
+	</div>
+	
+
+		</div>
+					</div>
+
+	
+
+	<div id="col-1241844026" class="col home-boxes medium-3 small-6 large-3"  >
+				<div class="col-inner" style="background-color:rgb(245, 245, 245);" >
+			
+			
+
+	<div class="box has-hover   has-hover box-text-bottom" >
+
+		<div class="box-image" >
+			<a href="/services/building-owners/"  >			<div class="" >
+				<img width="435" height="220" src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20435%20220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E" data-src="https://www.hts.com/wp-content/uploads/2019/03/shutterstock_203752939.jpg" class="lazy-load attachment- size-" alt="shutterstock 203752939" srcset="" data-srcset="https://www.hts.com/wp-content/uploads/2019/03/shutterstock_203752939.jpg 435w, https://www.hts.com/wp-content/uploads/2019/03/shutterstock_203752939-300x152.jpg 300w" sizes="(max-width: 435px) 100vw, 435px" title="shutterstock 203752939 HTS | Commercial &amp; Industrial HVAC Systems, Parts, &amp; Services Company">											</div>
+			</a>		</div>
+
+		<div class="box-text text-center" >
+			<div class="box-text-inner">
+				
+
+<h3><a href="/services/building-owners/"><span data-text-color="secondary">Building Owners</span></a></h3>HTS strives to be an integral partner with building owners to ensure the best long-life equipment is in the right place and operating properly – and at its maximum efficiency.
+
+			</div>
+		</div>
+	</div>
+	
+
+		</div>
+					</div>
+
+	
+
+	<div id="col-629288139" class="col home-boxes medium-3 small-6 large-3"  >
+				<div class="col-inner" style="background-color:rgb(245, 245, 245);" >
+			
+			
+
+	<div class="box has-hover   has-hover box-text-bottom" >
+
+		<div class="box-image" >
+			<a href="/services/building-owners/"  >			<div class="" >
+				<img width="435" height="220" src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20435%20220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E" data-src="https://www.hts.com/wp-content/uploads/2020/03/architects-img.jpg" class="lazy-load attachment- size-" alt="architects img HTS | Commercial &amp; Industrial HVAC Systems, Parts, &amp; Services Company" srcset="" data-srcset="https://www.hts.com/wp-content/uploads/2020/03/architects-img.jpg 435w, https://www.hts.com/wp-content/uploads/2020/03/architects-img-300x152.jpg 300w, https://www.hts.com/wp-content/uploads/2020/03/architects-img-265x134.jpg 265w" sizes="(max-width: 435px) 100vw, 435px" title="architects img HTS | Commercial &amp; Industrial HVAC Systems, Parts, &amp; Services Company">											</div>
+			</a>		</div>
+
+		<div class="box-text text-center" >
+			<div class="box-text-inner">
+				
+
+<h3><a href="/services/engineers/"><span data-text-color="secondary">Engineers</span></a></h3>The majority of HTS project managers have degrees in engineering, so we think like you and understand the unique demands you face.
+
+			</div>
+		</div>
+	</div>
+	
+
+		</div>
+					</div>
+
+	
+
+	<div id="col-2102136026" class="col home-boxes medium-3 small-6 large-3"  >
+				<div class="col-inner" style="background-color:rgb(245, 245, 245);" >
+			
+			
+
+	<div class="box has-hover   has-hover box-text-bottom" >
+
+		<div class="box-image" >
+			<a href="/services/facilities-maintenance/"  >			<div class="" >
+				<img width="435" height="220" src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20435%20220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E" data-src="https://www.hts.com/wp-content/uploads/2020/03/Facilities-Maintenance-img.jpg" class="lazy-load attachment- size-" alt="Facilities Maintenance img HTS | Commercial &amp; Industrial HVAC Systems, Parts, &amp; Services Company" srcset="" data-srcset="https://www.hts.com/wp-content/uploads/2020/03/Facilities-Maintenance-img.jpg 435w, https://www.hts.com/wp-content/uploads/2020/03/Facilities-Maintenance-img-300x152.jpg 300w, https://www.hts.com/wp-content/uploads/2020/03/Facilities-Maintenance-img-265x134.jpg 265w" sizes="(max-width: 435px) 100vw, 435px" title="Facilities Maintenance img HTS | Commercial &amp; Industrial HVAC Systems, Parts, &amp; Services Company">											</div>
+			</a>		</div>
+
+		<div class="box-text text-center" >
+			<div class="box-text-inner">
+				
+
+<h3><a href="/services/facilities-maintenance/"><span data-text-color="secondary">Facilities Maintenance</span></a></h3>At HTS, we respect the facility manager’s need to be included and considered in the HVAC system design and equipment placement because you will often get questions from those deciding which equipment to buy.
+
+			</div>
+		</div>
+	</div>
+	
+
+		</div>
+					</div>
+
+	
+
+</div>
+<div class="row align-center"  id="row-1302845771">
+
+
+	<div id="col-998662535" class="col home-boxes medium-3 small-6 large-3"  >
+				<div class="col-inner" style="background-color:rgb(245, 245, 245);" >
+			
+			
+
+	<div class="box has-hover   has-hover box-text-bottom" >
+
+		<div class="box-image" >
+			<a href="/services/general-contractors/"  >			<div class="" >
+				<img width="435" height="220" src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20435%20220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E" data-src="https://www.hts.com/wp-content/uploads/2020/03/engineers-img.jpg" class="lazy-load attachment- size-" alt="engineers img HTS | Commercial &amp; Industrial HVAC Systems, Parts, &amp; Services Company" srcset="" data-srcset="https://www.hts.com/wp-content/uploads/2020/03/engineers-img.jpg 435w, https://www.hts.com/wp-content/uploads/2020/03/engineers-img-300x152.jpg 300w, https://www.hts.com/wp-content/uploads/2020/03/engineers-img-265x134.jpg 265w" sizes="(max-width: 435px) 100vw, 435px" title="engineers img HTS | Commercial &amp; Industrial HVAC Systems, Parts, &amp; Services Company">											</div>
+			</a>		</div>
+
+		<div class="box-text text-center" >
+			<div class="box-text-inner">
+				
+
+<h3><a href="/services/general-contractors/"><span data-text-color="secondary">General Contractors </span></a></h3>Our technical sales teams work with estimators, project managers and the rest of your construction team to help ensure the profitability of the job and the building owner’s preference for your company for future building projects.
+
+			</div>
+		</div>
+	</div>
+	
+
+		</div>
+					</div>
+
+	
+
+	<div id="col-574562800" class="col home-boxes medium-3 small-6 large-3"  >
+				<div class="col-inner" style="background-color:rgb(245, 245, 245);" >
+			
+			
+
+	<div class="box has-hover   has-hover box-text-bottom" >
+
+		<div class="box-image" >
+			<a href="/services/manufacturers/"  >			<div class="" >
+				<img width="435" height="220" src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20435%20220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E" data-src="https://www.hts.com/wp-content/uploads/2020/03/mfg-image.jpg" class="lazy-load attachment- size-" alt="man using tool at industrial site" srcset="" data-srcset="https://www.hts.com/wp-content/uploads/2020/03/mfg-image.jpg 435w, https://www.hts.com/wp-content/uploads/2020/03/mfg-image-300x152.jpg 300w, https://www.hts.com/wp-content/uploads/2020/03/mfg-image-265x134.jpg 265w" sizes="(max-width: 435px) 100vw, 435px" title="mfg image HTS | Commercial &amp; Industrial HVAC Systems, Parts, &amp; Services Company">											</div>
+			</a>		</div>
+
+		<div class="box-text text-center" >
+			<div class="box-text-inner">
+				
+
+<h3><a href="/services/manufacturers/"><span data-text-color="secondary">Manufacturers </span></a></h3>View all the products available in your area by selecting the HTS location nearest you or your project. HTS assists building owners, architects, mechanical engineers and contractors in the design.
+
+			</div>
+		</div>
+	</div>
+	
+
+		</div>
+					</div>
+
+	
+
+	<div id="col-232962190" class="col home-boxes medium-3 small-6 large-3"  >
+				<div class="col-inner" style="background-color:rgb(245, 245, 245);" >
+			
+			
+
+	<div class="box has-hover   has-hover box-text-bottom" >
+
+		<div class="box-image" >
+			<a href="/services/mechanical-contractors/"  >			<div class="" >
+				<img width="435" height="220" src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20435%20220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E" data-src="https://www.hts.com/wp-content/uploads/2019/03/shutterstock_150244385.jpg" class="lazy-load attachment- size-" alt="shutterstock 150244385" srcset="" data-srcset="https://www.hts.com/wp-content/uploads/2019/03/shutterstock_150244385.jpg 435w, https://www.hts.com/wp-content/uploads/2019/03/shutterstock_150244385-300x152.jpg 300w" sizes="(max-width: 435px) 100vw, 435px" title="shutterstock 150244385 HTS | Commercial &amp; Industrial HVAC Systems, Parts, &amp; Services Company">											</div>
+			</a>		</div>
+
+		<div class="box-text text-center" >
+			<div class="box-text-inner">
+				
+
+<h3><a href="/services/mechanical-contractors/"><span data-text-color="secondary">Mechanical Contractors </span></a></h3>To become the mechanical contractor’s preferred supplier, HTS provides in-depth technical expertise and knowledge on a wide variety of HVAC systems and provides superior project management.
+
+			</div>
+		</div>
+	</div>
+	
+
+		</div>
+					</div>
+
+	
+
+</div>
+<div class="row"  id="row-1591654940">
+
+
+	<div id="col-666093576" class="col small-12 large-12"  >
+				<div class="col-inner"  >
+			
+			
+
+
+		</div>
+					</div>
+
+	
+
+</div>
+	<section class="section home_putting_section" id="section_1590228440">
+		<div class="bg section-bg fill bg-fill  bg-loaded" >
+
+			
+			
+			
+
+		</div>
+
+		
+
+		<div class="section-content relative">
+			
+
+<div class="row"  id="row-184721785">
+
+
+	<div id="col-588746112" class="col medium-6 small-12 large-6"  >
+				<div class="col-inner"  >
+			
+			
+
+<p class="lead">Putting the power of your work environment back in your hands</p>
+
+		</div>
+				
+<style>
+#col-588746112 > .col-inner {
+  margin: 0px 0px -27px 0px;
+}
+</style>
+	</div>
+
+	
+
+	<div id="col-1112134949" class="col hide-for-small medium-6 small-12 large-6"  >
+				<div class="col-inner"  >
+			
+			
+
+
+		</div>
+					</div>
+
+	
+
+	<div id="col-118079057" class="col medium-6 small-12 large-6"  >
+				<div class="col-inner"  >
+			
+			
+
+<p data-line-height="xl">When it comes to commercial HVAC systems and industrial HVAC systems, being proactive is important. Not only will you be able to have the peace of mind that your system is operating efficiently, but you will also be able to avoid costly breakdowns in the future and even extend the life of your equipment. HTS specializes in a wide range of custom HVAC solutions — from HVAC chillers systems to building automation systems. By implementing a sophisticated building management system in your facility, we provide our end users with the power to:</p><ul><li>Gain real time information that provides insight on the efficiency of their system</li><li>Identify developing issues and resolving them quickly</li><li>Making precision adjustments to the climate in your facility</li><li>Optimizing energy usage</li><li>And more</li></ul>
+
+		</div>
+					</div>
+
+	
+
+	<div id="col-1471477604" class="col medium-6 small-12 large-6"  >
+				<div class="col-inner"  >
+			
+			
+
+<p data-line-height="xl">Many business owners aren’t even conscious of the amount of money that is being squandered from their budgets simply because of an inefficient HVAC building management system. HTS prides itself on unlocking this avenue of cost savings, which ultimately benefits our clients in profound ways. We are so dedicated to providing the best service, that our HVAC control systems staff offers both full and preventative maintenance, as well as emergency repairs.</p>
+<a href="/contact" target="_self" class="button primary is-outline"  style="border-radius:10px;">
+    <span>Contact us</span>
+  </a>
+
+
+
+		</div>
+					</div>
+
+	
+
+</div>
+
+		</div>
+
+		
+<style>
+#section_1590228440 {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+#section_1590228440 .ux-shape-divider--top svg {
+  height: 150px;
+  --divider-top-width: 100%;
+}
+#section_1590228440 .ux-shape-divider--bottom svg {
+  height: 150px;
+  --divider-width: 100%;
+}
+</style>
+	</section>
+	
+
+  <div class="banner has-hover" id="banner-948663649">
+          <div class="banner-inner fill">
+        <div class="banner-bg fill" >
+            <div class="bg fill bg-fill "></div>
+                        <div class="overlay"></div>            
+                    </div>
+		
+        <div class="banner-layers container">
+            <div class="fill banner-link"></div>            
+
+   <div id="text-box-1190010825" class="text-box banner-layer x50 md-x50 lg-x50 y50 md-y50 lg-y50 res-text">
+                                <div class="text-box-content text dark">
+              
+              <div class="text-inner text-center">
+                  
+
+<h3><strong>Find a Location</strong></h3><p class="lead">Let us help you find your HTS Representative from one of our 16 locations in Canada and the United States.</p>
+<a href="/locations" target="_self" class="button secondary is-large"  >
+    <span>Locations</span>
+  </a>
+
+
+
+              </div>
+           </div>
+                            
+<style>
+#text-box-1190010825 {
+  width: 85%;
+}
+#text-box-1190010825 .text-box-content {
+  font-size: 131%;
+}
+@media (min-width:550px) {
+  #text-box-1190010825 {
+    width: 60%;
+  }
+  #text-box-1190010825 .text-box-content {
+    font-size: 100%;
+  }
+}
+</style>
+    </div>
+ 
+
+        </div>
+      </div>
+
+            
+<style>
+#banner-948663649 {
+  padding-top: 401px;
+}
+#banner-948663649 .bg.bg-loaded {
+  background-image: url(https://www.hts.com/wp-content/uploads/2019/03/lcoations.jpg);
+}
+#banner-948663649 .overlay {
+  background-color: rgba(0, 20, 34, 0.65);
+}
+#banner-948663649 .bg {
+  background-position: 25% 87%;
+}
+#banner-948663649 .ux-shape-divider--top svg {
+  height: 150px;
+  --divider-top-width: 100%;
+}
+#banner-948663649 .ux-shape-divider--bottom svg {
+  height: 150px;
+  --divider-width: 100%;
+}
+</style>
+  </div>
+
+
+
+<script nitro-exclude>
+    document.cookie = 'nitroCachedPage=' + (!window.NITROPACK_STATE ? '0' : '1') + '; path=/; SameSite=Lax';
+</script>
+</main>
+
+<footer id="footer" class="footer-wrapper">
+
+	
+<!-- FOOTER 1 -->
+
+<!-- FOOTER 2 -->
+<div class="footer-widgets footer footer-2 dark">
+		<div class="row dark large-columns-3 mb-0">
+	   		<div id="text-6" class="col pb-0 widget widget_text"><span class="widget-title">Contact</span><div class="is-divider small"></div>			<div class="textwidget"><p>HTS is committed to the individual success of all those involved in a project’s HVAC system selection, design, purchase, installation and maintenance.</p>
+<p>Need information or an HVAC solution? We’re here to help!</p>
+<p><a href="/contact" class="button primary is-outline">CONTACT US</a></p>
+</div>
+		</div><div id="nav_menu-5" class="col pb-0 widget widget_nav_menu"><span class="widget-title">Quick Links</span><div class="is-divider small"></div><div class="menu-quick-links-container"><ul id="menu-quick-links" class="menu"><li id="menu-item-24695" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24695"><a href="https://www.hts.com/careers/">Careers</a></li>
+<li id="menu-item-24685" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24685"><a href="https://www.hts.com/services/">Services</a></li>
+<li id="menu-item-51173" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51173"><a href="https://www.hts.com/products/">Products</a></li>
+<li id="menu-item-24694" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24694"><a href="https://www.hts.com/news/">News</a></li>
+<li id="menu-item-24693" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24693"><a href="https://www.hts.com/events/">Events</a></li>
+<li id="menu-item-24692" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24692"><a href="https://www.hts.com/privacy-policy/">Privacy Policy</a></li>
+<li id="menu-item-24691" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24691"><a href="https://www.hts.com/legal-disclaimer/">Legal</a></li>
+</ul></div></div><div id="text-7" class="col pb-0 widget widget_text">			<div class="textwidget"><p><a href="https://dxseng.com" target="blank" rel="noopener"><img loading="lazy" class="alignnone wp-image-42162" src="https://www.hts.com/wp-content/uploads/2022/01/DXS.png" alt="" width="164" height="100" /></a></p>
+<p>DXS specializes exclusively in the design, installation and service of variable refrigerant flow (VRF) air conditioning and heating systems. Visit <a href="http://www.dxseng.com/" target="_blank" rel="noopener">www.dxseng.com</a> and contact a DXS representative in our Ontario, Texas, and New England offices.</p>
+</div>
+		</div>        
+		</div>
+</div>
+
+
+
+<div class="absolute-footer dark medium-text-center text-center">
+  <div class="container clearfix">
+
+    
+    <div class="footer-primary pull-left">
+            <div class="copyright-footer">
+        Copyright 2024 © <strong>HTS</strong> . All rights reserved. Website by <a href="https://astoundz.com" target="_blank">ASTOUNDZ.</a> <a href='/sitemap/' target="_blank">Sitemap</a>      </div>
+          </div>
+  </div>
+</div>
+
+<a href="#top" class="back-to-top button icon invert plain fixed bottom z-1 is-outline hide-for-medium circle" id="top-link" aria-label="Go to top"><i class="icon-angle-up" ></i></a>
+
+</footer>
+
+</div>
+
+<!-- Mobile Sidebar -->
+<div id="main-menu" class="mobile-sidebar no-scrollbar mfp-hide">
+    <div class="sidebar-menu no-scrollbar ">
+        <ul class="nav nav-sidebar  nav-vertical nav-uppercase">
+              <li class="header-search-form search-form html relative has-icon">
+	<div class="header-search-form-wrapper">
+		<form method="get" class="searchform" action="https://www.hts.com/" role="search">
+		<div class="flex-row relative">
+			<div class="flex-col flex-grow">
+	   	   <input type="search" class="search-field mb-0" name="s" value="" id="s" placeholder="Search&hellip;" />
+			</div>
+			<div class="flex-col">
+				<button type="submit" class="ux-search-submit submit-button secondary button icon mb-0" aria-label="Submit">
+					<i class="icon-search" ></i>				</button>
+			</div>
+		</div>
+    <div class="live-search-results text-left z-top"></div>
+</form>
+	</div>
+</li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51171"><a href="https://www.hts.com/products/">Products</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-41361"><a href="https://www.hts.com/services/">Services</a>
+<ul class="sub-menu nav-sidebar-ul children">
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41362"><a href="#">Solutions</a>
+	<ul class="sub-menu nav-sidebar-ul">
+		<li class="menu-item-log-out"><a href="https://www.hts.com/services/building-automation/">Building Automation</a></li>
+		<li class="menu-item-log-out"><a href="https://www.hts.com/services/client-services/">Client Services</a></li>
+		<li class="menu-item-log-out"><a href="https://www.hts.com/services/parts/">HVAC Parts &#038; Aftermarket</a></li>
+		<li class="menu-item-log-out"><a href="https://www.hts.com/services/service-maintenance/">HVAC Service &#038; Maintenance</a></li>
+		<li class="menu-item-custom_equipment"><a href="/products">Custom Equipment</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41363"><a href="#">Our Partners</a>
+	<ul class="sub-menu nav-sidebar-ul">
+		<li class="menu-item-log-out"><a href="https://www.hts.com/services/architects/">Architects</a></li>
+		<li class="menu-item-log-out"><a href="https://www.hts.com/services/building-owners/">Building Owners</a></li>
+		<li class="menu-item-log-out"><a href="https://www.hts.com/services/engineers/">Engineers</a></li>
+		<li class="menu-item-log-out"><a href="https://www.hts.com/services/facilities-maintenance/">Facilities Maintenance</a></li>
+		<li class="menu-item-log-out"><a href="https://www.hts.com/services/general-contractors/">General Contractors</a></li>
+		<li class="menu-item-log-out"><a href="https://www.hts.com/services/manufacturers/">Manufacturers</a></li>
+		<li class="menu-item-log-out"><a href="https://www.hts.com/services/mechanical-contractors/">Mechanical Contractors</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41364"><a href="#">Resources</a>
+	<ul class="sub-menu nav-sidebar-ul">
+		<li class="menu-item-log-out"><a href="https://www.hts.com/services/engineering-toolbox/">Engineering Toolbox</a></li>
+		<li class="menu-item-log-out"><a href="https://www.hts.com/services/leed-certification/">LEED Certification</a></li>
+		<li class="menu-item-log-out"><a href="https://www.hts.com/services/our-employees/">Our Employees</a></li>
+		<li class="menu-item-log-out"><a href="https://www.hts.com/services/tax-utility-incentives/">Tax &#038; Utility Incentives</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-41366"><a href="https://www.hts.com/systems/">Systems</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-41367"><a href="https://www.hts.com/projects/">Projects</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-41374"><a href="https://www.hts.com/news/">News</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-41375"><a href="https://www.hts.com/events/">Events</a></li>
+<ul id="menu-about-1" class="nav nav-sidebar nav-vertical nav-anim nav-uppercase"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-40477"><a href="https://www.hts.com/about/">About</a>
+<ul class="sub-menu nav-sidebar-ul children">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-41445"><a href="https://www.hts.com/leadership/">Leadership</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-41446"><a href="https://www.hts.com/careers/">Careers</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51537"><a href="https://www.hts.com/texas-culture/">Texas Culture</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-43863"><a href="https://www.hts.com/awards-recognition/supplier-awards-recognition/">Awards</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-52191"><a target="_blank" rel="noopener noreferrer" href="https://hubs.la/Q02RSXW40">Blog</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-41444"><a href="https://www.hts.com/contact/">Contact</a></li>
+</ul>        </ul>
+    </div><!-- inner -->
+</div><!-- #mobile-menu -->
+<script>
+              (function(e){
+                  var el = document.createElement('script');
+                  el.setAttribute('data-account', 'Mdi8zIFMzv');
+                  el.setAttribute('src', 'https://cdn.userway.org/widget.js');
+                  document.body.appendChild(el);
+                })();
+              </script><div id="pum-52122" class="pum pum-overlay pum-theme-51199 pum-theme-default-theme popmake-overlay click_open" data-popmake="{&quot;id&quot;:52122,&quot;slug&quot;:&quot;product-line-sheets&quot;,&quot;theme_id&quot;:51199,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;cookie_name&quot;:&quot;&quot;,&quot;extra_selectors&quot;:&quot;.product_new_linesheet_btn&quot;}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:false,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;small&quot;,&quot;responsive_min_width&quot;:&quot;0%&quot;,&quot;responsive_min_width_unit&quot;:false,&quot;responsive_max_width&quot;:&quot;100%&quot;,&quot;responsive_max_width_unit&quot;:false,&quot;custom_width&quot;:&quot;640px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_left&quot;:&quot;0&quot;,&quot;position_bottom&quot;:&quot;0&quot;,&quot;position_right&quot;:&quot;0&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:false,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:false,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}" role="dialog" aria-modal="false"
+								   >
+
+	<div id="popmake-52122" class="pum-container popmake theme-51199 pum-responsive pum-responsive-small responsive size-small">
+
+				
+
+				
+
+		
+
+				<div class="pum-content popmake-content" tabindex="0">
+			<div class="modal-content-list product_linesheet_popup">
+<h3>Locations</h3>
+<div class="modal_col">
+<h4>Houston</h4>
+<h6><a class="download_linesheet_pdf" href="https://www.hts.com/wp-content/uploads/2024/09/Parts-Linesheet-HTX-091124.pdf" download="">Houston Parts Line Sheet</a></h6>
+<h6><a class="download_linesheet_pdf" href="https://www.hts.com/wp-content/uploads/2024/08/Houston-Mech-Line-Sheet_8.19.24.pdf" download="">Houston Line Sheet</a></h6>
+<h6><a class="download_linesheet_pdf" href="https://www.hts.com/wp-content/uploads/2024/08/HTX-APG-Linesheet-8.15.24.pdf" download="">Houston APG Line Sheet</a></h6>
+<h6><a class="download_linesheet_pdf" href="https://www.hts.com/wp-content/uploads/2021/01/Parts-Catalog-Texas-2021_digital.pdf" download="">Texas Parts Catalog</a></h6>
+</div>
+<div class="modal_col">
+<h4>Austin</h4>
+<h6><a class="download_linesheet_pdf" href="https://www.hts.com/wp-content/uploads/2024/09/Parts-CTX-Line-Sheet-9.10.24.pdf" download="">Austin Parts Line Sheet</a></h6>
+<h6><a class="download_linesheet_pdf" href="https://www.hts.com/wp-content/uploads/2024/10/Central-TX-Mech-Linesheet-10.21.24.pdf" download="">Austin Line Sheet</a></h6>
+<h6><a class="download_linesheet_pdf" href="https://www.hts.com/wp-content/uploads/2024/07/Central-TX-APG-Linesheet-7.25.24.pdf" download="">Austin APG Line Sheet</a></h6>
+</div>
+<div class="modal_col">
+<h4>San Antonio</h4>
+<h6><a class="download_linesheet_pdf" href="https://www.hts.com/wp-content/uploads/2024/09/Parts-CTX-Line-Sheet-9.10.24.pdf" download="">San Antonio Parts Line Sheet</a></h6>
+<h6><a class="download_linesheet_pdf" href="https://www.hts.com/wp-content/uploads/2024/10/Central-TX-Mech-Linesheet-10.21.24.pdf" download="">San Antonio Line Sheet</a></h6>
+<h6><a class="download_linesheet_pdf" href="https://www.hts.com/wp-content/uploads/2024/07/Central-TX-APG-Linesheet-7.25.24.pdf" download="">San Antonio APG Line Sheet</a></h6>
+</div>
+<div class="modal_col">
+<h4>Dallas</h4>
+<h6><a class="download_linesheet_pdf" href="https://www.hts.com/wp-content/uploads/2024/09/Parts-DFW-Line-Sheet-9.9.24-1.pdf" download="">Dallas Parts Line Sheet</a></h6>
+<h6><a class="download_linesheet_pdf" href="https://www.hts.com/wp-content/uploads/2024/09/DFW-Mech-Line-Sheet-091124.pdf" download="">Dallas Line Sheet</a></h6>
+<h6><a class="download_linesheet_pdf" href="https://www.hts.com/wp-content/uploads/2024/09/apg_linesheet_dfw_091224.pdf" download="">Dallas APG Line Sheet</a></h6>
+</div>
+<div class="modal_col">
+<h4>Fort Worth</h4>
+<h6><a class="download_linesheet_pdf" href="https://www.hts.com/wp-content/uploads/2024/09/Parts-DFW-Line-Sheet-9.9.24-1.pdf" download="">Fort Worth Parts Line Sheet</a></h6>
+<h6><a class="download_linesheet_pdf" href="https://www.hts.com/wp-content/uploads/2024/09/DFW-Mech-Line-Sheet-091124.pdf" download="">Fort Worth Line Sheet</a></h6>
+<h6><a class="download_linesheet_pdf" href="https://www.hts.com/wp-content/uploads/2024/09/apg_linesheet_dfw_091224.pdf" download="">Fort Worth APG Line Sheet</a></h6>
+</div>
+<div class="modal_col">
+<h4>New England</h4>
+<h6><a class="download_linesheet_pdf" href="https://www.hts.com/wp-content/uploads/2024/10/HTS_NewEngland_LineSheet_October2024.pdf" download="">New England Line Sheet</a></h6>
+<h6><a class="download_linesheet_pdf" href="https://www.hts.com/wp-content/uploads/2024/10/HTS_NewEngland_LineSheet_October2024_Maine.pdf" download="">New England (Maine) Line Sheet</a></h6>
+<h6><a class="download_linesheet_pdf" href="https://www.hts.com/wp-content/uploads/2024/03/Parts-Catalog-2024-Boston-digital.pdf" download="">New England Parts Catalog</a></h6>
+</div>
+<div class="modal_col">
+<h4>Toronto</h4>
+<h6><a class="download_linesheet_pdf" href="https://www.hts.com/wp-content/uploads/2024/04/Ontario-Parts-Aftermarket-Catalog-2024-v.1.pdf" download="">Ontario Parts Catalog</a></h6>
+<h6><a class="download_linesheet_pdf" href="https://www.hts.com/wp-content/uploads/2022/11/HTS_Ontario_Service_Brochure_2022.pdf" download="">Ontario Service Brochure</a></h6>
+<h6><a class="download_linesheet_pdf" href="https://www.hts.com/wp-content/uploads/2024/07/HTS_Toronto_Linecard_July2024.pdf" download="">Toronto Line Sheet</a></h6>
+</div>
+<div class="modal_col">
+<h4>Ottawa</h4>
+<h6><a class="download_linesheet_pdf" href="https://www.hts.com/wp-content/uploads/2024/07/HTS_Ottawa_LineCard_July2024.pdf" download="">Ottawa Line Sheet</a></h6>
+</div>
+<div class="modal_col">
+<h4>Sudbury</h4>
+<h6><a class="download_linesheet_pdf" href="https://www.hts.com/wp-content/uploads/2024/07/HTS_Sudbury_LineCard_July2024.pdf" download="">Sudbury Line Sheet</a></h6>
+</div>
+</div>
+		</div>
+
+
+				
+
+							<button type="button" class="pum-close popmake-close" aria-label="Close">
+			X			</button>
+		
+	</div>
+
+</div>
+    <div id="login-form-popup" class="lightbox-content mfp-hide">
+            <div class="woocommerce-notices-wrapper"></div>
+<div class="account-container lightbox-inner">
+
+	
+			<div class="account-login-inner">
+
+				<h3 class="uppercase">Login</h3>
+
+				<form class="woocommerce-form woocommerce-form-login login" method="post">
+
+					
+					<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+						<label for="username">Username or email address&nbsp;<span class="required">*</span></label>
+						<input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username" id="username" autocomplete="username" value="" />					</p>
+					<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+						<label for="password">Password&nbsp;<span class="required">*</span></label>
+						<input class="woocommerce-Input woocommerce-Input--text input-text" type="password" name="password" id="password" autocomplete="current-password" />
+					</p>
+
+					
+					<p class="form-row">
+						<label class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme">
+							<input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever" /> <span>Remember me</span>
+						</label>
+						<input type="hidden" id="woocommerce-login-nonce" name="woocommerce-login-nonce" value="e3bc1744f2" /><input type="hidden" name="_wp_http_referer" value="/" />						<button type="submit" class="woocommerce-button button woocommerce-form-login__submit" name="login" value="Log in">Log in</button>
+					</p>
+					<p class="woocommerce-LostPassword lost_password">
+						<a href="https://www.hts.com/my-account/lost-password/">Lost your password?</a>
+					</p>
+
+					
+				</form>
+			</div>
+
+			
+</div>
+
+          </div>
+  	<script id="wccp_pro_alert_message">
+	window.addEventListener('DOMContentLoaded', function() {}); //This line to stop JS deffer function in wp-rockt pluign
+	
+	window.addEventListener('load', function (){
+		// Create the first div element with the "oncontextmenu" attribute
+		const wccp_pro_mask = document.createElement('div');
+		wccp_pro_mask.setAttribute('oncontextmenu', 'return false;');
+		wccp_pro_mask.setAttribute('id', 'wccp_pro_mask');
+
+		// Create the second div element with the "msgmsg-box-wpcp hideme" classes
+		const wpcp_error_message = document.createElement('div');
+		wpcp_error_message.setAttribute('id', 'wpcp-error-message');
+		wpcp_error_message.setAttribute('class', 'msgmsg-box-wpcp hideme');
+
+		// Add a span element with the "error: " text inside the second div
+		const error_span = document.createElement('span');
+		error_span.innerText = 'error: ';
+		wpcp_error_message.appendChild(error_span);
+
+		// Add the error message text inside the second div
+		const error_text = document.createTextNode('<b>Alert: </b>Content selection is disabled!!');
+		wpcp_error_message.appendChild(error_text);
+
+		// Add the div elements to the document body
+		document.body.appendChild(wccp_pro_mask);
+		document.body.appendChild(wpcp_error_message);
+	});
+
+	var timeout_result;
+	function show_wccp_pro_message(smessage="", style="")
+	{
+		wccp_pro_log_to_console_if_allowed("function", "show_wccp_pro_message" + smessage);
+				
+		timeout = 3000;
+		
+		if(style == "") style = "warning-wpcp";
+		
+		if (smessage !== "" && timeout!=0)
+		{
+			var smessage_text = smessage;
+			jquery_fadeTo();
+			document.getElementById("wpcp-error-message").innerHTML = smessage_text;
+			document.getElementById("wpcp-error-message").className = "msgmsg-box-wpcp showme " + style;
+			clearTimeout(timeout_result);
+			timeout_result = setTimeout(hide_message, timeout);
+		}
+		else
+		{
+			clearTimeout(timeout_result);
+			timeout_result = setTimeout(hide_message, timeout);
+		}
+	}
+	function hide_message()
+	{
+		jquery_fadeOut();
+		document.getElementById("wpcp-error-message").className = "msgmsg-box-wpcp warning-wpcp hideme";
+	}
+	function jquery_fadeTo()
+	{
+		try {
+			jQuery("#wccp_pro_mask").fadeTo("slow", 0.3);
+		}
+		catch(err) {
+			//alert(err.message);
+			}
+	}
+	function jquery_fadeOut()
+	{
+		try {
+			jQuery("#wccp_pro_mask").fadeOut( "slow" );
+		}
+		catch(err) {}
+	}
+	</script>
+	<style>
+	#wccp_pro_mask
+	{
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		position: fixed;
+		right: 0;
+		top: 0;
+		background-color: #000;
+		pointer-events: none;
+		display: none;
+		z-index: 10000;
+		animation: 0.5s ease 0s normal none 1 running ngdialog-fadein;
+		background: rgba(0, 0, 0, 0.4) none repeat scroll 0 0;
+	}
+	#wpcp-error-message {
+	    direction: ltr;
+	    text-align: center;
+	    transition: opacity 900ms ease 0s;
+		pointer-events: none;
+	    z-index: 99999999;
+	}
+	.hideme {
+    	opacity:0;
+    	visibility: hidden;
+	}
+	.showme {
+    	opacity:1;
+    	visibility: visible;
+	}
+	.msgmsg-box-wpcp {
+		border-radius: 10px;
+		color: #555555;
+		font-family: Tahoma;
+		font-size: 12px;
+		margin: 10px;
+		padding: 10px 36px;
+		position: fixed;
+		width: 255px;
+		top: 50%;
+  		left: 50%;
+  		margin-top: -10px;
+  		margin-left: -130px;
+	}
+	.msgmsg-box-wpcp b {
+		font-weight:bold;
+		text-transform:uppercase;
+	}
+		.warning-wpcp {
+		background:#ffecec url('https://www.hts.com/wp-content/plugins/wccp-pro/images/warning.png') no-repeat 10px 50%;
+		border:1px solid #f2bfbf;
+		-webkit-box-shadow: 0px 0px 34px 2px #f2bfbf;
+		-moz-box-shadow: 0px 0px 34px 2px #f2bfbf;
+		box-shadow: 0px 0px 34px 2px #f2bfbf;
+	}
+	.success-wpcp {
+		background: #fafafa url('https://www.hts.com/wp-content/plugins/wccp-pro/images/success.png') no-repeat 10px 50%;
+		border: 1px solid #00b38f;
+		box-shadow: 0px 0px 34px 2px #adc;
+	}
+    </style>
+	<script type="text/javascript">
+		(function () {
+			var c = document.body.className;
+			c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+			document.body.className = c;
+		})();
+	</script>
+	<script type='text/javascript' src='https://www.hts.com/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.6.7.0' id='jquery-blockui-js'></script>
+<script type='text/javascript' id='wc-add-to-cart-js-extra'>
+/* <![CDATA[ */
+var wc_add_to_cart_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%","i18n_view_cart":"View cart","cart_url":"https:\/\/www.hts.com\/cart\/","is_cart":"","cart_redirect_after_add":"no"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.hts.com/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=6.7.0' id='wc-add-to-cart-js'></script>
+<script type='text/javascript' src='https://www.hts.com/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.6.7.0' id='js-cookie-js'></script>
+<script type='text/javascript' id='woocommerce-js-extra'>
+/* <![CDATA[ */
+var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.hts.com/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=6.7.0' id='woocommerce-js'></script>
+<script type='text/javascript' id='wc-cart-fragments-js-extra'>
+/* <![CDATA[ */
+var wc_cart_fragments_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%","cart_hash_key":"wc_cart_hash_6cc624c6c83c28947a6576cb49f3fd02","fragment_name":"wc_fragments_6cc624c6c83c28947a6576cb49f3fd02","request_timeout":"5000"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.hts.com/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js?ver=6.7.0' id='wc-cart-fragments-js'></script>
+<script type='text/javascript' src='https://www.hts.com/wp-content/themes/flatsome-child/assets/js/alian_custom.js?ver=1.3.87' id='theme-scripts-js'></script>
+<script type='text/javascript' id='wccp_pro_admin_bar_ajax-js-extra'>
+/* <![CDATA[ */
+var ajax_object = {"ajaxurl":"https:\/\/www.hts.com\/wp-admin\/admin-ajax.php","link":"https:\/\/www.hts.com\/"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.hts.com/wp-content/plugins/wccp-pro/js/admin_bar_ajax.js?ver=5.8.10' id='wccp_pro_admin_bar_ajax-js'></script>
+<script type='text/javascript' src='https://www.hts.com/wp-includes/js/jquery/ui/core.min.js?ver=1.12.1' id='jquery-ui-core-js'></script>
+<script type='text/javascript' id='popup-maker-site-js-extra'>
+/* <![CDATA[ */
+var pum_vars = {"version":"1.19.1","pm_dir_url":"https:\/\/www.hts.com\/wp-content\/plugins\/popup-maker\/","ajaxurl":"https:\/\/www.hts.com\/wp-admin\/admin-ajax.php","restapi":"https:\/\/www.hts.com\/wp-json\/pum\/v1","rest_nonce":null,"default_theme":"51199","debug_mode":"","disable_tracking":"","home_url":"\/","message_position":"top","core_sub_forms_enabled":"1","popups":[],"cookie_domain":"","analytics_route":"analytics","analytics_api":"https:\/\/www.hts.com\/wp-json\/pum\/v1"};
+var pum_sub_vars = {"ajaxurl":"https:\/\/www.hts.com\/wp-admin\/admin-ajax.php","message_position":"top"};
+var pum_popups = {"pum-52122":{"triggers":[{"type":"click_open","settings":{"cookie_name":"","extra_selectors":".product_new_linesheet_btn"}}],"cookies":[],"disable_on_mobile":false,"disable_on_tablet":false,"atc_promotion":null,"explain":null,"type_section":null,"theme_id":"51199","size":"small","responsive_min_width":"0%","responsive_max_width":"100%","custom_width":"640px","custom_height_auto":false,"custom_height":"380px","scrollable_content":false,"animation_type":"fade","animation_speed":"350","animation_origin":"center top","open_sound":"none","custom_sound":"","location":"center","position_top":"100","position_bottom":"0","position_left":"0","position_right":"0","position_from_trigger":false,"position_fixed":false,"overlay_disabled":false,"stackable":false,"disable_reposition":false,"zindex":"1999999999","close_button_delay":"0","fi_promotion":null,"close_on_form_submission":false,"close_on_form_submission_delay":"0","close_on_overlay_click":false,"close_on_esc_press":false,"close_on_f4_press":false,"disable_form_reopen":false,"disable_accessibility":false,"theme_slug":"default-theme","id":52122,"slug":"product-line-sheets"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='//www.hts.com/wp-content/uploads/pum/pum-site-scripts.js?defer&#038;generated=1730316339&#038;ver=1.19.1' id='popup-maker-site-js'></script>
+<script type='text/javascript' src='https://www.hts.com/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.7' id='regenerator-runtime-js'></script>
+<script type='text/javascript' src='https://www.hts.com/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0' id='wp-polyfill-js'></script>
+<script type='text/javascript' src='https://www.hts.com/wp-includes/js/hoverIntent.min.js?ver=1.10.1' id='hoverIntent-js'></script>
+<script type='text/javascript' id='flatsome-js-js-extra'>
+/* <![CDATA[ */
+var flatsomeVars = {"theme":{"version":"3.15.7"},"ajaxurl":"https:\/\/www.hts.com\/wp-admin\/admin-ajax.php","rtl":"","sticky_height":"70","assets_url":"https:\/\/www.hts.com\/wp-content\/themes\/flatsome\/assets\/js\/","lightbox":{"close_markup":"<button title=\"%title%\" type=\"button\" class=\"mfp-close\"><svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"28\" height=\"28\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-x\"><line x1=\"18\" y1=\"6\" x2=\"6\" y2=\"18\"><\/line><line x1=\"6\" y1=\"6\" x2=\"18\" y2=\"18\"><\/line><\/svg><\/button>","close_btn_inside":false},"user":{"can_edit_pages":false},"i18n":{"mainMenu":"Main Menu","toggleButton":"Toggle"},"options":{"cookie_notice_version":"1","swatches_layout":false,"swatches_box_select_event":false,"swatches_box_behavior_selected":false,"swatches_box_update_urls":"1","swatches_box_reset":false,"swatches_box_reset_extent":false,"swatches_box_reset_time":300,"search_result_latency":"0"},"is_mini_cart_reveal":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.hts.com/wp-content/themes/flatsome/assets/js/flatsome.js?ver=2ba06bae7e21001b4413f16ac4e08981' id='flatsome-js-js'></script>
+<script type='text/javascript' src='https://www.hts.com/wp-content/themes/flatsome/inc/extensions/flatsome-lazy-load/flatsome-lazy-load.js?ver=3.15.7' id='flatsome-lazy-js'></script>
+<script type='text/javascript' src='https://www.hts.com/wp-content/themes/flatsome/assets/js/woocommerce.js?ver=7a63f7aa2c4bbf851812535d8e4e7958' id='flatsome-theme-woocommerce-js-js'></script>
+<!--[if IE]>
+<script type='text/javascript' src='https://cdn.jsdelivr.net/npm/intersection-observer-polyfill@0.1.0/dist/IntersectionObserver.js?ver=0.1.0' id='intersection-observer-polyfill-js'></script>
+<![endif]-->
+<script type='text/javascript' src='https://www.hts.com/wp-includes/js/wp-embed.min.js?ver=5.8.10' id='wp-embed-js'></script>
+<script type='text/javascript' id='zxcvbn-async-js-extra'>
+/* <![CDATA[ */
+var _zxcvbnSettings = {"src":"https:\/\/www.hts.com\/wp-includes\/js\/zxcvbn.min.js"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.hts.com/wp-includes/js/zxcvbn-async.min.js?ver=1.0' id='zxcvbn-async-js'></script>
+<script type='text/javascript' src='https://www.hts.com/wp-includes/js/dist/hooks.min.js?ver=a7edae857aab69d69fa10d5aef23a5de' id='wp-hooks-js'></script>
+<script type='text/javascript' src='https://www.hts.com/wp-includes/js/dist/i18n.min.js?ver=5f1269854226b4dd90450db411a12b79' id='wp-i18n-js'></script>
+<script type='text/javascript' id='wp-i18n-js-after'>
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+</script>
+<script type='text/javascript' id='password-strength-meter-js-extra'>
+/* <![CDATA[ */
+var pwsL10n = {"unknown":"Password strength unknown","short":"Very weak","bad":"Weak","good":"Medium","strong":"Strong","mismatch":"Mismatch"};
+/* ]]> */
+</script>
+<script type='text/javascript' id='password-strength-meter-js-translations'>
+( function( domain, translations ) {
+	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
+	localeData[""].domain = domain;
+	wp.i18n.setLocaleData( localeData, domain );
+} )( "default", { "locale_data": { "messages": { "": {} } } } );
+</script>
+<script type='text/javascript' src='https://www.hts.com/wp-admin/js/password-strength-meter.min.js?ver=5.8.10' id='password-strength-meter-js'></script>
+<script type='text/javascript' id='wc-password-strength-meter-js-extra'>
+/* <![CDATA[ */
+var wc_password_strength_meter_params = {"min_password_strength":"3","stop_checkout":"","i18n_password_error":"Please enter a stronger password.","i18n_password_hint":"Hint: The password should be at least twelve characters long. To make it stronger, use upper and lower case letters, numbers, and symbols like ! \" ? $ % ^ & )."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.hts.com/wp-content/plugins/woocommerce/assets/js/frontend/password-strength-meter.min.js?ver=6.7.0' id='wc-password-strength-meter-js'></script>
+			<script type="text/javascript" id="wpsp-script-frontend"></script>
+			<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/8107882.js"></script>
+<!-- End of HubSpot Embed Code -->
+</body>
+</html>
