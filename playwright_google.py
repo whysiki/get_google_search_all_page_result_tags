@@ -108,7 +108,7 @@ class GoogleSearch:
         async with async_playwright() as p:
             async with await p.chromium.launch(
                 proxy={"server": next(iter(self.proxies_dict.values()))},
-                headless=False,
+                headless=True,
                 args=["--incognito", "--disable-gpu"],
             ) as browser:
                 context = await browser.new_context()
