@@ -83,7 +83,7 @@ def semaphore_decorator(semaphore: asyncio.Semaphore = asyncio.Semaphore(3)):
 class GoogleSearch:
     def __init__(self) -> None:
         self.base_url = "https://google.com/search"
-        self.proxy_url = "http://localhost:62333"  # if get none, use your own proxy
+        self.proxy_url: str = None  # if get none, use your own proxy
         self.proxies_dict = dict(http=self.proxy_url, https=self.proxy_url)
         self.result_tag_set: set = set()
         self.search_url: str = ""
@@ -93,9 +93,10 @@ class GoogleSearch:
         self.test_path = Path("data") / f"{int(time())}"
         self.limit_page_range: tuple = None  # [1, 10]
 
-    @property
-    def sorted_page_url_dict_items(self) -> List[tuple]:
-        return sorted(self.page_url_dict.items(), key=lambda x: int(x[0]))
+    def update_proxy(self, proxy_url: str) -> None:
+        self.proxy_url = proxy_url
+        self.proxies_dict = dict(http=self.proxy_url, https=self.proxy_url)
+        logger.debug(f"Updated proxy: {self.proxy_url}")
 
     async def search(
         self,
@@ -121,7 +122,7 @@ class GoogleSearch:
     async def get_pages(self):
         async with async_playwright() as p:
             async with await p.chromium.launch(
-                proxy={"server": next(iter(self.proxies_dict.values()))},
+                proxy={"server": self.proxy_url},
                 headless=True,
                 args=["--incognito", "--disable-gpu"],
             ) as browser:
@@ -243,4 +244,5 @@ class GoogleSearch:
 if __name__ == "__main__":
     search_query = "hvac company"
     google_search = GoogleSearch()
+    google_search.update_proxy("http://localhost:62333")
     asyncio.run(google_search.search(search_query))
