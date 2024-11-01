@@ -181,6 +181,12 @@ class GoogleSearch:
                 self.test_path
                 / Path(f"search_{self.search_query}_page_{current_page}.html"),
             )
+            for index, tag in enumerate(searched_result_tag_set):
+                text = tag.text
+                if text:
+                    print(
+                        f"[bold green]Page {current_page}[/bold green] Result {index + 1}:\n {text}"
+                    )
         else:
             save_html(
                 html_text,
