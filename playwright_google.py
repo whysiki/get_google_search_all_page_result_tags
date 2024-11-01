@@ -244,5 +244,6 @@ class GoogleSearch:
 if __name__ == "__main__":
     search_query = "hvac company"
     google_search = GoogleSearch()
-    google_search.update_proxy("http://localhost:62333")
-    asyncio.run(google_search.search(search_query))
+    google_search.update_proxy("http://localhost:62333")  # set a proxy
+    # asyncio.run(google_search.search(search_query, limit_page_range=(1, 3))) #limit_page_range=(1, 3)
+    asyncio.run(google_search.search(search_query))  # All pages
